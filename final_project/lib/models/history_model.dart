@@ -1,12 +1,12 @@
-class History {
+class HistoryModel {
   String? id;
   String? name;
   String? userId;
   String? recipeId;
 
-  History({this.id, this.name, this.userId, this.recipeId});
+  HistoryModel({this.id, this.name, this.userId, this.recipeId});
 
-  History.fromJson(Map<String, dynamic> json) {
+  HistoryModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
     userId = json['user_id'];

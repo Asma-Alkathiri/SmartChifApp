@@ -1,12 +1,12 @@
-class Recipe {
+class RecipeModel {
   String? id;
   String? name;
   String? description;
   String? recipeImg;
 
-  Recipe({this.id, this.name, this.description, this.recipeImg});
+  RecipeModel({this.id, this.name, this.description, this.recipeImg});
 
-  Recipe.fromJson(Map<String, dynamic> json) {
+  RecipeModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
     description = json['description'];

@@ -1,12 +1,12 @@
-class User {
+class UserModel {
   String? id;
   String? name;
   String? allergic;
   String? profileImg;
 
-  User({this.id, this.name, this.allergic, this.profileImg});
+  UserModel({this.id, this.name, this.allergic, this.profileImg});
 
-  User.fromJson(Map<String, dynamic> json) {
+  UserModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
     allergic = json['allergic'];

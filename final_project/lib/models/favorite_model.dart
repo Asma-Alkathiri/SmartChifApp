@@ -1,11 +1,11 @@
-class Favorite {
+class FavoriteModel {
   String? id;
   String? userId;
   String? recipeId;
 
-  Favorite({this.id, this.userId, this.recipeId});
+  FavoriteModel({this.id, this.userId, this.recipeId});
 
-  Favorite.fromJson(Map<String, dynamic> json) {
+  FavoriteModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     userId = json['user_id'];
     recipeId = json['recipe_id'];
