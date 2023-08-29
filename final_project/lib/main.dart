@@ -1,6 +1,8 @@
+import 'package:final_project/service/supabase_initializer.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  SupabaseInitializer.supabaseInitialize(); // this line to run the supabase
   runApp(const MainApp());
 }
 
