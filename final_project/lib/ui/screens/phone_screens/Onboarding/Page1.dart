@@ -15,17 +15,17 @@ class Page1 extends StatelessWidget {
           ),
 
           //  padding: const EdgeInsets.symmetric(horizontal: 20),
-          Center(
+          const Center(
             child: Text(
               "Browse your menu and order directly",
               style: TextStyle(fontSize: 38),
             ),
           ),
 
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
-          Text(
+          const Text(
             "Our app can send you everywhere, even space. For only \$2.99 per month",
             style: TextStyle(fontSize: 17, fontWeight: FontWeight.w300),
           ),
