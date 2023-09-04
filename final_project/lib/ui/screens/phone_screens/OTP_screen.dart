@@ -1,5 +1,6 @@
 import 'package:final_project/ui/componant/coustom_rectanglefield.dart';
 import 'package:final_project/ui/componant/coustom_textwithbutton.dart';
+import 'package:final_project/ui/componant/coustom_textwithsubtext.dart';
 import 'package:final_project/ui/componant/custom_Auth_Appbar.dart';
 import 'package:final_project/ui/constants/custom_colors.dart';
 import 'package:flutter/material.dart';
@@ -17,38 +18,7 @@ class OTPScreen extends StatelessWidget {
           SizedBox(
             height: 100,
           ),
-          SizedBox(
-            width: 400,
-            child: Column(
-              children: [
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Column(
-                    children: [
-                      Text(
-                        "Vefification Code",
-                        style: TextStyle(
-                            fontSize: 36, fontWeight: FontWeight.bold),
-                      ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      "Please type the verification code sent to prelookstudio@gmail.com",
-                      style: TextStyle(
-                          fontSize: 14,
-                          color: grayColor,
-                          fontWeight: FontWeight.w600),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
+          TextWithSubText(),
           SizedBox(
             height: 30,
           ),
@@ -65,3 +35,5 @@ class OTPScreen extends StatelessWidget {
     );
   }
 }
+
+
