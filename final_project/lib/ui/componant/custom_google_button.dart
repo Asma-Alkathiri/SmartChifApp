@@ -20,7 +20,7 @@ class GoogleButton extends StatelessWidget {
             children: [
               Align(
                   alignment: Alignment.centerLeft,
-                  child: Image.asset('assets/image/Group 17967.png')),
+                  child: Image.asset('assets/Group 17967.png')),
               const SizedBox(
                 width: 150,
               ),
