@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 class GoogleButton extends StatelessWidget {
   const GoogleButton({
     super.key,
-    this.buttonheight = 54,
+    this.buttonheight = 54, required this.onPressed,
   });
   final double buttonheight;
-
+  final Function() onPressed;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -15,7 +15,7 @@ class GoogleButton extends StatelessWidget {
           style: ElevatedButton.styleFrom(
             backgroundColor: const Color(0xffFFFFFF),
           ),
-          onPressed: () {},
+          onPressed: onPressed,
           child: Row(
             children: [
               Align(
