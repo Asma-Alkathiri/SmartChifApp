@@ -1,3 +1,4 @@
+import 'package:final_project/ui/constants/custom_colors.dart';
 import 'package:flutter/material.dart';
 
 class TextWithTextButton extends StatelessWidget {
@@ -21,7 +22,7 @@ class TextWithTextButton extends StatelessWidget {
           onTap: () {},
           child: const Text(
             "Login",
-            style: TextStyle(color: Colors.orange),
+            style: TextStyle(color: orangeColor),
           ),
         )
       ],
