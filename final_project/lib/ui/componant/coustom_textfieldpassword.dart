@@ -11,9 +11,9 @@ class Textfieldpassword extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
+        const Text(
           "password",
-          style: const TextStyle(color: Colors.grey, fontSize: 18),
+          style: TextStyle(color: Colors.grey, fontSize: 18),
         ),
         const SizedBox(height: 10),
         SizedBox(
@@ -24,7 +24,7 @@ class Textfieldpassword extends StatelessWidget {
             obscureText: true,
             decoration: InputDecoration(
               border: const OutlineInputBorder(
-                borderSide: const BorderSide(
+                borderSide:  BorderSide(
                   color: Colors.grey,
                 ),
               ),

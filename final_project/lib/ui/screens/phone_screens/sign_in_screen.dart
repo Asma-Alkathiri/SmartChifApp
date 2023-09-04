@@ -41,7 +41,7 @@ class SignInScreen extends StatelessWidget {
             height: 30,
           ),
           const Textfieldpassword(),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           TextButton(
@@ -51,7 +51,7 @@ class SignInScreen extends StatelessWidget {
               style: TextStyle(color: orangeColor),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           OrangeButton(
