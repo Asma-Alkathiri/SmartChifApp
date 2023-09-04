@@ -16,7 +16,7 @@ class PhoneSignin extends StatelessWidget {
       body: Column(
         children: [
           const SignInAppbar(),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           const Align(
@@ -65,7 +65,7 @@ class PhoneSignin extends StatelessWidget {
           ),
           const CoustomDeviderText(),
           Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: GoogleButton(
               onPressed: () {},
             ),

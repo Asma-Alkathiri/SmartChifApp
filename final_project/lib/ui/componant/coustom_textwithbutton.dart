@@ -4,25 +4,28 @@ import 'package:flutter/material.dart';
 class TextWithTextButton extends StatelessWidget {
   const TextWithTextButton({
     super.key,
+    this.title = "Already have an account?",
+    this.buttontitle = "Login",
   });
-
+  final String title;
+  final String buttontitle;
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text(
-          "Already have an account?",
-          style: TextStyle(fontSize: 14),
+        Text(
+          title,
+          style: const TextStyle(fontSize: 14),
         ),
         const SizedBox(
           width: 1,
         ),
         InkWell(
           onTap: () {},
-          child: const Text(
-            "Login",
-            style: TextStyle(color: orangeColor),
+          child: Text(
+            buttontitle,
+            style: const TextStyle(color: orangeColor),
           ),
         )
       ],
