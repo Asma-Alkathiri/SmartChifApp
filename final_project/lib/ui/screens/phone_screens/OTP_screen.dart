@@ -2,9 +2,7 @@ import 'package:final_project/ui/componant/coustom_rectanglefield.dart';
 import 'package:final_project/ui/componant/coustom_textwithbutton.dart';
 import 'package:final_project/ui/componant/coustom_textwithsubtext.dart';
 import 'package:final_project/ui/componant/custom_Auth_Appbar.dart';
-import 'package:final_project/ui/constants/custom_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class OTPScreen extends StatelessWidget {
   const OTPScreen({super.key});
@@ -35,5 +33,3 @@ class OTPScreen extends StatelessWidget {
     );
   }
 }
-
-
