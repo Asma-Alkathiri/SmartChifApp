@@ -1,3 +1,4 @@
+import 'package:final_project/service/supabase_initializer.dart';
 import 'package:final_project/ui/componant/coustom_textfieldpassword.dart';
 import 'package:final_project/ui/componant/coustom_textwithbutton.dart';
 import 'package:final_project/ui/componant/custom_Auth_Appbar.dart';
@@ -6,10 +7,27 @@ import 'package:final_project/ui/componant/custom_google_button.dart';
 import 'package:final_project/ui/componant/orange_button.dart';
 import 'package:final_project/ui/componant/text_field.dart';
 import 'package:final_project/ui/constants/custom_colors.dart';
+import 'package:final_project/ui/screens/phone_screens/authentication_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
-class SignInScreen extends StatelessWidget {
+class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
+
+  @override
+  State<SignInScreen> createState() => _SignInScreenState();
+}
+
+class _SignInScreenState extends State<SignInScreen> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,21 +51,24 @@ class SignInScreen extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          const TextFieldWidget(
+          TextFieldWidget(
+            controller: emailController,
             hintText: '',
             label: 'E-mail',
           ),
           const SizedBox(
             height: 30,
           ),
-          const Textfieldpassword(),
+          Textfieldpassword(
+            controller: passwordController,
+          ),
           const SizedBox(
             height: 10,
           ),
           TextButton(
             onPressed: () {},
             child: const Text(
-              "Forgaut Password?",
+              "Forgot Password?",
               style: TextStyle(color: orangeColor),
             ),
           ),
@@ -58,7 +79,26 @@ class SignInScreen extends StatelessWidget {
             title: "Login",
             height: 60,
             width: 248,
-            onPressed: () {},
+            onPressed: () async {
+              if (emailController.text.isNotEmpty &&
+                  passwordController.text.isNotEmpty) {
+                await SupabaseInitializer()
+                    .supabaseClient
+                    .auth
+                    .signInWithPassword(
+                        password: passwordController.text,
+                        email: emailController.text);
+              }
+              if (context.mounted) {
+                Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const AuthenticationScreen()),
+                    (route) {
+                  return false;
+                });
+              }
+            },
           ),
           const SizedBox(
             height: 30,
@@ -73,7 +113,12 @@ class SignInScreen extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: GoogleButton(onPressed: () {}),
+            child: GoogleButton(onPressed: () {}
+                // SupabaseInitializer()
+                //     .supabaseClient
+                //     .auth
+                //     .signInWithOAuth({provider: }),
+                ),
           )
         ],
       ),
