@@ -1,3 +1,4 @@
+import 'package:final_project/service/supabase_initializer.dart';
 import 'package:final_project/ui/componant/coustom_textfieldpassword.dart';
 import 'package:final_project/ui/componant/coustom_textwithbutton.dart';
 import 'package:final_project/ui/componant/custom_Auth_Appbar.dart';
@@ -5,10 +6,28 @@ import 'package:final_project/ui/componant/custom_devider_text.dart';
 import 'package:final_project/ui/componant/custom_google_button.dart';
 import 'package:final_project/ui/componant/orange_button.dart';
 import 'package:final_project/ui/componant/text_field.dart';
+import 'package:final_project/ui/screens/phone_screens/sign_in_screen.dart';
 import 'package:flutter/material.dart';
 
-class PhoneSignin extends StatelessWidget {
-  const PhoneSignin({super.key});
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({super.key});
+
+  @override
+  State<SignUpScreen> createState() => _SignUpScreenState();
+}
+
+class _SignUpScreenState extends State<SignUpScreen> {
+  TextEditingController nameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    nameController.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,21 +51,25 @@ class PhoneSignin extends StatelessWidget {
           const SizedBox(
             height: 30,
           ),
-          const TextFieldWidget(
+          TextFieldWidget(
+            controller: nameController,
             hintText: '',
             label: 'Full name',
           ),
           const SizedBox(
             height: 30,
           ),
-          const TextFieldWidget(
+          TextFieldWidget(
+            controller: emailController,
             hintText: '',
             label: 'E-mail',
           ),
           const SizedBox(
             height: 30,
           ),
-          const Textfieldpassword(),
+          Textfieldpassword(
+            controller: passwordController,
+          ),
           const SizedBox(
             height: 100,
           ),
@@ -54,7 +77,24 @@ class PhoneSignin extends StatelessWidget {
             title: "SIGN UP",
             height: 60,
             width: 248,
-            onPressed: () {},
+            onPressed: () async {
+              if (emailController.text.isNotEmpty &&
+                  passwordController.text.isNotEmpty) {
+                // Signing up ...
+                await SupabaseInitializer().supabaseClient.auth.signUp(
+                      email: emailController.text,
+                      password: passwordController.text,
+                    );
+                if (context.mounted) {
+                  Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SignInScreen()), (route) {
+                    return false;
+                  });
+                }
+              }
+            },
           ),
           const SizedBox(
             height: 30,
