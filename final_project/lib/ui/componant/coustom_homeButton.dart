@@ -52,7 +52,7 @@ class _HomeButtonState extends State<HomeButton> {
                     width: 5,
                   ),
                   Text(
-                    widget.name ?? "name",
+                    widget.name ?? "ali",
                     style:
                         const TextStyle(fontSize: 16, color: Color(0xffFFFFFF)),
                   ),
