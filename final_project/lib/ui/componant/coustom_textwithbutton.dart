@@ -11,6 +11,7 @@ class TextWithTextButton extends StatelessWidget {
   final String title;
   final String description;
   final Function()? onTap;
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -18,6 +19,7 @@ class TextWithTextButton extends StatelessWidget {
       children: [
         Text(
           description,
+
           style: const TextStyle(fontSize: 14),
         ),
         const SizedBox(
@@ -27,6 +29,7 @@ class TextWithTextButton extends StatelessWidget {
           onTap: onTap,
           child: Text(
             title,
+
             style: const TextStyle(color: orangeColor),
           ),
         )
