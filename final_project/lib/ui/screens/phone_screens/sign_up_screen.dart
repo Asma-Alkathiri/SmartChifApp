@@ -9,6 +9,7 @@ import 'package:final_project/ui/componant/text_field.dart';
 import 'package:final_project/ui/screens/phone_screens/sign_in_screen.dart';
 import 'package:flutter/material.dart';
 
+
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
 
@@ -28,6 +29,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     passwordController.dispose();
     super.dispose();
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -99,7 +101,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
           const SizedBox(
             height: 30,
           ),
-          const TextWithTextButton(),
+          const TextWithTextButton(
+            buttontitle: "",
+            description: 'Already have account?',
+            title: 'sign in',
+          ),
           const SizedBox(
             height: 30,
           ),
