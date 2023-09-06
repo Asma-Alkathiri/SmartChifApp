@@ -9,6 +9,7 @@ import 'package:final_project/ui/componant/text_field.dart';
 import 'package:final_project/ui/constants/custom_colors.dart';
 import 'package:final_project/ui/screens/phone_screens/authentication_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
@@ -112,7 +113,9 @@ class _SignInScreenState extends State<SignInScreen> {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: GoogleButton(onPressed: () {}
+            child: GoogleButton(onPressed: () {
+              onTapBtnGoogleSignin();
+            }
                 // SupabaseInitializer()
                 //     .supabaseClient
                 //     .auth
@@ -123,4 +126,11 @@ class _SignInScreenState extends State<SignInScreen> {
       ),
     );
   }
+}
+
+void onTapBtnGoogleSignin() async {
+  await SupabaseInitializer()
+      .supabaseClient
+      .auth
+      .signInWithOAuth(Provider.google);
 }
