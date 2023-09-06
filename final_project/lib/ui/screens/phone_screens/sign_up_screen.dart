@@ -7,8 +7,8 @@ import 'package:final_project/ui/componant/orange_button.dart';
 import 'package:final_project/ui/componant/text_field.dart';
 import 'package:flutter/material.dart';
 
-class PhoneSignin extends StatelessWidget {
-  const PhoneSignin({super.key});
+class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +59,10 @@ class PhoneSignin extends StatelessWidget {
           const SizedBox(
             height: 30,
           ),
-          const TextWithTextButton(),
+          const TextWithTextButton(
+            description: 'Already have account?',
+            title: 'sign in',
+          ),
           const SizedBox(
             height: 30,
           ),

@@ -6,6 +6,7 @@ import 'package:final_project/ui/componant/custom_google_button.dart';
 import 'package:final_project/ui/componant/orange_button.dart';
 import 'package:final_project/ui/componant/text_field.dart';
 import 'package:final_project/ui/constants/custom_colors.dart';
+import 'package:final_project/ui/screens/phone_screens/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -63,7 +64,16 @@ class SignInScreen extends StatelessWidget {
           const SizedBox(
             height: 30,
           ),
-          const TextWithTextButton(),
+          TextWithTextButton(
+            description: 'Don\'t have account?',
+            title: 'sign up',
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const SignUpScreen()));
+            },
+          ),
           const SizedBox(
             height: 100,
           ),
