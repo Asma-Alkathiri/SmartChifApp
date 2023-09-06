@@ -12,14 +12,14 @@ class SignInAppbar extends StatelessWidget {
         Align(
           alignment: Alignment.topRight,
           child: Image.asset(
-            "assets/image/Ellipse 128.png",
+            "assets/Ellipse 128.png",
             width: 70,
           ),
         ),
         Align(
           alignment: Alignment.topLeft,
           child: Image.asset(
-            "assets/image/Group 18120.png",
+            "assets/Group 18120.png",
             width: 160,
           ),
         ),
