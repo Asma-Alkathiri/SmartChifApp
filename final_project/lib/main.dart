@@ -1,7 +1,5 @@
 import 'package:final_project/service/supabase_initializer.dart';
-import 'package:final_project/ui/screens/phone_screens/Account_screen.dart';
-import 'package:final_project/ui/screens/phone_screens/Suggestions_screen.dart';
-import 'package:final_project/ui/screens/phone_screens/onboarding_screen.dart';
+import 'package:final_project/ui/screens/phone_screens/history_screen.dart';
 
 import 'package:flutter/material.dart';
 
@@ -15,6 +13,6 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: Suggestions());
+    return const MaterialApp(home: HistoryScreen());
   }
 }
