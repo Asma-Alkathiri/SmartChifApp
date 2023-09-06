@@ -6,7 +6,7 @@ class TextWithTextButton extends StatelessWidget {
     super.key,
     required this.title,
     required this.description,
-    this.onTap,
+    this.onTap, required String buttontitle,
   });
   final String title;
   final String description;

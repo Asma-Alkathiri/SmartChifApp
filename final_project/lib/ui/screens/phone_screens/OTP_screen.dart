@@ -9,7 +9,7 @@ class OTPScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return  Scaffold(
       body: Column(
         children: [
           SignInAppbar(),
@@ -27,6 +27,7 @@ class OTPScreen extends StatelessWidget {
           TextWithTextButton(
             title: "I don’t recevie a code!",
             buttontitle: "Please resend",
+            description: "",
           )
         ],
       ),

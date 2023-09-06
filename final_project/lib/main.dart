@@ -1,10 +1,6 @@
 import 'package:final_project/service/supabase_initializer.dart';
-
-import 'package:final_project/ui/componant/coustom_Cuisines.dart';
-
-import 'package:final_project/ui/screens/phone_screens/Onboarding_Page/Page3.dart';
 import 'package:final_project/ui/screens/phone_screens/onboarding_screen.dart';
-import 'package:final_project/ui/screens/phone_screens/home_screen.dart';
+
 
 import 'package:flutter/material.dart';
 
@@ -18,14 +14,6 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    return const MaterialApp(
-        home: HomeButton(
-      name: "Ali",
-    ));
-
     return const MaterialApp(home: OnboardingScreen());
-
-
   }
 }

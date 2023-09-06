@@ -60,6 +60,7 @@ class SignUpScreen extends StatelessWidget {
             height: 30,
           ),
           const TextWithTextButton(
+            buttontitle: "",
             description: 'Already have account?',
             title: 'sign in',
           ),

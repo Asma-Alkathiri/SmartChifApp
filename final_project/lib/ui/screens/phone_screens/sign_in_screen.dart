@@ -65,6 +65,7 @@ class SignInScreen extends StatelessWidget {
             height: 30,
           ),
           TextWithTextButton(
+            buttontitle: "",
             description: 'Don\'t have account?',
             title: 'sign up',
             onTap: () {
