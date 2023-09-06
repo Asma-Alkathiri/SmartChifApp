@@ -5,28 +5,29 @@ import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:flutter/material.dart';
 
 class Account extends StatelessWidget {
-  const Account({super.key});
-
+  const Account({super.key,  this.name = "Name"});
+  final String name;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [
           const AccountAppBar(),
-          const Column(
+          Column(
             children: [
-              CircleAvatar(
+              const CircleAvatar(
                 backgroundImage: NetworkImage(
                     "https://images.pexels.com/photos/18270600/pexels-photo-18270600/free-photo-of-indian-traditional-bride-in-nauvari-traditional-attire.jpeg"),
                 radius: 60,
               ),
               kVSpace8,
               Text(
-                "Abdulrazaq",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                name,
+                style:
+                    const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
               kVSpace8,
-              Text(
+              const Text(
                 "Edit Profile",
                 style: TextStyle(fontSize: 12, fontWeight: FontWeight.w100),
               ),
