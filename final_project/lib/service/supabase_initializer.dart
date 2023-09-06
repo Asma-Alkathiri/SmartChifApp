@@ -13,4 +13,11 @@ class SupabaseInitializer {
           'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZxdWpveW54eHF5dGJ3cHpzdnVpIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTMzMTgzNjcsImV4cCI6MjAwODg5NDM2N30.DBCpZ8KgmPj56PEbOf-b7CqoesRL_Ik1MyVDuDseQhg',
     );
   }
+
+  void onTapBtnGoogleSignin() async {
+    await SupabaseInitializer()
+        .supabaseClient
+        .auth
+        .signInWithOAuth(Provider.google);
+  }
 }

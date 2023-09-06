@@ -108,7 +108,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             padding: const EdgeInsets.all(8.0),
             child: GoogleButton(
               onPressed: () {
-                onTapBtnGoogleSignin();
+                SupabaseInitializer().onTapBtnGoogleSignin();
               },
             ),
           )
