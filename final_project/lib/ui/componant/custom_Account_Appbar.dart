@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class AccountAppBar extends StatelessWidget {
@@ -13,13 +12,13 @@ class AccountAppBar extends StatelessWidget {
         Align(
           alignment: Alignment.topRight,
           child: Image.asset(
-            "assets/image/Vector-5.png",
+            "assets/Vector-5.png",
           ),
         ),
         Align(
           alignment: Alignment.topLeft,
           child: Image.asset(
-            "assets/image/Component 1.png",
+            "assets/Component 1.png",
             width: 190,
           ),
         ),
