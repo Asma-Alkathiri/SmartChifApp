@@ -1,4 +1,5 @@
 import 'package:final_project/service/supabase_initializer.dart';
+import 'package:final_project/ui/componant/coustom_homeButton.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,11 +13,8 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
-    );
+        home: HomeButton(
+      name: "Ali",
+    ));
   }
 }
