@@ -1,9 +1,4 @@
-import 'package:final_project/ui/componant/Empty_page.dart';
-import 'package:final_project/ui/componant/error_container.dart';
 import 'package:final_project/ui/componant/app_scaffold.dart';
-import 'package:final_project/ui/componant/orange_button.dart';
-import 'package:final_project/ui/constants/custom_colors.dart';
-import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:flutter/material.dart';
 
 class FavouriteScreen extends StatelessWidget {
@@ -13,6 +8,8 @@ class FavouriteScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const AppScaffold();
+    return const AppScaffold(
+      appBarTitle: "Favourite",
+    );
   }
 }

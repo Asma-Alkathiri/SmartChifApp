@@ -4,10 +4,18 @@ import 'package:final_project/ui/constants/custom_colors.dart';
 import 'package:flutter/material.dart';
 
 class AppScaffold extends StatelessWidget {
-  const AppScaffold({super.key, this.appBarTitle, this.body, this.drawer});
+  const AppScaffold(
+      {super.key,
+      this.appBarTitle,
+      this.body,
+      this.drawer,
+      this.onPressedBackIcon,
+      this.onPressedProfile});
   final String? appBarTitle;
   final Widget? body;
   final Widget? drawer;
+  final Function()? onPressedBackIcon;
+  final Function()? onPressedProfile;
 
   @override
   Widget build(BuildContext context) {
@@ -16,18 +24,23 @@ class AppScaffold extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: whiteColor,
         elevation: 0,
-        leading: const Center(
-          child: BackIconContainar(),
+        leading: Center(
+          child: BackIconContainar(
+            onPressed: onPressedBackIcon,
+          ),
         ),
         title: Center(
           child: Text(
             appBarTitle ?? "",
             style: const TextStyle(
-                fontSize: 18, fontWeight: FontWeight.w500, color: blackColor),
+                fontSize: 20, fontWeight: FontWeight.w500, color: blackColor),
           ),
         ),
-        actions: const [
-          Center(child: ImageProfileContainar()),
+        actions: [
+          Center(
+              child: ImageProfileContainar(
+            onPressed: onPressedProfile,
+          )),
         ],
       ),
       drawer: drawer,

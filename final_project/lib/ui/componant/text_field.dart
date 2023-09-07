@@ -27,9 +27,9 @@ class TextFieldWidget extends StatelessWidget {
         children: [
           Text(
             label,
-            style: const TextStyle(color: Colors.grey, fontSize: 18),
+            style: const TextStyle(color: grayColor, fontSize: 18),
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 14),
           SizedBox(
             height: 75,
             width: 360,
@@ -46,7 +46,7 @@ class TextFieldWidget extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                     fontSize: 18),
                 contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+                    const EdgeInsets.symmetric(horizontal: 24, vertical: 18),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
                   borderSide: const BorderSide(

@@ -12,7 +12,7 @@ class BackIconContainar extends StatelessWidget {
       width: 38,
       padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
       decoration: BoxDecoration(
-          color: Colors.white,
+          color: whiteColor,
           borderRadius: BorderRadius.circular(12),
           boxShadow: [
             BoxShadow(

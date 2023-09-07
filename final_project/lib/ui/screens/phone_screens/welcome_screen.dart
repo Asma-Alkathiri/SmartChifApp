@@ -1,8 +1,4 @@
 import 'package:final_project/ui/componant/app_scaffold.dart';
-import 'package:final_project/ui/componant/back_icon_containar.dart';
-import 'package:final_project/ui/componant/image_profile_containar.dart';
-import 'package:final_project/ui/constants/custom_colors.dart';
-import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -11,7 +7,7 @@ class WelcomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppScaffold(
+    return const AppScaffold(
       appBarTitle: "home",
     );
   }
