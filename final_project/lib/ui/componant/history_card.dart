@@ -3,7 +3,18 @@ import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:flutter/material.dart';
 
 class HistoryCard extends StatelessWidget {
-  const HistoryCard({super.key});
+  const HistoryCard(
+      {super.key,
+      this.onPressedFavoriteIcone,
+      this.foodName = 'Bruschetta',
+      this.description = 'toppings of tomato',
+      this.components = "CHEESE",
+      this.foodImage = "assets/images/bf3.jpg"});
+  final Function()? onPressedFavoriteIcone;
+  final String foodName;
+  final String description;
+  final String components;
+  final String foodImage;
 
   @override
   Widget build(BuildContext context) {
@@ -33,13 +44,13 @@ class HistoryCard extends StatelessWidget {
                     Radius.circular(15),
                   ),
                   child: Image.asset(
-                    "assets/images/bf3.jpg",
+                    foodImage,
                     fit: BoxFit.cover,
                   )),
             ),
             Positioned(
-              top: 20,
-              right: 20,
+              top: 10,
+              right: 10,
               child: Container(
                 height: 38,
                 width: 38,
@@ -62,7 +73,7 @@ class HistoryCard extends StatelessWidget {
                     color: whiteColor,
                     size: 22,
                   ),
-                  onPressed: () {},
+                  onPressed: onPressedFavoriteIcone,
                 ),
               ),
             ),
@@ -72,18 +83,18 @@ class HistoryCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  'Bruschetta',
-                  style: TextStyle(
+                Text(
+                  foodName,
+                  style: const TextStyle(
                     color: blackColor,
                     fontSize: 16,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
                 kVSpace4,
-                const Text(
-                  'toppings of tomato',
-                  style: TextStyle(
+                Text(
+                  description,
+                  style: const TextStyle(
                     color: blackColor,
                     fontSize: 12,
                     fontWeight: FontWeight.w400,
@@ -95,10 +106,11 @@ class HistoryCard extends StatelessWidget {
                   height: 27,
                   width: 67,
                   decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 240, 238, 238),
-                      borderRadius: BorderRadius.circular(4)),
-                  child: const Text(
-                    "CHEESE",
+                    color: const Color.fromARGB(255, 240, 238, 238),
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                  child: Text(
+                    components,
                   ),
                 ),
               ],

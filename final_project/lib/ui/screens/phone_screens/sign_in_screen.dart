@@ -7,6 +7,7 @@ import 'package:final_project/ui/componant/custom_google_button.dart';
 import 'package:final_project/ui/componant/orange_button.dart';
 import 'package:final_project/ui/componant/text_field.dart';
 import 'package:final_project/ui/constants/custom_colors.dart';
+import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:final_project/ui/screens/phone_screens/authentication_screen.dart';
 import 'package:final_project/ui/screens/phone_screens/sign_up_screen.dart';
 import 'package:flutter/material.dart';
@@ -32,102 +33,96 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          const SignInAppbar(),
-          const SizedBox(
-            height: 100,
-          ),
-          const Padding(
-            padding: EdgeInsets.only(left: 30),
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                "Login",
-                style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const SignInAppbar(),
+            kVSpace32,
+            kVSpace24,
+            Padding(
+              padding: const EdgeInsets.all(24),
+              child: Column(
+                children: [
+                  const Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      "Login",
+                      style:
+                          TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  kVSpace4,
+                  kVSpace24,
+                  TextFieldWidget(
+                    controller: emailController,
+                    hintText: 'Your email',
+                    label: 'E-mail',
+                  ),
+                  kVSpace16,
+                  Textfieldpassword(
+                    controller: passwordController,
+                  ),
+                  kVSpace16,
+                  TextButton(
+                    onPressed: () {},
+                    child: const Text(
+                      "Forgot Password?",
+                      style: TextStyle(color: orangeColor),
+                    ),
+                  ),
+                  kVSpace16,
+                  OrangeButton(
+                    title: "LOGIN",
+                    height: 50,
+                    width: 248,
+                    onPressed: () async {
+                      if (emailController.text.isNotEmpty &&
+                          passwordController.text.isNotEmpty) {
+                        await SupabaseInitializer()
+                            .supabaseClient
+                            .auth
+                            .signInWithPassword(
+                                password: passwordController.text,
+                                email: emailController.text);
+                      }
+                      if (context.mounted) {
+                        Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const AuthenticationScreen()), (route) {
+                          return false;
+                        });
+                      }
+                    },
+                  ),
+                  kVSpace32,
+                  TextWithTextButton(
+                    buttontitle: "",
+                    description: 'Don\'t have account?',
+                    title: ' sign up',
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const SignUpScreen()));
+                    },
+                  ),
+                  kVSpace32,
+                  kVSpace16,
+                  const CoustomDeviderText(),
+                  kVSpace16,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: GoogleButton(onPressed: () {
+                      SupabaseInitializer().onTapBtnGoogleSignin();
+                    }),
+                  ),
+                ],
               ),
-            ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          TextFieldWidget(
-            controller: emailController,
-            hintText: '',
-            label: 'E-mail',
-          ),
-          const SizedBox(
-            height: 30,
-          ),
-          Textfieldpassword(
-            controller: passwordController,
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          TextButton(
-            onPressed: () {},
-            child: const Text(
-              "Forgot Password?",
-              style: TextStyle(color: orangeColor),
-            ),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          OrangeButton(
-            title: "Login",
-            height: 60,
-            width: 248,
-            onPressed: () async {
-              if (emailController.text.isNotEmpty &&
-                  passwordController.text.isNotEmpty) {
-                await SupabaseInitializer()
-                    .supabaseClient
-                    .auth
-                    .signInWithPassword(
-                        password: passwordController.text,
-                        email: emailController.text);
-              }
-              if (context.mounted) {
-                Navigator.pushAndRemoveUntil(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const AuthenticationScreen()),
-                    (route) {
-                  return false;
-                });
-              }
-            },
-          ),
-          const SizedBox(
-            height: 30,
-          ),
-          TextWithTextButton(
-            buttontitle: "",
-            description: 'Don\'t have account?',
-            title: 'sign up',
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const SignUpScreen()));
-            },
-          ),
-          const SizedBox(
-            height: 100,
-          ),
-          const CoustomDeviderText(),
-          const SizedBox(
-            height: 30,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: GoogleButton(onPressed: () {
-              SupabaseInitializer().onTapBtnGoogleSignin();
-            }),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }

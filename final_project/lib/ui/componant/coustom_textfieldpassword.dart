@@ -15,13 +15,14 @@ class Textfieldpassword extends StatelessWidget {
         children: [
           const Text(
             "password",
-            style: TextStyle(color: Colors.grey, fontSize: 18),
+            style: TextStyle(color: grayColor, fontSize: 18),
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 14),
           SizedBox(
             width: 360,
             height: 65,
             child: TextField(
+              style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w400),
               controller: controller,
               obscureText: true,
               decoration: InputDecoration(
@@ -37,15 +38,17 @@ class Textfieldpassword extends StatelessWidget {
                   ),
                 ),
                 focusedBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Color(0xffFE724C)),
+                    borderSide: const BorderSide(color: orangeColor),
                     borderRadius: BorderRadius.circular(10)),
-                hintText: '',
+                hintText: 'Password',
                 hintStyle: const TextStyle(
-                    color: Colors.grey,
+                    color: hintColor,
                     fontWeight: FontWeight.w400,
                     fontSize: 18),
+                contentPadding:
+                    const EdgeInsets.symmetric(horizontal: 24, vertical: 18),
                 filled: true,
-                fillColor: Colors.white,
+                fillColor: whiteColor,
               ),
             ),
           ),

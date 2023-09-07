@@ -33,89 +33,86 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          const SignInAppbar(),
-          kVSpace32,
-          const Align(
-            alignment: Alignment.centerLeft,
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Text(
-                "Sign Up",
-                style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const SignInAppbar(),
+            kVSpace32,
+            Padding(
+              padding: const EdgeInsets.all(24),
+              child: Column(
+                children: [
+                  const Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      "Sign Up",
+                      style:
+                          TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  kVSpace24,
+                  TextFieldWidget(
+                    controller: nameController,
+                    hintText: 'Full name',
+                    label: 'Full name',
+                  ),
+                  kVSpace8,
+                  TextFieldWidget(
+                    controller: emailController,
+                    hintText: 'Your email',
+                    label: 'E-mail',
+                  ),
+                  kVSpace8,
+                  Textfieldpassword(
+                    controller: passwordController,
+                  ),
+                  kVSpace24,
+                  OrangeButton(
+                    title: "SIGN UP",
+                    height: 50,
+                    width: 248,
+                    onPressed: () async {
+                      if (emailController.text.isNotEmpty &&
+                          passwordController.text.isNotEmpty) {
+                        // Signing up ...
+                        await SupabaseInitializer().supabaseClient.auth.signUp(
+                              email: emailController.text,
+                              password: passwordController.text,
+                            );
+                        if (context.mounted) {
+                          Navigator.pushAndRemoveUntil(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const SignInScreen()),
+                              (route) {
+                            return false;
+                          });
+                        }
+                      }
+                    },
+                  ),
+                  kVSpace24,
+                  const TextWithTextButton(
+                    buttontitle: "",
+                    description: 'Already have account?',
+                    title: ' Login',
+                  ),
+                  kVSpace32,
+                  const CoustomDeviderText(),
+                  kVSpace8,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: GoogleButton(
+                      onPressed: () {
+                        SupabaseInitializer().onTapBtnGoogleSignin();
+                      },
+                    ),
+                  ),
+                ],
               ),
-            ),
-          ),
-          const SizedBox(
-            height: 30,
-          ),
-          TextFieldWidget(
-            controller: nameController,
-            hintText: '',
-            label: 'Full name',
-          ),
-          const SizedBox(
-            height: 30,
-          ),
-          TextFieldWidget(
-            controller: emailController,
-            hintText: '',
-            label: 'E-mail',
-          ),
-          const SizedBox(
-            height: 30,
-          ),
-          Textfieldpassword(
-            controller: passwordController,
-          ),
-          const SizedBox(
-            height: 100,
-          ),
-          OrangeButton(
-            title: "SIGN UP",
-            height: 60,
-            width: 248,
-            onPressed: () async {
-              if (emailController.text.isNotEmpty &&
-                  passwordController.text.isNotEmpty) {
-                // Signing up ...
-                await SupabaseInitializer().supabaseClient.auth.signUp(
-                      email: emailController.text,
-                      password: passwordController.text,
-                    );
-                if (context.mounted) {
-                  Navigator.pushAndRemoveUntil(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const SignInScreen()), (route) {
-                    return false;
-                  });
-                }
-              }
-            },
-          ),
-          const SizedBox(
-            height: 30,
-          ),
-          const TextWithTextButton(
-            buttontitle: "",
-            description: 'Already have account?',
-            title: 'sign in',
-          ),
-          const SizedBox(
-            height: 30,
-          ),
-          const CoustomDeviderText(),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: GoogleButton(
-              onPressed: () {
-                SupabaseInitializer().onTapBtnGoogleSignin();
-              },
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }
