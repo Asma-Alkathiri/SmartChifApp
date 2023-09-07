@@ -5,7 +5,7 @@ import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:flutter/material.dart';
 
 class Account extends StatelessWidget {
-  const Account({super.key,  this.name = "Name"});
+  const Account({super.key, this.name = "Name"});
   final String name;
   @override
   Widget build(BuildContext context) {
