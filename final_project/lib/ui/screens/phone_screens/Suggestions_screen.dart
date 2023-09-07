@@ -1,4 +1,4 @@
-import 'package:final_project/ui/componant/main_appbar.dart';
+import 'package:final_project/ui/componant/app_scaffold.dart';
 import 'package:final_project/ui/componant/suggestion_card.dart';
 import 'package:flutter/material.dart';
 
@@ -7,10 +7,10 @@ class Suggestions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return AppScaffold(
+      
       body: Column(
         children: [
-          const MainAppbar(),
           Expanded(
             child: ListView.builder(
               itemCount: 6,

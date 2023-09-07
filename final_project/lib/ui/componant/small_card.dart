@@ -1,4 +1,5 @@
 import 'package:final_project/ui/constants/custom_colors.dart';
+import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:flutter/material.dart';
 
 class SmallCard extends StatelessWidget {
@@ -35,28 +36,33 @@ class SmallCard extends StatelessWidget {
                   fit: BoxFit.cover,
                 )),
           ),
-          const Padding(
-            padding: EdgeInsets.all(16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Bruschetta',
-                  style: TextStyle(
-                    color: blackColor,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                  ),
+          kVSpace8,
+          const Expanded(
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Bruschetta',
+                      style: TextStyle(
+                        color: blackColor,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    Text(
+                      'toppings of tomato ',
+                      style: TextStyle(
+                        color: blackColor,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ],
                 ),
-                Text(
-                  'toppings of tomato',
-                  style: TextStyle(
-                    color: blackColor,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-              ],
+              ),
             ),
           ),
         ],
