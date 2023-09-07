@@ -21,44 +21,49 @@ class TextFieldWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          label,
-          style: const TextStyle(color: Colors.grey, fontSize: 18),
-        ),
-        const SizedBox(height: 16),
-        SizedBox(
-          height: 65,
-          width: 360,
-          child: TextField(
-            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
-            keyboardType: inputType,
-            maxLines: maxLines,
-            onSubmitted: onSubmitted,
-            controller: controller,
-            decoration: InputDecoration(
-              hintText: hintText,
-              hintStyle: const TextStyle(
-                  color: hintColor, fontWeight: FontWeight.w400, fontSize: 18),
-              contentPadding: const EdgeInsets.all(24),
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10),
-                borderSide: const BorderSide(
-                  color: lightGrayColor,
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            label,
+            style: const TextStyle(color: Colors.grey, fontSize: 18),
+          ),
+          const SizedBox(height: 16),
+          SizedBox(
+            height: 75,
+            width: 360,
+            child: TextField(
+              style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w400),
+              keyboardType: inputType,
+              maxLines: maxLines,
+              onSubmitted: onSubmitted,
+              controller: controller,
+              decoration: InputDecoration(
+                hintText: hintText,
+                hintStyle: const TextStyle(
+                    color: hintColor,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 18),
+                contentPadding:
+                    const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide: const BorderSide(
+                    color: lightGrayColor,
+                  ),
                 ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide: const BorderSide(color: orangeColor, width: 1.5),
+                ),
+                filled: true,
+                fillColor: whiteColor,
               ),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10),
-                borderSide: const BorderSide(color: orangeColor, width: 1.5),
-              ),
-              filled: true,
-              fillColor: whiteColor,
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

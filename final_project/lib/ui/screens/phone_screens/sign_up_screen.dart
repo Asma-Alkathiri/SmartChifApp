@@ -6,9 +6,9 @@ import 'package:final_project/ui/componant/custom_devider_text.dart';
 import 'package:final_project/ui/componant/custom_google_button.dart';
 import 'package:final_project/ui/componant/orange_button.dart';
 import 'package:final_project/ui/componant/text_field.dart';
+import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:final_project/ui/screens/phone_screens/sign_in_screen.dart';
 import 'package:flutter/material.dart';
-
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -30,16 +30,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
     super.dispose();
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [
           const SignInAppbar(),
-          const SizedBox(
-            height: 10,
-          ),
+          kVSpace32,
           const Align(
             alignment: Alignment.centerLeft,
             child: Padding(
