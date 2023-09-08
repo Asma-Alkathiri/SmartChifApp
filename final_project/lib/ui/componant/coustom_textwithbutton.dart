@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 class TextWithTextButton extends StatelessWidget {
   const TextWithTextButton({
     super.key,
+
     required this.buttonTitle,
     required this.text,
     this.onTap,
     this.buttonTitleColor = orangeColor,
     this.textColor = darkGrayColor,
+
   });
   final String buttonTitle;
   final String text;
@@ -22,16 +24,20 @@ class TextWithTextButton extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
+
           text,
           style: TextStyle(
               fontSize: 14, color: textColor, fontWeight: FontWeight.w400),
+
         ),
         InkWell(
           onTap: onTap,
           child: Text(
+
             buttonTitle,
             style:
                 TextStyle(color: buttonTitleColor, fontWeight: FontWeight.w400),
+
           ),
         )
       ],
