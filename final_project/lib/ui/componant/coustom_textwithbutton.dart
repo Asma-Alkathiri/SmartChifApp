@@ -6,7 +6,8 @@ class TextWithTextButton extends StatelessWidget {
     super.key,
     required this.title,
     required this.description,
-    this.onTap, required String buttontitle,
+    this.onTap,
+    required String buttontitle,
   });
   final String title;
   final String description;
@@ -19,17 +20,15 @@ class TextWithTextButton extends StatelessWidget {
       children: [
         Text(
           description,
-
           style: const TextStyle(fontSize: 14),
         ),
         const SizedBox(
-          width: 1,
+          width: 4,
         ),
         InkWell(
           onTap: onTap,
           child: Text(
             title,
-
             style: const TextStyle(color: orangeColor),
           ),
         )
