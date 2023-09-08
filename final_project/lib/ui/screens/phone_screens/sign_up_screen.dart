@@ -92,10 +92,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     },
                   ),
                   kVSpace24,
-                  const TextWithTextButton(
+                  TextWithTextButton(
                     buttontitle: "",
                     description: 'Already have account?',
                     title: ' Login',
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const SignInScreen()));
+                    },
                   ),
                   kVSpace32,
                   const CoustomDeviderText(),

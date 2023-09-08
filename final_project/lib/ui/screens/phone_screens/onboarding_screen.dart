@@ -30,25 +30,28 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 onLastPage = (index == 2);
               });
             },
-            children: [
-              const Page1(),
-              const Page2(),
-              const Page3(),
-              Container(
-                color: Colors.green,
-              ),
-              Container(
-                color: Colors.blue,
-              ),
+            children: const [
+              Page1(),
+              Page2(),
+              Page3(),
+           
             ],
           ),
           Container(
             alignment: const Alignment(0, 0),
             child: SmoothPageIndicator(
               controller: _controller,
+              onDotClicked: (index) {
+                _controller.nextPage(
+                    duration: const Duration(microseconds: 500),
+                    curve: Curves.bounceIn);
+              },
               count: 3,
               effect: const SlideEffect(
-                activeDotColor: orangeColor,
+                activeDotColor: yellowColor,
+                dotColor: lightGrayColor,
+                dotHeight: 5,
+                dotWidth: 10,
               ),
             ),
           ),

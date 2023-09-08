@@ -5,42 +5,43 @@ import 'package:flutter/material.dart';
 class GoogleButton extends StatelessWidget {
   const GoogleButton({
     super.key,
-    this.buttonheight = 54,
+    this.width = 278,
+    this.height = 57,
     required this.onPressed,
   });
-  final double buttonheight;
+  final double width;
+  final double height;
   final Function() onPressed;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: buttonheight,
-      child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: whiteColor,
-            elevation: 0.08,
-            fixedSize: const Size(200, 50),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(50),
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: whiteColor,
+        elevation: 0.08,
+        fixedSize: Size(width, height),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(50),
+        ),
+      ),
+      onPressed: onPressed,
+      child: Row(
+        children: [
+          kHSpace8,
+          Align(
+              alignment: Alignment.centerLeft,
+              child: Image.asset('assets/Group 17967.png')),
+          kHSpace16,
+          const Align(
+            alignment: Alignment.center,
+            child: Text(
+              "Continue with google",
+              style: TextStyle(
+                  fontSize: 14, color: blackColor, fontWeight: FontWeight.w400),
             ),
           ),
-          onPressed: onPressed,
-          child: Row(
-            children: [
-              kHSpace16,
-              Align(
-                  alignment: Alignment.centerLeft,
-                  child: Image.asset('assets/Group 17967.png')),
-              kHSpace32,
-              const Align(
-                alignment: Alignment.center,
-                child: Text(
-                  "GOOGLE",
-                  style: TextStyle(fontSize: 13, color: Colors.black),
-                ),
-              ),
-              kHSpace16,
-            ],
-          )),
+          kHSpace16,
+        ],
+      ),
     );
   }
 }

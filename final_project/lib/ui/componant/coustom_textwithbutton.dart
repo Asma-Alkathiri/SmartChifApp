@@ -20,7 +20,8 @@ class TextWithTextButton extends StatelessWidget {
       children: [
         Text(
           description,
-          style: const TextStyle(fontSize: 14),
+          style: const TextStyle(
+              fontSize: 14, color: darkGrayColor, fontWeight: FontWeight.w400),
         ),
         InkWell(
           onTap: onTap,

@@ -36,9 +36,7 @@ class CoustomDeviderText extends StatelessWidget {
         Text(
           title,
           style: const TextStyle(
-              fontSize: 14,
-              color: Color.fromARGB(255, 91, 88, 88),
-              fontWeight: FontWeight.w500),
+              fontSize: 14, color: darkGrayColor, fontWeight: FontWeight.w500),
         ),
         kHSpace24,
         Container(
