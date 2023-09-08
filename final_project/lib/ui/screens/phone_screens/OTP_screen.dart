@@ -72,12 +72,9 @@ class OTPScreen extends StatelessWidget {
           ),
           kVSpace16,
           TextWithTextButton(
-
-            description: "I don’t recevie a code!",
-            title: "Please resend",
-            buttontitle: '',
+            buttonTitle: 'Please resend',
+            text: 'I don’t recevie a code!',
           ),
-
         ],
       ),
     );
