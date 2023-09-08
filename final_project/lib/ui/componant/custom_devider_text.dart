@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 class CoustomDeviderText extends StatelessWidget {
   const CoustomDeviderText(
       {super.key,
-      this.widthDivider1 = 110,
+      this.widthDivider1 = 95,
       this.heightDivider1 = 1,
-      this.widthDivider2 = 110,
+      this.widthDivider2 = 95,
       this.heightDivider2 = 1,
-      this.divider1Color = Colors.black,
-      this.divider2Color = Colors.black,
+      this.divider1Color = lightGrayColor,
+      this.divider2Color = lightGrayColor,
       this.title = "sign in with",
-      this.textColor = Colors.black});
+      this.textColor = darkGrayColor});
 
   final double widthDivider1;
   final double heightDivider1;
@@ -22,6 +22,7 @@ class CoustomDeviderText extends StatelessWidget {
   final Color divider2Color;
   final String title;
   final Color textColor;
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -30,19 +31,19 @@ class CoustomDeviderText extends StatelessWidget {
         Container(
             width: widthDivider1, // Customize the width of the divider
             height: heightDivider1, // Customize the height of the divider
-            color: lightGrayColor // Customize the color of the divider
+            color: divider1Color // Customize the color of the divider
             ),
         kHSpace24,
         Text(
           title,
-          style: const TextStyle(
-              fontSize: 14, color: darkGrayColor, fontWeight: FontWeight.w500),
+          style: TextStyle(
+              fontSize: 16, color: textColor, fontWeight: FontWeight.w500),
         ),
         kHSpace24,
         Container(
           width: widthDivider2, // Customize the width of the divider
           height: heightDivider2, // Customize the height of the divider
-          color: lightGrayColor, // Customize the color of the divider
+          color: divider2Color, // Customize the color of the divider
         ),
       ],
     );

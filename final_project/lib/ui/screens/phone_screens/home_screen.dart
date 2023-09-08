@@ -2,6 +2,7 @@ import 'package:final_project/ui/componant/home_container.dart';
 import 'package:final_project/ui/componant/app_scaffold.dart';
 import 'package:final_project/ui/componant/small_card.dart';
 import 'package:final_project/ui/constants/custom_spacing.dart';
+import 'package:final_project/ui/screens/phone_screens/Account_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -11,6 +12,15 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
+      onPressedBackIcon: () {},
+      onPressedProfile: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const AccountScreen(),
+          ),
+        );
+      },
       body: SafeArea(
         top: false,
         child: SingleChildScrollView(

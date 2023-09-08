@@ -89,8 +89,9 @@ class _SignInScreenState extends State<SignInScreen> {
                         Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
-                                builder: (context) =>
-                                    const AuthenticationScreen()), (route) {
+                              builder: (context) =>
+                                  const AuthenticationScreen(),
+                            ), (route) {
                           return false;
                         });
                       }
@@ -98,18 +99,20 @@ class _SignInScreenState extends State<SignInScreen> {
                   ),
                   kVSpace32,
                   TextWithTextButton(
-                    buttontitle: "",
-                    description: 'Don\'t have account?',
-                    title: ' sign up',
+                    // buttontitle: "",
+                    text: 'Don\'t have account?',
+                    buttonTitle: ' sign up',
                     onTap: () {
-                      Navigator.push(
+                      Navigator.pushAndRemoveUntil(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const SignUpScreen()));
+                            builder: (context) => const SignUpScreen(),
+                          ), (route) {
+                        return false;
+                      });
                     },
                   ),
                   kVSpace32,
-                  kVSpace16,
                   const CoustomDeviderText(),
                   kVSpace16,
                   Padding(
