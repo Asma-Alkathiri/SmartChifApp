@@ -25,9 +25,9 @@ class OTPScreen extends StatelessWidget {
             height: 30,
           ),
           TextWithTextButton(
-            title: "I don’t recevie a code!",
-            buttontitle: "Please resend",
-            description: "",
+            text: "I don’t recevie a code!",
+            buttonTitle: "Please resend",
+            // description: "",
           )
         ],
       ),

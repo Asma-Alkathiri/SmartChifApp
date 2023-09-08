@@ -6,7 +6,7 @@ class GoogleButton extends StatelessWidget {
   const GoogleButton({
     super.key,
     this.width = 278,
-    this.height = 57,
+    this.height = 50,
     required this.onPressed,
   });
   final double width;
@@ -36,10 +36,9 @@ class GoogleButton extends StatelessWidget {
             child: Text(
               "Continue with google",
               style: TextStyle(
-                  fontSize: 14, color: blackColor, fontWeight: FontWeight.w400),
+                  fontSize: 16, color: textColor, fontWeight: FontWeight.w400),
             ),
           ),
-          kHSpace16,
         ],
       ),
     );
