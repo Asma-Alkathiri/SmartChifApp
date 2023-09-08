@@ -114,9 +114,12 @@ class _SignInScreenState extends State<SignInScreen> {
                   kVSpace16,
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10),
-                    child: GoogleButton(onPressed: () {
-                      SupabaseInitializer().onTapBtnGoogleSignin();
-                    }),
+                    child: GoogleButton(
+                        height: 50,
+                        width: 248,
+                        onPressed: () {
+                          SupabaseInitializer().onTapBtnGoogleSignin();
+                        }),
                   ),
                 ],
               ),
