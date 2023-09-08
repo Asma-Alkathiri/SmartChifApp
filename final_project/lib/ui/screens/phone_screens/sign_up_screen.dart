@@ -7,8 +7,10 @@ import 'package:final_project/ui/componant/custom_google_button.dart';
 import 'package:final_project/ui/componant/orange_button.dart';
 import 'package:final_project/ui/componant/text_field.dart';
 import 'package:final_project/ui/constants/custom_spacing.dart';
+import 'package:final_project/ui/screens/phone_screens/OTP_screen.dart';
 import 'package:final_project/ui/screens/phone_screens/sign_in_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -77,12 +79,26 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           email: emailController.text,
                           password: passwordController.text,
                         );
+                    await SupabaseInitializer()
+                        .supabaseClient
+                        .from("user")
+                        .insert({
+                      "name": nameController.text,
+                      "id":
+                          Supabase.instance.client.auth.currentSession?.user.id
+                    });
+                    await SupabaseInitializer()
+                        .supabaseClient
+                        .auth
+                        .signInWithOtp(email: emailController.text);
+
                     if (context.mounted) {
                       Navigator.pushAndRemoveUntil(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const SignInScreen()),
-                          (route) {
+                              builder: (context) => OTPScreen(
+                                    userEmail: emailController.text,
+                                  )), (route) {
                         return false;
                       });
                     }
@@ -98,7 +114,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const SignInScreen(),
+                        builder: (context) =>
+                            OTPScreen(userEmail: emailController.text),
                       ), (route) {
                     return false;
                   });

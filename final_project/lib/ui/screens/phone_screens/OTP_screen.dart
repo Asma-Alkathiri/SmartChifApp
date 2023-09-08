@@ -52,28 +52,27 @@ class OTPScreen extends StatelessWidget {
           OrangeButton(
             title: "verfy",
             onPressed: () async {
-              String otp = getOTP(
+              String otp = await getOTP(
                   num1Controller!,
                   num2Controller!,
                   num3Controller!,
                   num4Controller!,
                   num5Controller!,
                   num6Controller!);
-              final test = await SupabaseInitializer()
-                  .supabaseClient
-                  .auth
-                  .verifyOTP(
-                      token: otp,
-                      email: Supabase
-                          .instance.client.auth.currentSession?.user.email,
-                      type: OtpType.signup);
-              print(test.toString());
+              await SupabaseInitializer().supabaseClient.auth.verifyOTP(
+                  token: otp, email: userEmail, type: OtpType.signup);
             },
           ),
           kVSpace16,
           TextWithTextButton(
             buttonTitle: 'Please resend',
             text: 'I don’t recevie a code!',
+            onTap: () async {
+              await SupabaseInitializer()
+                  .supabaseClient
+                  .auth
+                  .resend(type: OtpType.signup, email: userEmail);
+            },
           ),
         ],
       ),
