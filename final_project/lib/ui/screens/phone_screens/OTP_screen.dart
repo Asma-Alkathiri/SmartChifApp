@@ -26,6 +26,7 @@ class OTPScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
+
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -94,6 +95,7 @@ class OTPScreen extends StatelessWidget {
             ),
           ],
         ),
+
       ),
     );
   }
