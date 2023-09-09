@@ -4,8 +4,8 @@ import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:final_project/ui/screens/phone_screens/Account_screen.dart';
 import 'package:flutter/material.dart';
 
-class Suggestions extends StatelessWidget {
-  const Suggestions({super.key});
+class SuggestionsScreen extends StatelessWidget {
+  const SuggestionsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

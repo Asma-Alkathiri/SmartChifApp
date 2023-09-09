@@ -1,8 +1,6 @@
-import 'package:final_project/ui/componant/componant_container.dart';
 import 'package:final_project/ui/componant/component_bottom_sheet.dart';
 import 'package:final_project/ui/componant/orange_button.dart';
 import 'package:final_project/ui/constants/custom_colors.dart';
-import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:flutter/material.dart';
 
 class HomeContainer extends StatelessWidget {

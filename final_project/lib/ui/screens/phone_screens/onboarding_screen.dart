@@ -1,5 +1,6 @@
 import 'package:final_project/ui/componant/coustom_OnboardingButton.dart';
 import 'package:final_project/ui/constants/custom_colors.dart';
+import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:final_project/ui/screens/phone_screens/Onboarding_Page/Page1.dart';
 import 'package:final_project/ui/screens/phone_screens/Onboarding_Page/Page2.dart';
 import 'package:final_project/ui/screens/phone_screens/Onboarding_Page/Page3.dart';

@@ -14,12 +14,13 @@ class Page2 extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 24),
         child: Column(
           children: [
+            kVSpace64,
             Center(
               child: Lottie.network(
                   "https://lottie.host/e941e07b-329a-4686-94cc-6880a404ccad/Mv0e2BD3rZ.json",
                   height: 400),
             ),
-            kVSpace16,
+            kVSpace24,
             const Center(
               child: Text(
                 "Browse your menu and order directly",

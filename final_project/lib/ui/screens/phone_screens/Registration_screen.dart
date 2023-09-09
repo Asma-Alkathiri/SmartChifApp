@@ -4,8 +4,8 @@ import 'package:final_project/ui/componant/orange_button.dart';
 import 'package:final_project/ui/componant/text_field.dart';
 import 'package:flutter/material.dart';
 
-class Registration extends StatelessWidget {
-  const Registration({super.key});
+class RegistrationScreen extends StatelessWidget {
+  const RegistrationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

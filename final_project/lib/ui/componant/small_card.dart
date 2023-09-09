@@ -1,4 +1,3 @@
-import 'package:final_project/ui/constants/custom_colors.dart';
 import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:flutter/material.dart';
 

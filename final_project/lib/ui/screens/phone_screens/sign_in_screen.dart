@@ -9,6 +9,7 @@ import 'package:final_project/ui/componant/text_field.dart';
 import 'package:final_project/ui/constants/custom_colors.dart';
 import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:final_project/ui/screens/phone_screens/authentication_screen.dart';
+import 'package:final_project/ui/screens/phone_screens/resetpassword.dart';
 import 'package:final_project/ui/screens/phone_screens/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -66,7 +67,14 @@ class _SignInScreenState extends State<SignInScreen> {
                   ),
                   kVSpace16,
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ResetPasswordScreen(),
+                        ),
+                      );
+                    },
                     child: const Text(
                       "Forgot Password?",
                       style: TextStyle(color: orangeColor),
