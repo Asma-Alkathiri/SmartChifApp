@@ -8,7 +8,6 @@ import 'package:final_project/ui/componant/orange_button.dart';
 import 'package:final_project/ui/componant/text_field.dart';
 import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:final_project/ui/screens/phone_screens/OTP_screen.dart';
-import 'package:final_project/ui/screens/phone_screens/sign_in_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -39,7 +38,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         body: SingleChildScrollView(
           child: Column(children: [
             const SignInAppbar(),
-            kVSpace32,
+            kVSpace64,
             Padding(
               padding: const EdgeInsets.all(24),
               child: Column(
@@ -68,7 +67,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   Textfieldpassword(
                     controller: passwordController,
                   ),
-                  kVSpace24,
+                  kVSpace64,
                   OrangeButton(
                     title: "SIGN UP",
                     height: 50,
@@ -109,9 +108,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   kVSpace24,
                   TextWithTextButton(
-                    // buttontitle: "",
                     text: 'Already have account?',
-                    buttonTitle: ' Login',
+                    buttonTitle: 'Login',
                     textColor: Theme.of(context).colorScheme.primary,
                     onTap: () {
                       Navigator.pushAndRemoveUntil(
@@ -124,7 +122,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       });
                     },
                   ),
-                  kVSpace24,
+                  kVSpace32,
+                  kVSpace16,
                   CoustomDeviderText(
                     textColor: Theme.of(context).colorScheme.primary,
                     divider1Color: Theme.of(context).colorScheme.primary,

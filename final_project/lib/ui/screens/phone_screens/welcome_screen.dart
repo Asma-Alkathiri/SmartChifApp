@@ -50,8 +50,7 @@ class WelcomeScreen extends StatelessWidget {
               ),
             ),
             kVSpace128,
-            kVSpace32,
-            kVSpace4,
+            kVSpace128,
             const CoustomDeviderText(
               textColor: lightGrayColor,
             ),
@@ -77,7 +76,7 @@ class WelcomeScreen extends StatelessWidget {
                   TextWithTextButton(
                     text: 'Already have account?',
                     textColor: lightGrayColor,
-                    buttonTitle: ' Sign In',
+                    buttonTitle: 'Sign In',
                     buttonTitleColor: lightGrayColor,
                     onTap: () {
                       Navigator.push(

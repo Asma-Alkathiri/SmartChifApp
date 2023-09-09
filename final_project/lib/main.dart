@@ -42,7 +42,7 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: lightTheme,
       darkTheme: DarkTheme,
-      home: const WelcomeScreen(),
+      home: const HomeScreen(),
     );
   }
 }
