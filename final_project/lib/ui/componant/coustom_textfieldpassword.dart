@@ -5,21 +5,24 @@ class Textfieldpassword extends StatelessWidget {
   const Textfieldpassword({
     super.key,
     this.controller,
+    this.fontsize = 18,  this.width = 360,
   });
   final TextEditingController? controller;
+  final double fontsize;
+  final double width;
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
+          Text(
             "password",
-            style: TextStyle(color: grayColor, fontSize: 18),
+            style: TextStyle(color: grayColor, fontSize: fontsize),
           ),
           const SizedBox(height: 14),
           SizedBox(
-            width: 360,
+            width: width,
             height: 65,
             child: TextField(
               style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w400),
