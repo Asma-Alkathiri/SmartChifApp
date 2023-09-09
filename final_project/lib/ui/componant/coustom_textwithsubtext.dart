@@ -16,30 +16,23 @@ class TextWithSubText extends StatelessWidget {
     return SizedBox(
       width: 400,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Column(
-              children: [
-                Text(
-                  title1,
-                  style: const TextStyle(
-                      fontSize: 36, fontWeight: FontWeight.bold),
-                ),
-              ],
-            ),
+          Text(
+            title1,
+            style: const TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
           ),
           kVSpace16,
-          Padding(
-            padding: const EdgeInsets.all(8.0),
+          SizedBox(
+            width: 400,
             child: Align(
               alignment: Alignment.centerLeft,
               child: Text(
                 title2,
                 style: const TextStyle(
-                    fontSize: 14,
+                    fontSize: 16,
                     color: grayColor,
-                    fontWeight: FontWeight.w600),
+                    fontWeight: FontWeight.w400),
               ),
             ),
           ),

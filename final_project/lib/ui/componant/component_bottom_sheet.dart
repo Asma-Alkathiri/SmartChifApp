@@ -1,16 +1,19 @@
 import 'package:final_project/ui/componant/componant_container.dart';
 import 'package:final_project/ui/componant/orange_button.dart';
+import 'package:final_project/ui/constants/custom_colors.dart';
 import 'package:final_project/ui/constants/custom_spacing.dart';
+import 'package:final_project/ui/screens/phone_screens/Suggestions_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ComponentBottomSheet extends StatelessWidget {
-  const ComponentBottomSheet({super.key, this.Category = "Vegetables"});
-  final String Category;
+  const ComponentBottomSheet({super.key, this.category = "Vegetables"});
+  final String category;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: whiteColor,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(24),
@@ -19,7 +22,7 @@ class ComponentBottomSheet extends StatelessWidget {
             children: [
               kVSpace16,
               Text(
-                Category,
+                category,
                 style: const TextStyle(fontSize: 18),
               ),
               kVSpace16,
@@ -52,7 +55,14 @@ class ComponentBottomSheet extends StatelessWidget {
                       height: 45,
                       width: 165,
                       title: " APPLY",
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SuggestionsScreen(),
+                          ),
+                        );
+                      },
                     ),
                   ],
                 ),
