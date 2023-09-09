@@ -11,6 +11,8 @@ class RectangleTextNumberField extends StatelessWidget {
     this.num4Controller,
     this.num5Controller,
     this.num6Controller,
+    this.height = 58,
+    this.width = 54,
   });
   final TextEditingController? num1Controller;
   final TextEditingController? num2Controller;
@@ -18,6 +20,8 @@ class RectangleTextNumberField extends StatelessWidget {
   final TextEditingController? num4Controller;
   final TextEditingController? num5Controller;
   final TextEditingController? num6Controller;
+  final double height;
+  final double width;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -27,8 +31,8 @@ class RectangleTextNumberField extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             SizedBox(
-              height: 58,
-              width: 54,
+              height: height,
+              width: width,
               child: TextFormField(
                 controller: num1Controller,
                 onChanged: (value) {
@@ -55,12 +59,12 @@ class RectangleTextNumberField extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 10,
             ),
             SizedBox(
-              height: 58,
-              width: 54,
+              height: height,
+              width: width,
               child: TextFormField(
                 controller: num2Controller,
                 onChanged: (value) {
@@ -87,12 +91,12 @@ class RectangleTextNumberField extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 10,
             ),
             SizedBox(
-              height: 58,
-              width: 54,
+              height: height,
+              width: width,
               child: TextFormField(
                 controller: num3Controller,
                 onChanged: (value) {
@@ -119,12 +123,12 @@ class RectangleTextNumberField extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 10,
             ),
             SizedBox(
-              height: 58,
-              width: 54,
+              height: height,
+              width: width,
               child: TextFormField(
                 controller: num4Controller,
                 onChanged: (value) {
@@ -151,12 +155,12 @@ class RectangleTextNumberField extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 10,
             ),
             SizedBox(
-              height: 58,
-              width: 54,
+              height: height,
+              width: width,
               child: TextFormField(
                 controller: num5Controller,
                 onChanged: (value) {
@@ -183,12 +187,12 @@ class RectangleTextNumberField extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 10,
             ),
             SizedBox(
-              height: 58,
-              width: 54,
+              height: height,
+              width: width,
               child: TextFormField(
                 controller: num6Controller,
                 style: const TextStyle(color: orangeColor),

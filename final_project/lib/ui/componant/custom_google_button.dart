@@ -8,9 +8,11 @@ class GoogleButton extends StatelessWidget {
     this.width = 278,
     this.height = 50,
     required this.onPressed,
+    this.fontsize = 16,
   });
   final double width;
   final double height;
+  final double fontsize;
   final Function() onPressed;
   @override
   Widget build(BuildContext context) {
@@ -31,12 +33,14 @@ class GoogleButton extends StatelessWidget {
               alignment: Alignment.centerLeft,
               child: Image.asset('assets/Group 17967.png')),
           kHSpace16,
-          const Align(
+          Align(
             alignment: Alignment.center,
             child: Text(
               "Continue with google",
               style: TextStyle(
-                  fontSize: 16, color: textColor, fontWeight: FontWeight.w400),
+                  fontSize: fontsize,
+                  color: textColor,
+                  fontWeight: FontWeight.w400),
             ),
           ),
         ],

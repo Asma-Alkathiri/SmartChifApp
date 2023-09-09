@@ -38,6 +38,8 @@ class OTPScreen extends StatelessWidget {
             height: 50,
           ),
           RectangleTextNumberField(
+              width: 70,
+              height: 70,
               num1Controller: num1Controller,
               num2Controller: num2Controller,
               num3Controller: num3Controller,

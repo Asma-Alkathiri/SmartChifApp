@@ -3,16 +3,18 @@ import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:flutter/material.dart';
 
 class CoustomDeviderText extends StatelessWidget {
-  const CoustomDeviderText(
-      {super.key,
-      this.widthDivider1 = 95,
-      this.heightDivider1 = 1,
-      this.widthDivider2 = 95,
-      this.heightDivider2 = 1,
-      this.divider1Color = lightGrayColor,
-      this.divider2Color = lightGrayColor,
-      this.title = "sign in with",
-      this.textColor = darkGrayColor});
+  const CoustomDeviderText({
+    super.key,
+    this.widthDivider1 = 95,
+    this.heightDivider1 = 1,
+    this.widthDivider2 = 95,
+    this.heightDivider2 = 1,
+    this.divider1Color = lightGrayColor,
+    this.divider2Color = lightGrayColor,
+    this.title = "sign in with",
+    this.textColor = darkGrayColor,
+    this.fontSize = 16,
+  });
 
   final double widthDivider1;
   final double heightDivider1;
@@ -22,6 +24,7 @@ class CoustomDeviderText extends StatelessWidget {
   final Color divider2Color;
   final String title;
   final Color textColor;
+  final double fontSize;
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +40,9 @@ class CoustomDeviderText extends StatelessWidget {
         Text(
           title,
           style: TextStyle(
-              fontSize: 16, color: textColor, fontWeight: FontWeight.w500),
+              fontSize: fontSize,
+              color: textColor,
+              fontWeight: FontWeight.w500),
         ),
         kHSpace24,
         Container(
