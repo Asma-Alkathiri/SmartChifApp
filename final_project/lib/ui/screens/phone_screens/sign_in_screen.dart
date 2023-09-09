@@ -44,6 +44,7 @@ class _SignInScreenState extends State<SignInScreen> {
               padding: const EdgeInsets.all(24),
               child: Column(
                 children: [
+                  kVSpace64,
                   const Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
@@ -100,9 +101,8 @@ class _SignInScreenState extends State<SignInScreen> {
                   ),
                   kVSpace32,
                   TextWithTextButton(
-                    // buttontitle: "",
                     text: 'Don\'t have account?',
-                    buttonTitle: ' sign up',
+                    buttonTitle: 'sign up',
                     textColor: Theme.of(context).colorScheme.primary,
                     onTap: () {
                       Navigator.pushAndRemoveUntil(
@@ -114,7 +114,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       });
                     },
                   ),
-                  kVSpace32,
+                  kVSpace64,
                   CoustomDeviderText(
                     textColor: Theme.of(context).colorScheme.primary,
                     divider1Color: Theme.of(context).colorScheme.primary,

@@ -1,9 +1,11 @@
 import 'package:final_project/ui/componant/home_container.dart';
 import 'package:final_project/ui/componant/app_scaffold.dart';
 import 'package:final_project/ui/componant/small_card.dart';
+import 'package:final_project/ui/constants/custom_colors.dart';
 import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:final_project/ui/screens/phone_screens/Account_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key, this.onPressed});
@@ -29,21 +31,40 @@ class HomeScreen extends StatelessWidget {
             children: [
               kVSpace16,
               const HomeContainer(),
+              kVSpace16,
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
-                child: GridView.builder(
+                child:
+                    // Column(
+                    //   crossAxisAlignment: CrossAxisAlignment.start,
+                    //   children: [
+                    //     const SizedBox(
+                    //       height: 95,
+                    //       width: 155,
+                    //       child: Text(
+                    //         "Suggestion Suggestion",
+                    //         style: TextStyle(
+                    //             color: blackColor,
+                    //             fontSize: 30,
+                    //             fontWeight: FontWeight.w400),
+                    //       ),
+                    //     ),
+                    MasonryGridView.builder(
                   shrinkWrap: true,
                   itemCount: 4,
-                  itemBuilder: (context, index) {
-                    return const Center(child: SmallCard());
-                  },
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate:
+                      const SliverSimpleGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    crossAxisSpacing: 8,
-                    mainAxisSpacing: 16,
-                    mainAxisExtent: 215,
                   ),
+                  itemBuilder: (context, index) {
+                    return const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Center(child: SmallCard()),
+                    );
+                  },
                 ),
+                //   ],
+                // ),
               ),
             ],
           ),

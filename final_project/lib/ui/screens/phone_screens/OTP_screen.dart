@@ -26,59 +26,76 @@ class OTPScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
-      body: Column(
-        children: [
-          const SignInAppbar(),
-          const SizedBox(
-            height: 128,
-          ),
-          TextWithSubText(
-              title2: "Please type the verification code sent to $userEmail"),
-          const SizedBox(
-            height: 50,
-          ),
-          RectangleTextNumberField(
-              width: 70,
-              height: 70,
-              num1Controller: num1Controller,
-              num2Controller: num2Controller,
-              num3Controller: num3Controller,
-              num4Controller: num4Controller,
-              num5Controller: num5Controller,
-              num6Controller: num6Controller),
-          const SizedBox(
-            height: 30,
-          ),
-          const SizedBox(
-            height: 300,
-          ),
-          OrangeButton(
-            title: "verfy",
-            onPressed: () async {
-              String otp = getOTP(
-                  num1Controller!,
-                  num2Controller!,
-                  num3Controller!,
-                  num4Controller!,
-                  num5Controller!,
-                  num6Controller!);
-              await SupabaseInitializer().supabaseClient.auth.verifyOTP(
-                  token: otp, email: userEmail, type: OtpType.signup);
-            },
-          ),
-          kVSpace16,
-          TextWithTextButton(
-            buttonTitle: 'Please resend',
-            textColor: Theme.of(context).colorScheme.primary,
-            text: 'I don’t recevie a code!',
-            onTap: () async {
-              await SupabaseInitializer()
-                  .supabaseClient
-                  .auth
-                  .resend(type: OtpType.signup, email: userEmail);
-            },
-          ),
-        ],
+
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const SignInAppbar(),
+            kVSpace128,
+            kVSpace64,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 28),
+              child: Column(
+                children: [
+                  TextWithSubText(
+                      title2:
+                          "Please type the verification code sent to $userEmail"),
+                  const SizedBox(
+                    height: 50,
+                  ),
+                  RectangleTextNumberField(
+                      num1Controller: num1Controller,
+                      num2Controller: num2Controller,
+                      num3Controller: num3Controller,
+                      num4Controller: num4Controller,
+                      num5Controller: num5Controller,
+                      num6Controller: num6Controller),
+                  kVSpace64,
+                  // kVSpace16,
+                  // TextWithTextButton(
+                  //   buttonTitle: 'Please resend',
+                  //   textColor: Theme.of(context).colorScheme.primary,
+                  //   text: 'I don’t recevie a code!',
+                  //   onTap: () async {
+                  //     await SupabaseInitializer()
+                  //         .supabaseClient
+                  //         .auth
+                  //         .resend(type: OtpType.signup, email: userEmail);
+                  //   },
+                  // ),
+                  kVSpace16,
+                  OrangeButton(
+                    title: "Verfy",
+                    onPressed: () async {
+                      String otp = getOTP(
+                          num1Controller!,
+                          num2Controller!,
+                          num3Controller!,
+                          num4Controller!,
+                          num5Controller!,
+                          num6Controller!);
+                      await SupabaseInitializer().supabaseClient.auth.verifyOTP(
+                          token: otp, email: userEmail, type: OtpType.signup);
+                    },
+                  ),
+                  kVSpace16,
+                  TextWithTextButton(
+                    buttonTitle: 'Please resend',
+                    textColor: Theme.of(context).colorScheme.primary,
+                    text: 'I don’t recevie a code!',
+                    onTap: () async {
+                      await SupabaseInitializer()
+                          .supabaseClient
+                          .auth
+                          .resend(type: OtpType.signup, email: userEmail);
+                    },
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+
       ),
     );
   }

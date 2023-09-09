@@ -1,4 +1,5 @@
 import 'package:final_project/ui/constants/custom_colors.dart';
+import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -28,11 +29,13 @@ class RectangleTextNumberField extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Form(
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             SizedBox(
+
               height: height,
               width: width,
+
               child: TextFormField(
                 controller: num1Controller,
                 onChanged: (value) {
@@ -49,7 +52,7 @@ class RectangleTextNumberField extends StatelessWidget {
                 ],
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(color: grayColor),
+                      borderSide: const BorderSide(color: lightGrayColor),
                       borderRadius: BorderRadius.circular(10)),
                   focusedBorder: OutlineInputBorder(
                       borderSide: const BorderSide(color: orangeColor),
@@ -59,12 +62,14 @@ class RectangleTextNumberField extends StatelessWidget {
                 ),
               ),
             ),
+
             const SizedBox(
               width: 10,
             ),
             SizedBox(
               height: height,
               width: width,
+
               child: TextFormField(
                 controller: num2Controller,
                 onChanged: (value) {
@@ -81,7 +86,7 @@ class RectangleTextNumberField extends StatelessWidget {
                 ],
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(color: grayColor),
+                      borderSide: const BorderSide(color: lightGrayColor),
                       borderRadius: BorderRadius.circular(10)),
                   focusedBorder: OutlineInputBorder(
                       borderSide: const BorderSide(color: orangeColor),
@@ -91,12 +96,13 @@ class RectangleTextNumberField extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(
-              width: 10,
-            ),
+
+            kHSpace8,
+
             SizedBox(
               height: height,
               width: width,
+
               child: TextFormField(
                 controller: num3Controller,
                 onChanged: (value) {
@@ -113,7 +119,7 @@ class RectangleTextNumberField extends StatelessWidget {
                 ],
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(color: grayColor),
+                      borderSide: const BorderSide(color: lightGrayColor),
                       borderRadius: BorderRadius.circular(10)),
                   focusedBorder: OutlineInputBorder(
                       borderSide: const BorderSide(color: orangeColor),
@@ -123,12 +129,14 @@ class RectangleTextNumberField extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(
-              width: 10,
-            ),
+
+            kHSpace8,
+   
+
             SizedBox(
               height: height,
               width: width,
+
               child: TextFormField(
                 controller: num4Controller,
                 onChanged: (value) {
@@ -145,7 +153,7 @@ class RectangleTextNumberField extends StatelessWidget {
                 ],
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(color: grayColor),
+                      borderSide: const BorderSide(color: lightGrayColor),
                       borderRadius: BorderRadius.circular(10)),
                   focusedBorder: OutlineInputBorder(
                       borderSide: const BorderSide(color: orangeColor),
@@ -155,12 +163,13 @@ class RectangleTextNumberField extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(
-              width: 10,
-            ),
+
+            kHSpace8,
+
             SizedBox(
               height: height,
               width: width,
+
               child: TextFormField(
                 controller: num5Controller,
                 onChanged: (value) {
@@ -177,7 +186,7 @@ class RectangleTextNumberField extends StatelessWidget {
                 ],
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(color: grayColor),
+                      borderSide: const BorderSide(color: lightGrayColor),
                       borderRadius: BorderRadius.circular(10)),
                   focusedBorder: OutlineInputBorder(
                       borderSide: const BorderSide(color: orangeColor),
@@ -187,12 +196,13 @@ class RectangleTextNumberField extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(
-              width: 10,
-            ),
+
+            kHSpace8,
+
             SizedBox(
               height: height,
               width: width,
+
               child: TextFormField(
                 controller: num6Controller,
                 style: const TextStyle(color: orangeColor),
@@ -204,7 +214,7 @@ class RectangleTextNumberField extends StatelessWidget {
                 ],
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(color: grayColor),
+                      borderSide: const BorderSide(color: lightGrayColor),
                       borderRadius: BorderRadius.circular(10)),
                   focusedBorder: OutlineInputBorder(
                       borderSide: const BorderSide(color: orangeColor),

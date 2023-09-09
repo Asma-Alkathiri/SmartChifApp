@@ -35,7 +35,9 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: lightTheme,
       darkTheme: DarkTheme,
-      home: const TabletHomeScreen(),
+
+      home: const HomeScreen(),
+
     );
   }
 }
