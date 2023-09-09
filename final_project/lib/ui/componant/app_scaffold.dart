@@ -20,9 +20,9 @@ class AppScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: whiteColor,
+      backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
-        backgroundColor: whiteColor,
+        backgroundColor: Theme.of(context).colorScheme.background,
         elevation: 0,
         leading: Center(
           child: BackIconContainar(
@@ -32,8 +32,10 @@ class AppScaffold extends StatelessWidget {
         title: Center(
           child: Text(
             appBarTitle ?? "",
-            style: const TextStyle(
-                fontSize: 20, fontWeight: FontWeight.w500, color: blackColor),
+            style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w500,
+                color: Theme.of(context).colorScheme.primary),
           ),
         ),
         actions: [

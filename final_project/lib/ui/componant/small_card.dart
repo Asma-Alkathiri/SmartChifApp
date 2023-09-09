@@ -11,7 +11,7 @@ class SmallCard extends StatelessWidget {
       width: 155,
       height: 215,
       decoration: BoxDecoration(
-          color: whiteColor,
+          color: Theme.of(context).colorScheme.background,
           borderRadius: BorderRadius.circular(15),
           boxShadow: [
             BoxShadow(
@@ -37,17 +37,17 @@ class SmallCard extends StatelessWidget {
                 )),
           ),
           kVSpace8,
-          const Expanded(
+          Expanded(
             child: SingleChildScrollView(
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       'Bruschetta',
                       style: TextStyle(
-                        color: blackColor,
+                        color: Theme.of(context).colorScheme.primary,
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
                       ),
@@ -55,9 +55,9 @@ class SmallCard extends StatelessWidget {
                     Text(
                       'toppings of tomato ',
                       style: TextStyle(
-                        color: blackColor,
+                        color: Theme.of(context).colorScheme.primary,
                         fontSize: 14,
-                        fontWeight: FontWeight.w400,
+                        fontWeight: FontWeight.w300,
                       ),
                     ),
                   ],

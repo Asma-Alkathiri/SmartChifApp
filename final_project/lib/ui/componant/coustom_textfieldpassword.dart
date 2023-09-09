@@ -48,7 +48,7 @@ class Textfieldpassword extends StatelessWidget {
                 contentPadding:
                     const EdgeInsets.symmetric(horizontal: 24, vertical: 18),
                 filled: true,
-                fillColor: whiteColor,
+                fillColor: Theme.of(context).colorScheme.background,
               ),
             ),
           ),

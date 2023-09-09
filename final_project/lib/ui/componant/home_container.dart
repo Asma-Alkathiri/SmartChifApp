@@ -12,7 +12,7 @@ class HomeContainer extends StatelessWidget {
       width: 327,
       padding: const EdgeInsets.all(34),
       decoration: BoxDecoration(
-          color: whiteColor,
+          color: Theme.of(context).colorScheme.background,
           borderRadius: BorderRadius.circular(12),
           boxShadow: [
             BoxShadow(

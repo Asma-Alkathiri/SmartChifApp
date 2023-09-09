@@ -12,6 +12,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
+      appBarTitle: "Home",
       onPressedBackIcon: () {},
       onPressedProfile: () {
         Navigator.push(

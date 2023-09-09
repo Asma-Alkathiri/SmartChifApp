@@ -25,15 +25,16 @@ class OTPScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.background,
       body: Column(
         children: [
-          SignInAppbar(),
-          SizedBox(
+          const SignInAppbar(),
+          const SizedBox(
             height: 128,
           ),
           TextWithSubText(
-              title2: "Please type the verification code sent to ${userEmail}"),
-          SizedBox(
+              title2: "Please type the verification code sent to $userEmail"),
+          const SizedBox(
             height: 50,
           ),
           RectangleTextNumberField(
@@ -43,16 +44,16 @@ class OTPScreen extends StatelessWidget {
               num4Controller: num4Controller,
               num5Controller: num5Controller,
               num6Controller: num6Controller),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
-          SizedBox(
+          const SizedBox(
             height: 300,
           ),
           OrangeButton(
             title: "verfy",
             onPressed: () async {
-              String otp = await getOTP(
+              String otp = getOTP(
                   num1Controller!,
                   num2Controller!,
                   num3Controller!,
@@ -66,6 +67,7 @@ class OTPScreen extends StatelessWidget {
           kVSpace16,
           TextWithTextButton(
             buttonTitle: 'Please resend',
+            textColor: Theme.of(context).colorScheme.primary,
             text: 'I don’t recevie a code!',
             onTap: () async {
               await SupabaseInitializer()

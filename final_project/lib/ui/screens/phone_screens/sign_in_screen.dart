@@ -33,6 +33,7 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.background,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -102,6 +103,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     // buttontitle: "",
                     text: 'Don\'t have account?',
                     buttonTitle: ' sign up',
+                    textColor: Theme.of(context).colorScheme.primary,
                     onTap: () {
                       Navigator.pushAndRemoveUntil(
                           context,
@@ -113,7 +115,11 @@ class _SignInScreenState extends State<SignInScreen> {
                     },
                   ),
                   kVSpace32,
-                  const CoustomDeviderText(),
+                  CoustomDeviderText(
+                    textColor: Theme.of(context).colorScheme.primary,
+                    divider1Color: Theme.of(context).colorScheme.primary,
+                    divider2Color: Theme.of(context).colorScheme.primary,
+                  ),
                   kVSpace16,
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10),

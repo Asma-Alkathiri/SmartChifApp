@@ -58,7 +58,7 @@ class TextFieldWidget extends StatelessWidget {
                   borderSide: const BorderSide(color: orangeColor, width: 1.5),
                 ),
                 filled: true,
-                fillColor: whiteColor,
+                fillColor: Theme.of(context).colorScheme.background,
               ),
             ),
           ),
