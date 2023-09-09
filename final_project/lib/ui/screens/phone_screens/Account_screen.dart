@@ -11,6 +11,7 @@ class AccountScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.background,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -43,7 +44,7 @@ class AccountScreen extends StatelessWidget {
                         "Edit Profile",
                         style: TextStyle(
                             fontSize: 12,
-                            fontWeight: FontWeight.w300,
+                            fontWeight: FontWeight.w600,
                             color: grayColor),
                       ),
                     ],

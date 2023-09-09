@@ -22,7 +22,7 @@ class HistoryCard extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       height: 272,
       decoration: BoxDecoration(
-          color: whiteColor,
+          color: Theme.of(context).colorScheme.background,
           borderRadius: BorderRadius.circular(15),
           boxShadow: [
             BoxShadow(
@@ -85,8 +85,8 @@ class HistoryCard extends StatelessWidget {
               children: [
                 Text(
                   foodName,
-                  style: const TextStyle(
-                    color: blackColor,
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.primary,
                     fontSize: 16,
                     fontWeight: FontWeight.w700,
                   ),
@@ -94,8 +94,8 @@ class HistoryCard extends StatelessWidget {
                 kVSpace4,
                 Text(
                   description,
-                  style: const TextStyle(
-                    color: blackColor,
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.primary,
                     fontSize: 12,
                     fontWeight: FontWeight.w400,
                   ),
@@ -106,11 +106,13 @@ class HistoryCard extends StatelessWidget {
                   height: 27,
                   width: 67,
                   decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 240, 238, 238),
+                    color: Theme.of(context).colorScheme.primary,
                     borderRadius: BorderRadius.circular(4),
                   ),
                   child: Text(
                     components,
+                    style: TextStyle(
+                        color: Theme.of(context).colorScheme.background),
                   ),
                 ),
               ],

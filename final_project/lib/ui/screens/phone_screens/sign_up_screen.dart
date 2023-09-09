@@ -35,107 +35,114 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Theme.of(context).colorScheme.background,
         body: SingleChildScrollView(
-      child: Column(children: [
-        const SignInAppbar(),
-        kVSpace32,
-        Padding(
-          padding: const EdgeInsets.all(24),
-          child: Column(
-            children: [
-              const Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  "Sign Up",
-                  style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
-                ),
-              ),
-              kVSpace24,
-              TextFieldWidget(
-                controller: nameController,
-                hintText: 'Full name',
-                label: 'Full name',
-              ),
-              kVSpace8,
-              TextFieldWidget(
-                controller: emailController,
-                hintText: 'Your email',
-                label: 'E-mail',
-              ),
-              kVSpace8,
-              Textfieldpassword(
-                controller: passwordController,
-              ),
-              kVSpace24,
-              OrangeButton(
-                title: "SIGN UP",
-                height: 50,
-                width: 248,
-                onPressed: () async {
-                  if (emailController.text.isNotEmpty &&
-                      passwordController.text.isNotEmpty) {
-                    // Signing up ...
-                    await SupabaseInitializer().supabaseClient.auth.signUp(
-                          email: emailController.text,
-                          password: passwordController.text,
-                        );
-                    await SupabaseInitializer()
-                        .supabaseClient
-                        .from("user")
-                        .insert({
-                      "name": nameController.text,
-                      "id":
-                          Supabase.instance.client.auth.currentSession?.user.id
-                    });
-                    await SupabaseInitializer()
-                        .supabaseClient
-                        .auth
-                        .signInWithOtp(email: emailController.text);
+          child: Column(children: [
+            const SignInAppbar(),
+            kVSpace32,
+            Padding(
+              padding: const EdgeInsets.all(24),
+              child: Column(
+                children: [
+                  const Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      "Sign Up",
+                      style:
+                          TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  kVSpace24,
+                  TextFieldWidget(
+                    controller: nameController,
+                    hintText: 'Full name',
+                    label: 'Full name',
+                  ),
+                  kVSpace8,
+                  TextFieldWidget(
+                    controller: emailController,
+                    hintText: 'Your email',
+                    label: 'E-mail',
+                  ),
+                  kVSpace8,
+                  Textfieldpassword(
+                    controller: passwordController,
+                  ),
+                  kVSpace24,
+                  OrangeButton(
+                    title: "SIGN UP",
+                    height: 50,
+                    width: 248,
+                    onPressed: () async {
+                      if (emailController.text.isNotEmpty &&
+                          passwordController.text.isNotEmpty) {
+                        // Signing up ...
+                        await SupabaseInitializer().supabaseClient.auth.signUp(
+                              email: emailController.text,
+                              password: passwordController.text,
+                            );
+                        await SupabaseInitializer()
+                            .supabaseClient
+                            .from("user")
+                            .insert({
+                          "name": nameController.text,
+                          "id": Supabase
+                              .instance.client.auth.currentSession?.user.id
+                        });
+                        await SupabaseInitializer()
+                            .supabaseClient
+                            .auth
+                            .signInWithOtp(email: emailController.text);
 
-                    if (context.mounted) {
+                        if (context.mounted) {
+                          Navigator.pushAndRemoveUntil(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => OTPScreen(
+                                        userEmail: emailController.text,
+                                      )), (route) {
+                            return false;
+                          });
+                        }
+                      }
+                    },
+                  ),
+                  kVSpace24,
+                  TextWithTextButton(
+                    // buttontitle: "",
+                    text: 'Already have account?',
+                    buttonTitle: ' Login',
+                    textColor: Theme.of(context).colorScheme.primary,
+                    onTap: () {
                       Navigator.pushAndRemoveUntil(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => OTPScreen(
-                                    userEmail: emailController.text,
-                                  )), (route) {
+                            builder: (context) =>
+                                OTPScreen(userEmail: emailController.text),
+                          ), (route) {
                         return false;
                       });
-                    }
-                  }
-                },
+                    },
+                  ),
+                  kVSpace24,
+                  CoustomDeviderText(
+                    textColor: Theme.of(context).colorScheme.primary,
+                    divider1Color: Theme.of(context).colorScheme.primary,
+                    divider2Color: Theme.of(context).colorScheme.primary,
+                  ),
+                  kVSpace8,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: GoogleButton(
+                      onPressed: () {
+                        SupabaseInitializer().onTapBtnGoogleSignin();
+                      },
+                    ),
+                  ),
+                ],
               ),
-              kVSpace24,
-              TextWithTextButton(
-                // buttontitle: "",
-                text: 'Already have account?',
-                buttonTitle: ' Login',
-                onTap: () {
-                  Navigator.pushAndRemoveUntil(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) =>
-                            OTPScreen(userEmail: emailController.text),
-                      ), (route) {
-                    return false;
-                  });
-                },
-              ),
-              kVSpace24,
-              const CoustomDeviderText(),
-              kVSpace8,
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: GoogleButton(
-                  onPressed: () {
-                    SupabaseInitializer().onTapBtnGoogleSignin();
-                  },
-                ),
-              ),
-            ],
-          ),
-        ),
-      ]),
-    ));
+            ),
+          ]),
+        ));
   }
 }

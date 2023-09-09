@@ -22,7 +22,7 @@ class SuggestionCard extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       height: 248,
       decoration: BoxDecoration(
-          color: whiteColor,
+          color: Theme.of(context).colorScheme.background,
           borderRadius: BorderRadius.circular(15),
           boxShadow: [
             BoxShadow(
@@ -72,14 +72,14 @@ class SuggestionCard extends StatelessWidget {
             ),
           ]),
           Padding(
-            padding: EdgeInsets.all(16),
+            padding: const EdgeInsets.all(16),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   foodName,
-                  style: const TextStyle(
-                    color: blackColor,
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.primary,
                     fontSize: 16,
                     fontWeight: FontWeight.w700,
                   ),
@@ -87,8 +87,8 @@ class SuggestionCard extends StatelessWidget {
                 kVSpace4,
                 Text(
                   description,
-                  style: const TextStyle(
-                    color: blackColor,
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.primary,
                     fontSize: 12,
                     fontWeight: FontWeight.w400,
                   ),

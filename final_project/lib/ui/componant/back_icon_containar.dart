@@ -12,7 +12,7 @@ class BackIconContainar extends StatelessWidget {
       width: 38,
       padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
       decoration: BoxDecoration(
-          color: whiteColor,
+          color: Theme.of(context).colorScheme.background,
           borderRadius: BorderRadius.circular(12),
           boxShadow: [
             BoxShadow(
@@ -24,10 +24,10 @@ class BackIconContainar extends StatelessWidget {
           ]),
       child: IconButton(
         padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 0),
-        icon: const Icon(
+        icon: Icon(
           Icons.arrow_back_ios_new_sharp,
           size: 18,
-          color: blackColor,
+          color: Theme.of(context).colorScheme.primary,
         ),
         onPressed: onPressed,
       ),
