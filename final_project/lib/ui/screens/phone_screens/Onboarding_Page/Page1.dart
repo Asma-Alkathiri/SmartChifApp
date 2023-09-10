@@ -14,7 +14,7 @@ class Page1 extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 24),
         child: Column(
           children: [
-            kVSpace64,
+            kVSpace32,
             Center(
               child: Lottie.network(
                   "https://lottie.host/956c8e87-98a6-40e5-aef3-3c64bc277a97/MMD3NkQhgF.json",

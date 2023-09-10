@@ -19,7 +19,7 @@ class CoustomOnboardingButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         minimumSize: Size(width, height),
         shape: const CircleBorder(),
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16),
         backgroundColor: orangeColor, // Button color
       ),
       child: Icon(

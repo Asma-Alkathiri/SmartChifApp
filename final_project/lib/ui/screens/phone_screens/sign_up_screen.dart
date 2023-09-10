@@ -105,7 +105,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       }
                     },
                   ),
-                  kVSpace24,
+                  kVSpace16,
                   TextWithTextButton(
                     text: 'Already have account?',
                     buttonTitle: 'Login',
@@ -122,7 +122,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     },
                   ),
                   kVSpace32,
-                  kVSpace16,
                   CoustomDeviderText(
                     textColor: Theme.of(context).colorScheme.primary,
                     divider1Color: Theme.of(context).colorScheme.primary,
