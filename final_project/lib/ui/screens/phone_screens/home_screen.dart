@@ -32,7 +32,7 @@ class HomeScreen extends StatelessWidget {
             const HomeContainer(),
             kVSpace16,
             Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24),
+                padding: const EdgeInsets.symmetric(horizontal: 28),
                 child: SizedBox(
                   height: MediaQuery.of(context).size.height * 0.45,
                   child: const SingleChildScrollView(
@@ -44,7 +44,7 @@ class HomeScreen extends StatelessWidget {
                           children: [
                             kVSpace16,
                             SizedBox(
-                              width: 155,
+                              width: 170,
                               height: 80,
                               child: Text(
                                 "Meal Suggestions",
