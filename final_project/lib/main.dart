@@ -4,10 +4,7 @@ import 'package:final_project/firebase_options.dart';
 import 'package:final_project/service/supabase_initializer.dart';
 import 'package:final_project/theme/dark_theme.dart';
 import 'package:final_project/theme/light_theme.dart';
-
-
-
-
+import 'package:final_project/ui/screens/phone_screens/authentication_screen.dart';
 
 import 'package:final_project/ui/screens/tablet_screens/screens/tablet_navigationBar.dart';
 
@@ -18,7 +15,6 @@ import 'package:final_project/ui/screens/phone_screens/welcome_screen.dart';
 import 'package:final_project/ui/screens/tablet_screens/screens/tablet_Account_screen.dart';
 import 'package:final_project/ui/screens/tablet_screens/screens/tablet_authentication_screeen.dart';
 import 'package:final_project/ui/screens/tablet_screens/screens/tablet_home_screen.dart';
-
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
@@ -46,10 +42,7 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: lightTheme,
       darkTheme: DarkTheme,
-
-      home: const WelcomeScreen(),
-
-
+      home: const AuthenticationScreen(),
     );
   }
 }

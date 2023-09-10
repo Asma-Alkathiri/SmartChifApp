@@ -1,7 +1,9 @@
+import 'package:final_project/service/supabase_initializer.dart';
 import 'package:final_project/ui/componant/component_bottom_sheet.dart';
 import 'package:final_project/ui/componant/orange_button.dart';
 import 'package:final_project/ui/constants/custom_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 class HomeContainer extends StatelessWidget {
   const HomeContainer({super.key, this.height = 249, this.width = 327});
