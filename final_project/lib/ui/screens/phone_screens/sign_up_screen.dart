@@ -76,22 +76,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       if (emailController.text.isNotEmpty &&
                           passwordController.text.isNotEmpty) {
                         // Signing up ...
-                        await SupabaseInitializer().supabaseClient.auth.signUp(
+                        final userSignup = await SupabaseInitializer()
+                            .supabaseClient
+                            .auth
+                            .signUp(
                               email: emailController.text,
                               password: passwordController.text,
                             );
+
                         await SupabaseInitializer()
                             .supabaseClient
                             .from("user")
                             .insert({
                           "name": nameController.text,
-                          "id": Supabase
-                              .instance.client.auth.currentSession?.user.id
+                          "id": userSignup.user!.id
                         });
-                        await SupabaseInitializer()
-                            .supabaseClient
-                            .auth
-                            .signInWithOtp(email: emailController.text);
 
                         if (context.mounted) {
                           Navigator.pushAndRemoveUntil(

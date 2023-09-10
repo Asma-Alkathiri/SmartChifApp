@@ -1,4 +1,5 @@
 import 'package:final_project/ui/constants/custom_colors.dart';
+
 import 'package:final_project/ui/screens/phone_screens/Account_screen.dart';
 import 'package:final_project/ui/screens/phone_screens/favourite_screen.dart';
 import 'package:final_project/ui/screens/phone_screens/home_screen.dart';
@@ -16,6 +17,7 @@ class _NavigationBar1State extends State<NavigationBar1> {
     const HomeScreen(),
     const FavouriteScreen(),
     const AccountScreen(),
+
   ];
 
   int selectedIndex = 0;
@@ -34,6 +36,7 @@ class _NavigationBar1State extends State<NavigationBar1> {
           BottomNavigationBarItem(
               icon: Icon(Icons.favorite), label: "Favorite"),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
+
           // BottomNavigationBarItem(
           //     icon: Image.asset('assets/Group 18073.png'), label: "Profile"),
           // BottomNavigationBarItem(
@@ -41,6 +44,7 @@ class _NavigationBar1State extends State<NavigationBar1> {
         ],
         currentIndex: selectedIndex,
         backgroundColor: whiteColor,
+
         showSelectedLabels: false,
         showUnselectedLabels: false,
         onTap: (index) {

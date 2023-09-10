@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 
 class AccountScreen extends StatelessWidget {
   const AccountScreen({super.key, this.name = "Name"});
+
   final String name;
   @override
   Widget build(BuildContext context) {
