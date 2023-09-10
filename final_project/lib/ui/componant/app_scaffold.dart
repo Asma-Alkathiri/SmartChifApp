@@ -23,9 +23,12 @@ class AppScaffold extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.background,
         elevation: 0,
-        leading: Center(
-          child: BackIconContainar(
-            onPressed: onPressedBackIcon,
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 12, top: 12),
+          child: Center(
+            child: BackIconContainar(
+              onPressed: onPressedBackIcon,
+            ),
           ),
         ),
         title: Center(
@@ -38,10 +41,13 @@ class AppScaffold extends StatelessWidget {
           ),
         ),
         actions: [
-          Center(
-              child: ImageProfileContainar(
-            onPressed: onPressedProfile,
-          )),
+          Padding(
+            padding: const EdgeInsets.only(right: 12, top: 12),
+            child: Center(
+                child: ImageProfileContainar(
+              onPressed: onPressedProfile,
+            )),
+          ),
         ],
       ),
       drawer: drawer,

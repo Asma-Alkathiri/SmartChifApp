@@ -1,6 +1,6 @@
 import 'package:final_project/ui/componant/coustom_OnboardingButton.dart';
+import 'package:final_project/ui/componant/coustom_navigationbar.dart';
 import 'package:final_project/ui/constants/custom_colors.dart';
-import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:final_project/ui/screens/phone_screens/Onboarding_Page/Page1.dart';
 import 'package:final_project/ui/screens/phone_screens/Onboarding_Page/Page2.dart';
 import 'package:final_project/ui/screens/phone_screens/Onboarding_Page/Page3.dart';
@@ -59,18 +59,24 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               ? Container(
                   alignment: const Alignment(0, 0.8),
                   child: CoustomOnboardingButton(
+                    width: 80,
+                    height: 80,
                     icon1: Icons.arrow_forward_sharp,
                     onPressed: () {
                       Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const HomeScreen()));
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const NavigationBar1(),
+                        ),
+                      );
                     },
                   ),
                 )
               : Container(
                   alignment: const Alignment(0, 0.8),
                   child: CoustomOnboardingButton(
+                    width: 80,
+                    height: 80,
                     icon1: Icons.arrow_forward_sharp,
                     onPressed: () {
                       _controller.nextPage(
