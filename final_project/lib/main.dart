@@ -4,6 +4,7 @@ import 'package:final_project/firebase_options.dart';
 import 'package:final_project/service/supabase_initializer.dart';
 import 'package:final_project/theme/dark_theme.dart';
 import 'package:final_project/theme/light_theme.dart';
+import 'package:final_project/ui/componant/coustom_navigationbar.dart';
 
 import 'package:final_project/ui/screens/phone_screens/OTP_screen.dart';
 import 'package:final_project/ui/screens/phone_screens/authentication_screen.dart';
@@ -40,7 +41,7 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: lightTheme,
       darkTheme: DarkTheme,
-      home: const AuthenticationScreen(),
+      home: const NavigationBar1(),
     );
   }
 }

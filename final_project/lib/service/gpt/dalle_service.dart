@@ -1,8 +1,6 @@
 import 'dart:convert';
 import 'package:final_project/models/dalle_request_model.dart';
 import 'package:final_project/models/dalle_response.dart';
-import 'package:final_project/models/gpt_content.dart';
-import 'package:final_project/service/gpt/gpt_service.dart';
 import 'package:final_project/service/gpt/header.dart';
 import 'package:http/http.dart' as http;
 

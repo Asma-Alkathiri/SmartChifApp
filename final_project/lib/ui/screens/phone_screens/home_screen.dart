@@ -20,7 +20,7 @@ class HomeScreen extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => const AccountScreen(),
+            builder: (context) => AccountScreen(),
           ),
         );
       },
@@ -34,7 +34,7 @@ class HomeScreen extends StatelessWidget {
             Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.52,
+                  height: MediaQuery.of(context).size.height * 0.45,
                   child: const SingleChildScrollView(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -49,7 +49,7 @@ class HomeScreen extends StatelessWidget {
                               child: Text(
                                 "Meal Suggestions",
                                 style: TextStyle(
-                                    fontSize: 26, fontWeight: FontWeight.w500),
+                                    fontSize: 24, fontWeight: FontWeight.w500),
                               ),
                             ),
                             kVSpace16,

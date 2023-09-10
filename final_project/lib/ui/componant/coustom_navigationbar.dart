@@ -16,8 +16,7 @@ class _NavigationBar1State extends State<NavigationBar1> {
   final List screens = [
     const HomeScreen(),
     const FavouriteScreen(),
-    const AccountScreen(),
-
+    AccountScreen(),
   ];
 
   int selectedIndex = 0;
@@ -44,7 +43,6 @@ class _NavigationBar1State extends State<NavigationBar1> {
         ],
         currentIndex: selectedIndex,
         backgroundColor: whiteColor,
-
         showSelectedLabels: false,
         showUnselectedLabels: false,
         onTap: (index) {

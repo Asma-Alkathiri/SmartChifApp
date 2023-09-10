@@ -1,14 +1,18 @@
+import 'package:final_project/models/user_model.dart';
+import 'package:final_project/service/supabase_initializer.dart';
 import 'package:final_project/ui/componant/custom_Account_Appbar.dart';
 import 'package:final_project/ui/componant/orange_button.dart';
 import 'package:final_project/ui/componant/text_field.dart';
 import 'package:final_project/ui/constants/custom_colors.dart';
 import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 class AccountScreen extends StatelessWidget {
-  const AccountScreen({super.key, this.name = "Name"});
+  AccountScreen({super.key});
 
-  final String name;
+  final name = SupabaseInitializer().supabaseClient.from('user').select(); // we need to fix this 
+  final User? user = SupabaseInitializer().supabaseClient.auth.currentUser;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +40,7 @@ class AccountScreen extends StatelessWidget {
                       ),
                       kVSpace8,
                       Text(
-                        name,
+                        '$name',
                         style: const TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold),
                       ),
@@ -58,20 +62,7 @@ class AccountScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 24),
               child: Column(
                 children: [
-                  const TextFieldWidget(
-                    hintText: "Full Name",
-                    label: "Full Name",
-                  ),
-                  kVSpace16,
-                  const TextFieldWidget(
-                    hintText: "E-mail",
-                    label: "E-mail",
-                  ),
-                  kVSpace16,
-                  const TextFieldWidget(
-                    hintText: "Phone Number",
-                    label: "Phone Number",
-                  ),
+                  Text('${user!.email}'),
                   kVSpace32,
                   OrangeButton(
                     title: "SAVE",
