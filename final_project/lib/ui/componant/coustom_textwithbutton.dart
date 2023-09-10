@@ -1,16 +1,25 @@
 import 'package:final_project/ui/constants/custom_colors.dart';
+import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:flutter/material.dart';
 
 class TextWithTextButton extends StatelessWidget {
   const TextWithTextButton({
     super.key,
-    required this.title,
-    required this.description,
-    this.onTap, required String buttontitle,
+    required this.buttonTitle,
+    required this.text,
+    this.onTap,
+    this.buttonTitleColor = orangeColor,
+
+    this.textColor = darkGrayColor,  this.fontsize = 14,  this.fontsizebutton = 14,
+
   });
-  final String title;
-  final String description;
+  final String buttonTitle;
+  final String text;
   final Function()? onTap;
+  final Color textColor;
+  final Color buttonTitleColor;
+  final double fontsize;
+   final double fontsizebutton;
 
   @override
   Widget build(BuildContext context) {
@@ -18,19 +27,21 @@ class TextWithTextButton extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          description,
+          text,
+          style: TextStyle(
 
-          style: const TextStyle(fontSize: 14),
+              fontSize: fontsize, color: textColor, fontWeight: FontWeight.w400),
+
         ),
-        const SizedBox(
-          width: 1,
-        ),
+        kHSpace4,
         InkWell(
           onTap: onTap,
           child: Text(
-            title,
+            buttonTitle,
+            style:
 
-            style: const TextStyle(color: orangeColor),
+                TextStyle(color: buttonTitleColor, fontWeight: FontWeight.w400,fontSize: fontsizebutton),
+
           ),
         )
       ],

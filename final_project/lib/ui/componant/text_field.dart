@@ -10,6 +10,7 @@ class TextFieldWidget extends StatelessWidget {
     this.maxLines,
     this.onSubmitted,
     this.controller,
+    this.textfontsize = 18,  this.width = 360,
   });
   final String hintText;
   final String label;
@@ -18,7 +19,8 @@ class TextFieldWidget extends StatelessWidget {
   final int? maxLines;
   final Function(String)? onSubmitted;
   final TextEditingController? controller;
-
+  final double textfontsize;
+  final double width;
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -27,12 +29,12 @@ class TextFieldWidget extends StatelessWidget {
         children: [
           Text(
             label,
-            style: const TextStyle(color: Colors.grey, fontSize: 18),
+            style: TextStyle(color: grayColor, fontSize: textfontsize),
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 14),
           SizedBox(
             height: 75,
-            width: 360,
+            width: width,
             child: TextField(
               style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w400),
               keyboardType: inputType,
@@ -46,7 +48,7 @@ class TextFieldWidget extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                     fontSize: 18),
                 contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+                    const EdgeInsets.symmetric(horizontal: 24, vertical: 18),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
                   borderSide: const BorderSide(
@@ -58,7 +60,7 @@ class TextFieldWidget extends StatelessWidget {
                   borderSide: const BorderSide(color: orangeColor, width: 1.5),
                 ),
                 filled: true,
-                fillColor: whiteColor,
+                fillColor: Theme.of(context).colorScheme.background,
               ),
             ),
           ),

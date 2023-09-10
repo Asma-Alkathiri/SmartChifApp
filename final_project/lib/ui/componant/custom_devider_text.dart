@@ -1,18 +1,20 @@
+import 'package:final_project/ui/constants/custom_colors.dart';
+import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:flutter/material.dart';
 
 class CoustomDeviderText extends StatelessWidget {
-  const CoustomDeviderText(
-      {super.key,
-      this.widthDivider1 = 150,
-      this.heightDivider1 = 1,
-      this.widthDivider2 = 150,
-      this.heightDivider2 = 1,
-      this.divider1Color = Colors.black,
-      this.divider2Color = Colors.black,
-      this.sizedBox1 = 10,
-      this.sizedBox2 = 10,
-      this.title = "sign in with",
-      this.textColor = Colors.black});
+  const CoustomDeviderText({
+    super.key,
+    this.widthDivider1 = 95,
+    this.heightDivider1 = 1,
+    this.widthDivider2 = 95,
+    this.heightDivider2 = 1,
+    this.divider1Color = lightGrayColor,
+    this.divider2Color = lightGrayColor,
+    this.title = "sign in with",
+    this.textColor = darkGrayColor,
+    this.fontSize = 16,
+  });
 
   final double widthDivider1;
   final double heightDivider1;
@@ -20,10 +22,10 @@ class CoustomDeviderText extends StatelessWidget {
   final double heightDivider2;
   final Color divider1Color;
   final Color divider2Color;
-  final double sizedBox1;
-  final double sizedBox2;
   final String title;
   final Color textColor;
+  final double fontSize;
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -34,16 +36,15 @@ class CoustomDeviderText extends StatelessWidget {
             height: heightDivider1, // Customize the height of the divider
             color: divider1Color // Customize the color of the divider
             ),
-        SizedBox(
-          width: sizedBox1,
-        ),
+        kHSpace24,
         Text(
           title,
-          style: TextStyle(fontSize: 14, color: textColor),
+          style: TextStyle(
+              fontSize: fontSize,
+              color: textColor,
+              fontWeight: FontWeight.w500),
         ),
-        SizedBox(
-          width: sizedBox2,
-        ),
+        kHSpace24,
         Container(
           width: widthDivider2, // Customize the width of the divider
           height: heightDivider2, // Customize the height of the divider

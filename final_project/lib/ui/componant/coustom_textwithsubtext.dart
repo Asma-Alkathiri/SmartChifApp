@@ -1,4 +1,5 @@
 import 'package:final_project/ui/constants/custom_colors.dart';
+import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:flutter/material.dart';
 
 class TextWithSubText extends StatelessWidget {
@@ -15,28 +16,23 @@ class TextWithSubText extends StatelessWidget {
     return SizedBox(
       width: 400,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Column(
-              children: [
-                Text(
-                  title1,
-                  style: const TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
-                ),
-              ],
-            ),
+          Text(
+            title1,
+            style: const TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
+          kVSpace16,
+          SizedBox(
+            width: 400,
             child: Align(
               alignment: Alignment.centerLeft,
               child: Text(
                 title2,
                 style: const TextStyle(
-                    fontSize: 14,
+                    fontSize: 16,
                     color: grayColor,
-                    fontWeight: FontWeight.w600),
+                    fontWeight: FontWeight.w400),
               ),
             ),
           ),
