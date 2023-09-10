@@ -46,7 +46,7 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: lightTheme,
       darkTheme: DarkTheme,
-      home: const ForGpt(),
+      home: const AuthenticationScreen(),
     );
   }
 }

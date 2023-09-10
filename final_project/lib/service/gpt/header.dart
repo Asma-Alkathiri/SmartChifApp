@@ -6,7 +6,7 @@ class OpenAi {
       Uri.parse('https://api.openai.com/v1/images/generations');
 
   static const openAikey =
-      'Bearer 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';
+      'Bearer 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';
 
   static const openAiorg = 'org-hoIIshAmuJeyXbVq4p8jMEn4';
 
