@@ -13,6 +13,7 @@ import 'package:final_project/ui/screens/phone_screens/Registration_screen.dart'
 import 'package:final_project/ui/screens/phone_screens/Suggestions_screen.dart';
 import 'package:final_project/ui/screens/phone_screens/authentication_screen.dart';
 import 'package:final_project/ui/screens/phone_screens/favourite_screen.dart';
+import 'package:final_project/ui/screens/phone_screens/for_gpt.dart';
 import 'package:final_project/ui/screens/phone_screens/history_screen.dart';
 import 'package:final_project/ui/screens/phone_screens/home_screen.dart';
 import 'package:final_project/ui/screens/phone_screens/onboarding_screen.dart';
@@ -41,13 +42,11 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: lightTheme,
       darkTheme: DarkTheme,
-      home: const HomeScreen(),
+      home: const ForGpt(),
     );
-
   }
 }
