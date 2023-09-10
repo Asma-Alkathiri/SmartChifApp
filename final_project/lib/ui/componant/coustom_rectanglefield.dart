@@ -13,7 +13,7 @@ class RectangleTextNumberField extends StatelessWidget {
     this.num5Controller,
     this.num6Controller,
     this.height = 58,
-    this.width = 45,
+    this.width = 40,
   });
   final TextEditingController? num1Controller;
   final TextEditingController? num2Controller;

@@ -39,33 +39,31 @@ class ComponentBottomSheet extends StatelessWidget {
                 },
               ),
               kVSpace64,
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: Row(
-                  children: [
-                    kHSpace8,
-                    OrangeButton(
-                      height: 45,
-                      width: 165,
-                      title: " RESET",
-                      onPressed: () {},
-                    ),
-                    kHSpace16,
-                    OrangeButton(
-                      height: 45,
-                      width: 165,
-                      title: " APPLY",
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const SuggestionsScreen(),
-                          ),
-                        );
-                      },
-                    ),
-                  ],
-                ),
+              Row(
+                children: [
+                  kHSpace8,
+                  OrangeButton(
+                    height: 45,
+                    width: 150,
+                    title: " RESET",
+                    onPressed: () {},
+                  ),
+                  kHSpace16,
+                  OrangeButton(
+                    height: 45,
+                    width: 150,
+                    title: " APPLY",
+                    onPressed: () {
+                      Navigator.pop(context);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const SuggestionsScreen(),
+                        ),
+                      );
+                    },
+                  ),
+                ],
               ),
             ],
           ),

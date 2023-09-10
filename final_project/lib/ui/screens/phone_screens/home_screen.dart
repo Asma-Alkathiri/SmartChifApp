@@ -3,6 +3,7 @@ import 'package:final_project/ui/componant/app_scaffold.dart';
 import 'package:final_project/ui/componant/small_card.dart';
 import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:final_project/ui/screens/phone_screens/Account_screen.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
@@ -25,48 +26,51 @@ class HomeScreen extends StatelessWidget {
       },
       body: SafeArea(
         top: false,
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              kVSpace16,
-              const HomeContainer(),
-              kVSpace16,
-              Padding(
+        child: Column(
+          children: [
+            kVSpace24,
+            const HomeContainer(),
+            kVSpace16,
+            Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
-                child:
-                    // Column(
-                    //   crossAxisAlignment: CrossAxisAlignment.start,
-                    //   children: [
-                    //     const SizedBox(
-                    //       height: 95,
-                    //       width: 155,
-                    //       child: Text(
-                    //         "Suggestion Suggestion",
-                    //         style: TextStyle(
-                    //             color: blackColor,
-                    //             fontSize: 30,
-                    //             fontWeight: FontWeight.w400),
-                    //       ),
-                    //     ),
-                    MasonryGridView.builder(
-                  shrinkWrap: true,
-                  itemCount: 4,
-                  gridDelegate:
-                      const SliverSimpleGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
+                child: SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.52,
+                  child: const SingleChildScrollView(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Column(
+                          children: [
+                            kVSpace16,
+                            SizedBox(
+                              width: 155,
+                              height: 80,
+                              child: Text(
+                                "Meal Suggestions",
+                                style: TextStyle(
+                                    fontSize: 26, fontWeight: FontWeight.w500),
+                              ),
+                            ),
+                            kVSpace16,
+                            SmallCard(),
+                            kVSpace16,
+                            SmallCard(),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            kVSpace24,
+                            SmallCard(),
+                            kVSpace16,
+                            SmallCard(),
+                          ],
+                        )
+                      ],
+                    ),
                   ),
-                  itemBuilder: (context, index) {
-                    return const Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Center(child: SmallCard()),
-                    );
-                  },
-                ),
-                //   ],
-                // ),
-              ),
-            ],
-          ),
+                )),
+          ],
         ),
       ),
     );

@@ -33,7 +33,7 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: lightTheme,
       darkTheme: DarkTheme,
-      home: const HomeScreen(),
+      home: const WelcomeScreen(),
     );
   }
 }

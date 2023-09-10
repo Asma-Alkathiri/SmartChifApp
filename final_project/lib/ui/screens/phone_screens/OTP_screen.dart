@@ -26,7 +26,6 @@ class OTPScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
-
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -51,18 +50,6 @@ class OTPScreen extends StatelessWidget {
                       num5Controller: num5Controller,
                       num6Controller: num6Controller),
                   kVSpace64,
-                  // kVSpace16,
-                  // TextWithTextButton(
-                  //   buttonTitle: 'Please resend',
-                  //   textColor: Theme.of(context).colorScheme.primary,
-                  //   text: 'I don’t recevie a code!',
-                  //   onTap: () async {
-                  //     await SupabaseInitializer()
-                  //         .supabaseClient
-                  //         .auth
-                  //         .resend(type: OtpType.signup, email: userEmail);
-                  //   },
-                  // ),
                   kVSpace16,
                   OrangeButton(
                     title: "Verfy",
@@ -95,7 +82,6 @@ class OTPScreen extends StatelessWidget {
             ),
           ],
         ),
-
       ),
     );
   }
