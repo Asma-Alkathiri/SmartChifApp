@@ -38,7 +38,7 @@ class TabletHomeScreen extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: GridView.builder(
                   shrinkWrap: true,
-                  itemCount: 12,
+                  itemCount: 4,
                   itemBuilder: (context, index) {
                     return const Center(child: SmallCard());
                   },

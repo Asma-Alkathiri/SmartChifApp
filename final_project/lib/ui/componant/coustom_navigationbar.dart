@@ -1,3 +1,5 @@
+import 'package:final_project/ui/constants/custom_colors.dart';
+
 import 'package:final_project/ui/screens/phone_screens/Account_screen.dart';
 import 'package:final_project/ui/screens/phone_screens/favourite_screen.dart';
 import 'package:final_project/ui/screens/phone_screens/home_screen.dart';
@@ -14,7 +16,8 @@ class _NavigationBar1State extends State<NavigationBar1> {
   final List screens = [
     const HomeScreen(),
     const FavouriteScreen(),
-    // const Account(),
+    const AccountScreen(),
+
   ];
 
   int selectedIndex = 0;
@@ -23,21 +26,25 @@ class _NavigationBar1State extends State<NavigationBar1> {
     return Scaffold(
       body: screens.elementAt(selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
-        items: [
+        selectedItemColor: orangeColor,
+        unselectedItemColor: lightGrayColor,
+        items: const [
           BottomNavigationBarItem(
-              icon: Image.asset('assets/Group 17444.png'), label: "Home"),
+            icon: Icon(Icons.home),
+            label: "Home",
+          ),
           BottomNavigationBarItem(
-              icon: Image.asset('assets/Group 17440.png'), label: "Profile"),
-          BottomNavigationBarItem(
-              icon: Image.asset('assets/Group 17445.png'), label: "Profile"),
+              icon: Icon(Icons.favorite), label: "Favorite"),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
+
           // BottomNavigationBarItem(
           //     icon: Image.asset('assets/Group 18073.png'), label: "Profile"),
           // BottomNavigationBarItem(
           //     icon: Image.asset('assets/Group 17443.png'), label: "Profile"),
         ],
         currentIndex: selectedIndex,
-        selectedItemColor: Colors.green,
-        backgroundColor: Colors.grey[200],
+        backgroundColor: whiteColor,
+
         showSelectedLabels: false,
         showUnselectedLabels: false,
         onTap: (index) {

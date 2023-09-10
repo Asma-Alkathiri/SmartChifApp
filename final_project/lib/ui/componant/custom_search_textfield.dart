@@ -1,3 +1,4 @@
+import 'package:final_project/ui/constants/custom_colors.dart';
 import 'package:flutter/material.dart';
 
 class SearchTextField extends StatelessWidget {
@@ -20,7 +21,7 @@ class SearchTextField extends StatelessWidget {
               filled: true,
               focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
-                  borderSide: const BorderSide(color: Color(0xffFE724C))),
+                  borderSide: const BorderSide(color: orangeColor)),
               //   enabled: false,
               border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
