@@ -14,7 +14,9 @@ class _NavigationBar1State extends State<NavigationBar1> {
   final List screens = [
     const HomeScreen(),
     const FavouriteScreen(),
+
     const AccountScreen(),
+
   ];
 
   int selectedIndex = 0;
