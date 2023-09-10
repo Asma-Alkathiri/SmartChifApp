@@ -13,14 +13,18 @@ class AccountAppBar extends StatelessWidget {
           alignment: Alignment.topRight,
           child: Image.asset(
             "assets/Vector-5.png",
+
             width: 200,
+
           ),
         ),
         Align(
           alignment: Alignment.topLeft,
           child: Image.asset(
             "assets/Component 1.png",
+
             width: 180,
+
           ),
         ),
       ],
