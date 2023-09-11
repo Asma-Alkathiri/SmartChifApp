@@ -8,8 +8,8 @@ class LogOutButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 117,
-      height: 43,
+      width: 130,
+      height: 40,
       decoration: BoxDecoration(
         color: const Color(0xffFE724C),
         borderRadius: BorderRadius.circular(28.5),
@@ -19,7 +19,7 @@ class LogOutButton extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: Row(
             children: [
-              Image.asset("assets/image/Group 18072.png"),
+              Image.asset("assets/Group 18072.png"),
               const SizedBox(
                 width: 5,
               ),

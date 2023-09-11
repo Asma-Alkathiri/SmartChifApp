@@ -5,6 +5,7 @@ import 'package:final_project/service/supabase_initializer.dart';
 import 'package:final_project/theme/dark_theme.dart';
 import 'package:final_project/theme/light_theme.dart';
 import 'package:final_project/ui/screens/phone_screens/authentication_screen.dart';
+import 'package:final_project/ui/screens/phone_screens/onboarding_screen.dart';
 
 import 'package:final_project/ui/screens/tablet_screens/screens/tablet_navigationBar.dart';
 
@@ -42,7 +43,7 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: lightTheme,
       darkTheme: DarkTheme,
-      home: const AuthenticationScreen(),
+      home: const OnboardingScreen(),
     );
   }
 }
