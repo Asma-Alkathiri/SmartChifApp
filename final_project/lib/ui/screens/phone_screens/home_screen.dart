@@ -1,3 +1,4 @@
+import 'package:final_project/service/supabase_initializer.dart';
 import 'package:final_project/ui/componant/home_container.dart';
 import 'package:final_project/ui/componant/app_scaffold.dart';
 import 'package:final_project/ui/componant/small_card.dart';
