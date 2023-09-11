@@ -25,11 +25,11 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   bool isDark = false;
+  late Icon icon;
 
-  Icon icon = const Icon(Icons.sunny);
   @override
   void initState() {
-    // TODO: implement initState
+    icon = const Icon(Icons.sunny);
     super.initState();
     SupabaseIngredient().getIngredientbyType("Vegetable");
     SupabaseIngredient().getIngredientbyType("Fruit");
@@ -107,14 +107,24 @@ class _HomeScreenState extends State<HomeScreen> {
                 onTap: () {},
               ),
               kVSpace64,
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 12),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.all(8.0),
                       child: LogOutButton(),
-                    )
+                    ),
+                    IconButton(
+                        onPressed: () {
+                          isDark = !isDark;
+                          isDark
+                              ? icon = const Icon(Icons.sunny)
+                              : icon = const Icon(Icons.nightlight);
+                          setState(() {});
+                        },
+                        icon: icon)
                   ],
                 ),
               )
