@@ -61,7 +61,9 @@ class ErrorContainer extends StatelessWidget {
             kVSpace32,
             OrangeButton(
               title: buttonTitle,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pop(context);
+              },
               height: 49,
               width: 230,
             )
