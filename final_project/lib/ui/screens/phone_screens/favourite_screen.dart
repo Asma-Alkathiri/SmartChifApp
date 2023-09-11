@@ -1,5 +1,6 @@
 import 'package:final_project/service/supabase_users.dart';
 import 'package:final_project/ui/componant/app_scaffold.dart';
+import 'package:final_project/ui/componant/image_profile_containar.dart';
 import 'package:final_project/ui/componant/small_card.dart';
 import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:flutter/material.dart';
@@ -14,8 +15,26 @@ class FavouriteScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppScaffold(
-      appBarTitle: "Favourite",
+    return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.background,
+      appBar: AppBar(
+        title: Text(
+          "favourite",
+          style: TextStyle(color: Theme.of(context).colorScheme.primary),
+        ),
+        backgroundColor: Theme.of(context).colorScheme.background,
+        elevation: 0,
+        actions: const [
+          Padding(
+            padding: EdgeInsets.only(right: 12, top: 12),
+            child: Center(
+                child: ImageProfileContainar(
+                    // onPressed: onPressedProfile,
+                    )),
+          ),
+        ],
+      ),
+      // appBarTitle: "Favourite",
       body: SingleChildScrollView(
         child: Column(
           children: [
