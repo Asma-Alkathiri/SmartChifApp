@@ -15,7 +15,7 @@ class SupabaseUser {
     return usersList;
   }
 
-  getUserNmae() async {
+  Future<UserModel> getUserNmae() async {
     final rawData = await SupabaseInitializer()
         .supabaseClient
         .from('user')
@@ -23,11 +23,15 @@ class SupabaseUser {
         .eq('id',
             SupabaseInitializer().supabaseClient.auth.currentSession!.user.id);
 
-    UserModel.fromJson(rawData);
-
-    return rawData;
+    final UserModel user = UserModel.fromJson(rawData[0]);
+  
+    return user;
   }
 }
+
+
+
+
 
 // Future<List<City>?> getCites() async {
 //   final rawCities = await supabase.from('City').select('id, name,img_url');

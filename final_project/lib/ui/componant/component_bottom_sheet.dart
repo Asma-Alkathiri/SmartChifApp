@@ -25,17 +25,23 @@ class ComponentBottomSheet extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: whiteColor,
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              kVSpace16,
-              Text(
-                "Vegetable",
-                style: const TextStyle(fontSize: 18),
-              ),
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            kVSpace16,
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.35,
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      "Vegetable",
+                      style: TextStyle(fontSize: 18),
+                    ),
+       
               kVSpace16,
               GridView.builder(
                 shrinkWrap: true,
@@ -134,8 +140,14 @@ class ComponentBottomSheet extends StatelessWidget {
                       child: ComponentContainer(ingredient: dairyList[index]));
                 },
               ),
-              kVSpace64,
-              Row(
+    
+              
+
+            kVSpace24,
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Row(
+
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   kHSpace8,
@@ -162,8 +174,8 @@ class ComponentBottomSheet extends StatelessWidget {
                   ),
                 ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

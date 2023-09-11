@@ -23,13 +23,8 @@ class AppScaffold extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.background,
         elevation: 0,
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 12, top: 12),
-          child: Center(
-            child: BackIconContainar(
-              onPressed: onPressedBackIcon,
-            ),
-          ),
+        leading: const Padding(
+          padding: EdgeInsets.only(left: 12, top: 12),
         ),
         title: Center(
           child: Text(
