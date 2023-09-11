@@ -40,10 +40,13 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: lightTheme,
-      darkTheme: DarkTheme,
-      home: AccountScreen(),
-    );
+
+        debugShowCheckedModeBanner: false,
+        theme: lightTheme,
+        darkTheme: DarkTheme,
+        home: const AuthenticationScreen()
+        // const NavigationBar1(),
+        );
+
   }
 }

@@ -16,6 +16,7 @@ dependencies:
   lottie: ^2.6.0
   smooth_page_indicator: ^1.1.0
   supabase_flutter: ^1.10.14
+  cached_network_image: ^3.2.3
 
 dev_dependencies:
   flutter_test:
