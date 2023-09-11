@@ -121,7 +121,7 @@ class HomeScreen extends StatelessWidget {
             Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 28),
                 child: SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.45,
+                  height: MediaQuery.of(context).size.height * 0.50,
                   child: const SingleChildScrollView(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,

@@ -18,13 +18,13 @@ class Page1 extends StatelessWidget {
             Center(
               child: Lottie.network(
                   "https://lottie.host/956c8e87-98a6-40e5-aef3-3c64bc277a97/MMD3NkQhgF.json",
-                  height: 200),
+                  height: 400),
             ),
             kVSpace24,
             const Center(
               child: Text(
                 "Browse your menu and order directly",
-                style: TextStyle(fontSize: 30),
+                style: TextStyle(fontSize: 38),
                 textAlign: TextAlign.center,
               ),
             ),

@@ -34,8 +34,6 @@ class _ComponentContainerState extends State<ComponentContainer> {
       },
       onSecondaryTap: () {},
       child: Container(
-        // height: 40,
-        // width: 110,
         padding: const EdgeInsets.all(5),
         decoration: BoxDecoration(
             color: isSelected ? orangeColor : whiteColor,
