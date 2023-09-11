@@ -3,7 +3,6 @@ import 'package:final_project/service/supabase_initializer.dart';
 import 'package:final_project/service/supabase_users.dart';
 import 'package:final_project/ui/componant/custom_Account_Appbar.dart';
 import 'package:final_project/ui/componant/orange_button.dart';
-import 'package:final_project/ui/componant/text_field.dart';
 import 'package:final_project/ui/constants/custom_colors.dart';
 import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:flutter/material.dart';

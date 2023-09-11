@@ -6,7 +6,6 @@ import 'package:final_project/ui/componant/custom_Auth_Appbar.dart';
 import 'package:final_project/ui/componant/orange_button.dart';
 import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:final_project/ui/screens/phone_screens/authentication_screen.dart';
-import 'package:final_project/ui/screens/phone_screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 

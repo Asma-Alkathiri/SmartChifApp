@@ -4,7 +4,6 @@ import 'package:final_project/ui/constants/custom_colors.dart';
 import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import '../../models/ingredient_model.dart';
 
 class ComponentContainer extends StatefulWidget {

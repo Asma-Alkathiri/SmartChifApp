@@ -1,7 +1,5 @@
 import 'package:final_project/globals.dart';
-import 'package:final_project/models/dalle_response.dart';
 import 'package:final_project/models/gpt_content.dart';
-import 'package:final_project/service/gpt/dalle_service.dart';
 import 'package:final_project/service/gpt/gpt_service.dart';
 import 'package:final_project/ui/componant/custom_Auth_Appbar.dart';
 import 'package:final_project/ui/componant/orange_button.dart';

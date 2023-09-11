@@ -4,7 +4,6 @@ import 'package:final_project/ui/constants/custom_colors.dart';
 import 'package:final_project/ui/screens/phone_screens/Onboarding_Page/Page1.dart';
 import 'package:final_project/ui/screens/phone_screens/Onboarding_Page/Page2.dart';
 import 'package:final_project/ui/screens/phone_screens/Onboarding_Page/Page3.dart';
-import 'package:final_project/ui/screens/phone_screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 

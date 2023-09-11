@@ -9,7 +9,6 @@ import 'package:final_project/ui/componant/text_field.dart';
 import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:final_project/ui/screens/phone_screens/OTP_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
