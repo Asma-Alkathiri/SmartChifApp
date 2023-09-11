@@ -1,4 +1,8 @@
+
 import 'package:final_project/ui/componant/custom_logout_button.dart';
+
+import 'package:final_project/service/supabase_initializer.dart';
+
 import 'package:final_project/ui/componant/home_container.dart';
 import 'package:final_project/ui/componant/app_scaffold.dart';
 import 'package:final_project/ui/componant/image_profile_containar.dart';
@@ -15,6 +19,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
@@ -28,6 +33,7 @@ class HomeScreen extends StatelessWidget {
                 child: ImageProfileContainar(
                     // onPressed: onPressedProfile,
                     )),
+
           ),
         ],
       ),
@@ -102,7 +108,7 @@ class HomeScreen extends StatelessWidget {
             const HomeContainer(),
             kVSpace16,
             Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24),
+                padding: const EdgeInsets.symmetric(horizontal: 28),
                 child: SizedBox(
                   height: MediaQuery.of(context).size.height * 0.45,
                   child: const SingleChildScrollView(
@@ -114,12 +120,14 @@ class HomeScreen extends StatelessWidget {
                           children: [
                             kVSpace16,
                             SizedBox(
-                              width: 165,
+
+                              width: 170,
+
                               height: 80,
                               child: Text(
                                 "Meal Suggestions",
                                 style: TextStyle(
-                                    fontSize: 26, fontWeight: FontWeight.w500),
+                                    fontSize: 24, fontWeight: FontWeight.w500),
                               ),
                             ),
                             kVSpace16,

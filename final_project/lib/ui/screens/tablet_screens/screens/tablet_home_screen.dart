@@ -18,7 +18,7 @@ class TabletHomeScreen extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => const AccountScreen(),
+            builder: (context) => AccountScreen(),
           ),
         );
       },

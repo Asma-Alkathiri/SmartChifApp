@@ -6,6 +6,8 @@ import 'package:final_project/ui/screens/phone_screens/Suggestions_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../service/supabase_ingredient_service.dart';
+
 class ComponentBottomSheet extends StatelessWidget {
   const ComponentBottomSheet({super.key, this.category = "Vegetables"});
   final String category;
@@ -16,30 +18,164 @@ class ComponentBottomSheet extends StatelessWidget {
       backgroundColor: whiteColor,
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(24),
+          padding: const EdgeInsets.all(20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               kVSpace16,
               Text(
-                category,
+                "Vegetable",
                 style: const TextStyle(fontSize: 18),
               ),
               kVSpace16,
-              GridView.builder(
-                shrinkWrap: true,
-                itemCount: 5,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 3,
-                    crossAxisSpacing: 16,
-                    mainAxisExtent: 40,
-                    mainAxisSpacing: 16),
-                itemBuilder: (context, index) {
-                  return const Center(child: ComponentContainer());
-                },
+              FutureBuilder(
+                  future: SupabaseIngredient().getIngredientbyType('Vegetable'),
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      final ingredient = snapshot.data!;
+                      return GridView.builder(
+                        shrinkWrap: true,
+                        primary: false,
+                        itemCount: ingredient.length,
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 3,
+                                crossAxisSpacing: 16,
+                                mainAxisExtent: 40,
+                                mainAxisSpacing: 20),
+                        itemBuilder: (context, index) {
+                          return Center(
+                              child: ComponentContainer(
+                                  ingredient: ingredient[index]));
+                        },
+                      );
+                    }
+                    return const SizedBox.shrink();
+                  }),
+              kVSpace16,
+              Text(
+                "Fruit",
+                style: const TextStyle(fontSize: 18),
               ),
+              kVSpace16,
+              FutureBuilder(
+                  future: SupabaseIngredient().getIngredientbyType('Fruit'),
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      final ingredient = snapshot.data!;
+                      return GridView.builder(
+                        shrinkWrap: true,
+                        primary: false,
+                        itemCount: ingredient.length,
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 3,
+                                crossAxisSpacing: 16,
+                                mainAxisExtent: 40,
+                                mainAxisSpacing: 20),
+                        itemBuilder: (context, index) {
+                          return Center(
+                              child: ComponentContainer(
+                                  ingredient: ingredient[index]));
+                        },
+                      );
+                    }
+                    return const SizedBox.shrink();
+                  }),
+              kVSpace16,
+              Text(
+                "Protein",
+                style: const TextStyle(fontSize: 18),
+              ),
+              kVSpace16,
+              FutureBuilder(
+                  future: SupabaseIngredient().getIngredientbyType('Protein'),
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      final ingredient = snapshot.data!;
+                      return GridView.builder(
+                        shrinkWrap: true,
+                        primary: false,
+                        itemCount: ingredient.length,
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 3,
+                                crossAxisSpacing: 16,
+                                mainAxisExtent: 40,
+                                mainAxisSpacing: 20),
+                        itemBuilder: (context, index) {
+                          return Center(
+                              child: ComponentContainer(
+                                  ingredient: ingredient[index]));
+                        },
+                      );
+                    }
+                    return const SizedBox.shrink();
+                  }),
+              kVSpace16,
+              Text(
+                "Carbohydrate",
+                style: const TextStyle(fontSize: 18),
+              ),
+              kVSpace16,
+              FutureBuilder(
+                  future:
+                      SupabaseIngredient().getIngredientbyType('Carbohydrate'),
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      final ingredient = snapshot.data!;
+                      return GridView.builder(
+                        shrinkWrap: true,
+                        primary: false,
+                        itemCount: ingredient.length,
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 3,
+                                crossAxisSpacing: 16,
+                                mainAxisExtent: 40,
+                                mainAxisSpacing: 20),
+                        itemBuilder: (context, index) {
+                          return Center(
+                              child: ComponentContainer(
+                                  ingredient: ingredient[index]));
+                        },
+                      );
+                    }
+                    return const SizedBox.shrink();
+                  }),
+              kVSpace16,
+              Text(
+                "Dairy",
+                style: const TextStyle(fontSize: 18),
+              ),
+              kVSpace16,
+              FutureBuilder(
+                  future: SupabaseIngredient().getIngredientbyType('Dairy'),
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      final ingredient = snapshot.data!;
+                      return GridView.builder(
+                        shrinkWrap: true,
+                        primary: false,
+                        itemCount: ingredient.length,
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 3,
+                                crossAxisSpacing: 16,
+                                mainAxisExtent: 40,
+                                mainAxisSpacing: 20),
+                        itemBuilder: (context, index) {
+                          return Center(
+                              child: ComponentContainer(
+                                  ingredient: ingredient[index]));
+                        },
+                      );
+                    }
+                    return const SizedBox.shrink();
+                  }),
               kVSpace64,
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   kHSpace8,
                   OrangeButton(

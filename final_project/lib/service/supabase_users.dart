@@ -1,4 +1,6 @@
+import 'package:final_project/models/user_model.dart';
 import 'package:final_project/service/supabase_initializer.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 // we need to be sure if we need more functions
 
@@ -12,4 +14,38 @@ class SupabaseUser {
     }
     return usersList;
   }
+
+  Future<UserModel> getUserNmae() async {
+    final rawData = await SupabaseInitializer()
+        .supabaseClient
+        .from('user')
+        .select()
+        .eq('id',
+            SupabaseInitializer().supabaseClient.auth.currentSession!.user.id);
+
+    final UserModel user = UserModel.fromJson(rawData[0]);
+  
+    return user;
+  }
 }
+
+
+
+
+
+// Future<List<City>?> getCites() async {
+//   final rawCities = await supabase.from('City').select('id, name,img_url');
+//   final List<City> cities = [];
+//   for (final city in rawCities) {
+//     cities.add(City.fromJson(city));
+//   }
+//   return cities;
+// }
+
+// final User username = SupabaseInitializer()
+//     .supabaseClient
+//     .from('history')
+//     .select()
+//     .eq('id',
+//         SupabaseInitializer().supabaseClient.auth.currentSession!.user.id);
+//   print(username);
