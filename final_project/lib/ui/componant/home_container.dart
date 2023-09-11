@@ -45,7 +45,7 @@ class HomeContainer extends StatelessWidget {
                   shape: const RoundedRectangleBorder(
                       borderRadius:
                           BorderRadius.vertical(top: Radius.circular(30))),
-                  builder: (context) => const ComponentBottomSheet());
+                  builder: (context) => ComponentBottomSheet());
             },
           ),
         ],

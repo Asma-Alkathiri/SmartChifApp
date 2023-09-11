@@ -38,7 +38,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             ],
           ),
           Container(
-            alignment: const Alignment(0, 3),
+            alignment: const Alignment(0, 0),
             child: SmoothPageIndicator(
               controller: _controller,
               onDotClicked: (index) {
