@@ -34,8 +34,9 @@ class _ComponentContainerState extends State<ComponentContainer> {
       },
       onSecondaryTap: () {},
       child: Container(
-        height: 40,
-        width: 110,
+        // height: 40,
+        // width: 110,
+        padding: const EdgeInsets.all(5),
         decoration: BoxDecoration(
             color: isSelected ? orangeColor : whiteColor,
             borderRadius: BorderRadius.circular(50),
@@ -47,30 +48,24 @@ class _ComponentContainerState extends State<ComponentContainer> {
                 offset: const Offset(0, 3),
               ),
             ]),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 4),
-          child: Row(
-            children: [
-              SizedBox(
-                height: 29,
-                width: 30,
-                child: ClipRRect(
-                  borderRadius: const BorderRadius.all(
-                    Radius.circular(100),
-                  ),
-                  child: Image.network(widget.ingredient.ingrImg!),
-                  //  Image(
-                  //       image:
-                  //           CachedNetworkImageProvider(ingredient.ingrImg!)
-                ),
-              ),
-              kHSpace4,
-              Text(
-                widget.ingredient.name!,
-                style: TextStyle(fontSize: 10),
-              ),
-            ],
-          ),
+        child: Row(
+          children: [
+            SizedBox(
+              height: 29,
+              width: 29,
+
+              child: Image.network(widget.ingredient.ingrImg!),
+              //  Image(
+              //       image:
+              //           CachedNetworkImageProvider(ingredient.ingrImg!)
+              //   ),
+            ),
+            kHSpace4,
+            Text(
+              widget.ingredient.name!,
+              style: const TextStyle(fontSize: 12),
+            ),
+          ],
         ),
       ),
     );

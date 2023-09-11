@@ -1,4 +1,3 @@
-
 import 'package:final_project/ui/componant/custom_logout_button.dart';
 
 import 'package:final_project/service/supabase_initializer.dart';
@@ -7,6 +6,7 @@ import 'package:final_project/ui/componant/home_container.dart';
 import 'package:final_project/ui/componant/app_scaffold.dart';
 import 'package:final_project/ui/componant/image_profile_containar.dart';
 import 'package:final_project/ui/componant/small_card.dart';
+import 'package:final_project/ui/constants/custom_colors.dart';
 import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:final_project/ui/screens/phone_screens/Account_screen.dart';
 import 'package:flutter/gestures.dart';
@@ -19,7 +19,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
@@ -33,22 +32,22 @@ class HomeScreen extends StatelessWidget {
                 child: ImageProfileContainar(
                     // onPressed: onPressedProfile,
                     )),
-
           ),
         ],
       ),
       drawer: Drawer(
         backgroundColor: Theme.of(context).colorScheme.background,
-        child: Container(
+        child: SizedBox(
           child: ListView(
             children: [
               const DrawerHeader(
                 child: Column(
                   children: [
+                    kVSpace24,
                     CircleAvatar(
                       backgroundImage: NetworkImage(
                           'https://images.pexels.com/photos/14019743/pexels-photo-14019743.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'),
-                      radius: 50,
+                      radius: 40,
                     ),
                     SizedBox(
                       height: 10,
@@ -57,34 +56,46 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              kVSpace24,
+              kVSpace64,
               ListTile(
-                leading: const Icon(Icons.home),
+                leading: const Icon(
+                  Icons.person,
+                  color: grayColor,
+                ),
+                title: const Text(
+                  "Profile",
+                ),
+                onTap: () {},
+              ),
+              kVSpace16,
+              ListTile(
+                leading: const Icon(
+                  Icons.home,
+                  color: grayColor,
+                ),
                 title: const Text("Home"),
                 onTap: () {},
               ),
               kVSpace16,
               ListTile(
-                leading: const Icon(Icons.home),
-                title: const Text("Home"),
+                leading: const Icon(
+                  Icons.favorite,
+                  color: grayColor,
+                ),
+                title: const Text("Favorite"),
                 onTap: () {},
               ),
-              kVSpace16,
-              ListTile(
-                leading: const Icon(Icons.home),
-                title: const Text("Home"),
-                onTap: () {},
-              ),
-              const SizedBox(
-                height: 50,
-              ),
-              const Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: LogOutButton(),
-                  )
-                ],
+              kVSpace64,
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 12),
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: LogOutButton(),
+                    )
+                  ],
+                ),
               )
             ],
           ),
@@ -120,9 +131,7 @@ class HomeScreen extends StatelessWidget {
                           children: [
                             kVSpace16,
                             SizedBox(
-
                               width: 170,
-
                               height: 80,
                               child: Text(
                                 "Meal Suggestions",
