@@ -1,6 +1,5 @@
 import 'package:final_project/models/user_model.dart';
 import 'package:final_project/service/supabase_initializer.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 
 // we need to be sure if we need more functions
 

@@ -1,18 +1,16 @@
+import 'package:final_project/cubit/theme_cubit.dart';
 import 'package:final_project/ui/componant/custom_logout_button.dart';
 
-import 'package:final_project/service/supabase_initializer.dart';
 
 import 'package:final_project/ui/componant/home_container.dart';
-import 'package:final_project/ui/componant/app_scaffold.dart';
 import 'package:final_project/ui/componant/image_profile_containar.dart';
 import 'package:final_project/ui/componant/small_card.dart';
 import 'package:final_project/ui/constants/custom_colors.dart';
 import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:final_project/ui/screens/phone_screens/Account_screen.dart';
 import 'package:final_project/ui/screens/phone_screens/favourite_screen.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../service/supabase_ingredient_service.dart';
 
@@ -25,9 +23,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  bool isDark = false;
+  late Icon icon;
+
   @override
   void initState() {
-    // TODO: implement initState
+    icon = const Icon(Icons.sunny);
     super.initState();
     SupabaseIngredient().getIngredientbyType("Vegetable");
     SupabaseIngredient().getIngredientbyType("Fruit");
@@ -124,14 +125,28 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
               ),
               kVSpace64,
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 12),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.all(8.0),
                       child: LogOutButton(),
-                    )
+                    ),
+                    IconButton(
+                        onPressed: () {
+                          isDark = !isDark;
+                          final theme = context.read<ThemeCubit>();
+                          isDark
+                              ? icon = const Icon(Icons.sunny)
+                              : icon = const Icon(Icons.nightlight);
+                          isDark
+                              ? theme.changeTheme("Dark")
+                              : theme.changeTheme("Light");
+                          setState(() {});
+                        },
+                        icon: icon)
                   ],
                 ),
               )

@@ -63,7 +63,7 @@ class _TabletOnboardingScreenState extends State<TabletOnboardingScreen> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const HomeScreen()));
+                              builder: (context) => HomeScreen()));
                     },
                   ),
                 )

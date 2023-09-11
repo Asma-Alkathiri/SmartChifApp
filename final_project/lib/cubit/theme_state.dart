@@ -2,12 +2,11 @@ part of 'theme_cubit.dart';
 
 @immutable
 class ThemeState {
-  final ThemeData theme;
+  final ThemeData customTheme;
 
-  ThemeState(this.theme);
-  
+  const ThemeState(this.customTheme);
 }
 
 final class ThemeInitial extends ThemeState {
-    ThemeInitial(super.theme);
+  const ThemeInitial(super.customTheme);
 }
