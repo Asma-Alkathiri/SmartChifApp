@@ -92,7 +92,7 @@ class _SignInScreenState extends State<SignInScreen> {
                         return showDialog(
                             context: context,
                             builder: (context) {
-                              return ErrorContainer();
+                              return  Center(child: ErrorContainer(onPressed: (){},));
                             });
                       }
                       if (emailController.text.isNotEmpty &&

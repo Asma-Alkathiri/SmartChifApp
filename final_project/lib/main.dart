@@ -5,6 +5,7 @@ import 'package:final_project/globals.dart';
 import 'package:final_project/service/supabase_initializer.dart';
 import 'package:final_project/theme/dark_theme.dart';
 import 'package:final_project/theme/light_theme.dart';
+import 'package:final_project/ui/screens/phone_screens/intro_screen.dart';
 import 'package:final_project/ui/screens/phone_screens/onboarding_screen.dart';
 
 import 'package:final_project/ui/componant/coustom_navigationbar.dart';
@@ -45,13 +46,11 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
-        debugShowCheckedModeBanner: false,
-        theme: lightTheme,
-        darkTheme: DarkTheme,
-        home: const AuthenticationScreen()
-        // const NavigationBar1(),
-        );
-
+      debugShowCheckedModeBanner: false,
+      theme: lightTheme,
+      darkTheme: DarkTheme,
+      home: const OnboardingScreen(),
+      // const NavigationBar1(),
+    );
   }
 }

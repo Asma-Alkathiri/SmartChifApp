@@ -18,6 +18,9 @@ dependencies:
   supabase_flutter: ^1.10.14
   cached_network_image: ^3.2.3
   get_storage: ^2.1.1  
+  typing_animation: ^0.0.1
+  flutter_typist: ^1.0.12
+  animated_typing: ^0.2.1
 
 dev_dependencies:
   flutter_test:

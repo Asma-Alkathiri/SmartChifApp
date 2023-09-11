@@ -5,6 +5,7 @@ import 'package:final_project/ui/screens/phone_screens/Onboarding_Page/Page1.dar
 import 'package:final_project/ui/screens/phone_screens/Onboarding_Page/Page2.dart';
 import 'package:final_project/ui/screens/phone_screens/Onboarding_Page/Page3.dart';
 import 'package:final_project/ui/screens/phone_screens/home_screen.dart';
+import 'package:final_project/ui/screens/phone_screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -66,7 +67,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const NavigationBar1(),
+                          builder: (context) => const WelcomeScreen(),
                         ),
                       );
                     },
