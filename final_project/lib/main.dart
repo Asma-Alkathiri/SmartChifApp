@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:final_project/firebase_options.dart';
+import 'package:final_project/globals.dart';
 import 'package:final_project/service/supabase_initializer.dart';
 import 'package:final_project/theme/dark_theme.dart';
 import 'package:final_project/theme/light_theme.dart';
@@ -22,8 +23,10 @@ import 'package:final_project/ui/screens/tablet_screens/screens/tablet_home_scre
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
+import 'package:get_storage/get_storage.dart';
 
 void main() async {
+  await GetStorage.init();
   await SupabaseInitializer.supabaseInitialize();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -42,10 +45,13 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: lightTheme,
-      darkTheme: DarkTheme,
-      home: const OnboardingScreen(),
-    );
+
+        debugShowCheckedModeBanner: false,
+        theme: lightTheme,
+        darkTheme: DarkTheme,
+        home: const AuthenticationScreen()
+        // const NavigationBar1(),
+        );
+
   }
 }

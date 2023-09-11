@@ -1,4 +1,5 @@
 import 'package:final_project/service/supabase_initializer.dart';
+import 'package:get_storage/get_storage.dart';
 
 import '../models/ingredient_model.dart';
 
@@ -13,6 +14,8 @@ class SupabaseIngredient {
     for (final ingredient in rawIngredient) {
       ingredients.add(Ingredient.fromJson(ingredient));
     }
+    final box = GetStorage();
+    box.write(type, ingredients);
     return ingredients;
   }
 }

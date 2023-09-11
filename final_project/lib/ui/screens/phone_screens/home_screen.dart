@@ -13,9 +13,27 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
-class HomeScreen extends StatelessWidget {
+import '../../../service/supabase_ingredient_service.dart';
+
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key, this.onPressed});
   final Function()? onPressed;
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    SupabaseIngredient().getIngredientbyType("Vegetable");
+    SupabaseIngredient().getIngredientbyType("Fruit");
+    SupabaseIngredient().getIngredientbyType("Protein");
+    SupabaseIngredient().getIngredientbyType("Carbohydrate");
+    SupabaseIngredient().getIngredientbyType("Dairy");
+  }
 
   @override
   Widget build(BuildContext context) {
