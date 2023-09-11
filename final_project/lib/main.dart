@@ -10,6 +10,7 @@ import 'package:final_project/ui/screens/phone_screens/Account_screen.dart';
 
 import 'package:final_project/ui/screens/phone_screens/OTP_screen.dart';
 import 'package:final_project/ui/screens/phone_screens/authentication_screen.dart';
+import 'package:final_project/ui/screens/phone_screens/for_gpt.dart';
 import 'package:final_project/ui/screens/phone_screens/home_screen.dart';
 import 'package:final_project/ui/screens/phone_screens/welcome_screen.dart';
 
@@ -40,13 +41,11 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
         debugShowCheckedModeBanner: false,
         theme: lightTheme,
         darkTheme: DarkTheme,
-        home: const AuthenticationScreen()
+        home: AccountScreen()
         // const NavigationBar1(),
         );
-
   }
 }

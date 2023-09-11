@@ -1,5 +1,6 @@
 import 'package:final_project/models/user_model.dart';
 import 'package:final_project/service/supabase_initializer.dart';
+import 'package:final_project/service/supabase_users.dart';
 import 'package:final_project/ui/componant/custom_Account_Appbar.dart';
 import 'package:final_project/ui/componant/orange_button.dart';
 import 'package:final_project/ui/componant/text_field.dart';
@@ -8,23 +9,29 @@ import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-class AccountScreen extends StatelessWidget {
-  AccountScreen({super.key});
+class AccountScreen extends StatefulWidget {
+  const AccountScreen({super.key});
 
-  final name = SupabaseInitializer()
-      .supabaseClient
-      .from('user')
-      .select('name')
-      .eq(
-          'email',
-          SupabaseInitializer()
-              .supabaseClient
-              .auth
-              .currentUser!
-              .id); // we need to fix this
+  @override
+  State<AccountScreen> createState() => _AccountScreenState();
+}
+
+class _AccountScreenState extends State<AccountScreen> {
+  final id = SupabaseInitializer().supabaseClient.auth.currentUser!.id;
+
+  // we need to fix this
   final User? user = SupabaseInitializer().supabaseClient.auth.currentUser;
+
+  late UserModel userData=UserModel();
+
+  getUser() async {
+    userData = await SupabaseUser().getUserNmae();
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
+    getUser();
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       body: SingleChildScrollView(
@@ -50,7 +57,7 @@ class AccountScreen extends StatelessWidget {
                       ),
                       kVSpace8,
                       Text(
-                        '$name',
+                        userData.name != null ? '${userData.name}' : '',
                         style: const TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold),
                       ),

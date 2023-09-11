@@ -1,1 +1,1 @@
-List<String?> ingredientList = [];
+List<String?> ingredientList = ['tomato','rice'];

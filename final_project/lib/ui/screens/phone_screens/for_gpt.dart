@@ -1,3 +1,4 @@
+import 'package:final_project/globals.dart';
 import 'package:final_project/models/dalle_response.dart';
 import 'package:final_project/models/gpt_content.dart';
 import 'package:final_project/service/gpt/dalle_service.dart';
@@ -14,7 +15,7 @@ class ForGpt extends StatefulWidget {
   State<ForGpt> createState() => _ForGptState();
 }
 
-String prompt = 'i only hav rice and tomato';
+String prompt = 'i only have $ingredientList';
 
 class _ForGptState extends State<ForGpt> {
   TextEditingController chatController = TextEditingController();
