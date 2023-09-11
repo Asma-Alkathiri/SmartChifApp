@@ -11,7 +11,17 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 class AccountScreen extends StatelessWidget {
   AccountScreen({super.key});
 
-  final name = SupabaseInitializer().supabaseClient.from('user').select(); // we need to fix this 
+  final name = SupabaseInitializer()
+      .supabaseClient
+      .from('user')
+      .select('name')
+      .eq(
+          'email',
+          SupabaseInitializer()
+              .supabaseClient
+              .auth
+              .currentUser!
+              .id); // we need to fix this
   final User? user = SupabaseInitializer().supabaseClient.auth.currentUser;
   @override
   Widget build(BuildContext context) {

@@ -6,6 +6,7 @@ import 'package:final_project/theme/dark_theme.dart';
 import 'package:final_project/theme/light_theme.dart';
 
 import 'package:final_project/ui/componant/coustom_navigationbar.dart';
+import 'package:final_project/ui/screens/phone_screens/Account_screen.dart';
 
 import 'package:final_project/ui/screens/phone_screens/OTP_screen.dart';
 import 'package:final_project/ui/screens/phone_screens/authentication_screen.dart';
@@ -39,11 +40,13 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
         debugShowCheckedModeBanner: false,
         theme: lightTheme,
         darkTheme: DarkTheme,
         home: const AuthenticationScreen()
         // const NavigationBar1(),
         );
+
   }
 }
