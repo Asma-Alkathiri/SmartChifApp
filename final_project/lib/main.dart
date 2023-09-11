@@ -3,6 +3,18 @@ import 'dart:ui';
 import 'package:final_project/cubit/theme_cubit.dart';
 import 'package:final_project/firebase_options.dart';
 import 'package:final_project/service/supabase_initializer.dart';
+import 'package:final_project/theme/dark_theme.dart';
+import 'package:final_project/theme/light_theme.dart';
+import 'package:final_project/ui/screens/phone_screens/intro_screen.dart';
+import 'package:final_project/ui/screens/phone_screens/onboarding_screen.dart';
+
+import 'package:final_project/ui/componant/coustom_navigationbar.dart';
+import 'package:final_project/ui/screens/phone_screens/Account_screen.dart';
+
+import 'package:final_project/ui/screens/phone_screens/OTP_screen.dart';
+import 'package:final_project/ui/screens/phone_screens/authentication_screen.dart';
+import 'package:final_project/ui/screens/phone_screens/for_gpt.dart';
+
 import 'package:final_project/ui/screens/phone_screens/home_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
@@ -29,6 +41,7 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return BlocProvider(
       create: (context) => ThemeCubit(),
       child: BlocBuilder<ThemeCubit, ThemeState>(
@@ -37,7 +50,7 @@ class MainApp extends StatelessWidget {
               debugShowCheckedModeBanner: false,
               theme: state.customTheme,
               // darkTheme: DarkTheme,
-              home: const HomeScreen()
+              home: const OnboardingScreen(),
               // const NavigationBar1(),
               );
         },
