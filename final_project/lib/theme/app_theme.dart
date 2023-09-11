@@ -1,23 +1,15 @@
+import 'package:final_project/ui/constants/custom_colors.dart';
 import 'package:flutter/material.dart';
 
-Map appTheme = {
+Map customTheme = {
   "Light": ThemeData(
-    backgroundColor: Colors.white,
     brightness: Brightness.light,
-    textTheme: const TextTheme(
-            bodyLarge: TextStyle(),
-            bodyMedium: TextStyle(),
-            bodySmall: TextStyle())
-        .apply(bodyColor: Colors.black),
+    colorScheme:
+        const ColorScheme.light(background: whiteColor, primary: blackColor),
   ),
-
-  "Dart": ThemeData(
-    backgroundColor: Color(0xff2D2D3A),
+  "Dark": ThemeData(
     brightness: Brightness.dark,
-    textTheme: const TextTheme(
-            bodyLarge: TextStyle(),
-            bodyMedium: TextStyle(),
-            bodySmall: TextStyle())
-        .apply(bodyColor: Colors.white),
+    colorScheme: const ColorScheme.dark(
+        background: Color(0xff2D2D3A), primary: Colors.white),
   )
 };

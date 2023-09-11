@@ -6,8 +6,8 @@ import 'package:meta/meta.dart';
 part 'theme_state.dart';
 
 class ThemeCubit extends Cubit<ThemeState> {
-  ThemeCubit() : super(ThemeInitial(appTheme['Light']));
-  ChangeColor(String themKey) {
-    emit(ThemeState(appTheme[themKey]));
+  ThemeCubit() : super(ThemeInitial(customTheme['Light']));
+  changeTheme(String themKey) {
+    emit(ThemeState(customTheme[themKey]));
   }
 }
