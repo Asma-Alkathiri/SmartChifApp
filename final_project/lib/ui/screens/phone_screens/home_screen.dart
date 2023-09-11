@@ -1,4 +1,3 @@
-
 import 'package:final_project/ui/componant/custom_logout_button.dart';
 
 import 'package:final_project/service/supabase_initializer.dart';
@@ -13,13 +12,21 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key, this.onPressed});
   final Function()? onPressed;
 
   @override
-  Widget build(BuildContext context) {
+  State<HomeScreen> createState() => _HomeScreenState();
+}
 
+class _HomeScreenState extends State<HomeScreen> {
+  bool isDark = false;
+
+  Icon icon = const Icon(Icons.sunny);
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
@@ -33,61 +40,67 @@ class HomeScreen extends StatelessWidget {
                 child: ImageProfileContainar(
                     // onPressed: onPressedProfile,
                     )),
-
           ),
         ],
       ),
       drawer: Drawer(
         backgroundColor: Theme.of(context).colorScheme.background,
-        child: Container(
-          child: ListView(
-            children: [
-              const DrawerHeader(
-                child: Column(
-                  children: [
-                    CircleAvatar(
-                      backgroundImage: NetworkImage(
-                          'https://images.pexels.com/photos/14019743/pexels-photo-14019743.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'),
-                      radius: 50,
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Text("data"),
-                  ],
-                ),
-              ),
-              kVSpace24,
-              ListTile(
-                leading: const Icon(Icons.home),
-                title: const Text("Home"),
-                onTap: () {},
-              ),
-              kVSpace16,
-              ListTile(
-                leading: const Icon(Icons.home),
-                title: const Text("Home"),
-                onTap: () {},
-              ),
-              kVSpace16,
-              ListTile(
-                leading: const Icon(Icons.home),
-                title: const Text("Home"),
-                onTap: () {},
-              ),
-              const SizedBox(
-                height: 50,
-              ),
-              const Row(
+        child: ListView(
+          children: [
+            const DrawerHeader(
+              child: Column(
                 children: [
-                  Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: LogOutButton(),
-                  )
+                  CircleAvatar(
+                    backgroundImage: NetworkImage(
+                        'https://images.pexels.com/photos/14019743/pexels-photo-14019743.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'),
+                    radius: 50,
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text("data"),
                 ],
-              )
-            ],
-          ),
+              ),
+            ),
+            kVSpace24,
+            ListTile(
+              leading: const Icon(Icons.home),
+              title: const Text("Home"),
+              onTap: () {},
+            ),
+            kVSpace16,
+            ListTile(
+              leading: const Icon(Icons.home),
+              title: const Text("Home"),
+              onTap: () {},
+            ),
+            kVSpace16,
+            ListTile(
+              leading: const Icon(Icons.home),
+              title: const Text("Home"),
+              onTap: () {},
+            ),
+            const SizedBox(
+              height: 50,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: LogOutButton(),
+                ),
+                IconButton(
+                    onPressed: () {
+                      isDark = !isDark;
+                      isDark
+                          ? icon = const Icon(Icons.sunny)
+                          : icon = const Icon(Icons.night_shelter);
+                    },
+                    icon: icon)
+              ],
+            )
+          ],
         ),
       ),
       // appBarTitle: "Home",
@@ -120,9 +133,7 @@ class HomeScreen extends StatelessWidget {
                           children: [
                             kVSpace16,
                             SizedBox(
-
                               width: 170,
-
                               height: 80,
                               child: Text(
                                 "Meal Suggestions",

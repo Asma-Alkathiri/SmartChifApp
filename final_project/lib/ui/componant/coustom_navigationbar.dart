@@ -14,9 +14,9 @@ class NavigationBar1 extends StatefulWidget {
 
 class _NavigationBar1State extends State<NavigationBar1> {
   final List screens = [
-    const HomeScreen(),
+    HomeScreen(),
     const FavouriteScreen(),
-    AccountScreen(),
+    const AccountScreen(),
   ];
 
   int selectedIndex = 0;
