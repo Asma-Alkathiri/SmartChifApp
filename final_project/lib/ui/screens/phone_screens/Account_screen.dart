@@ -18,11 +18,14 @@ class AccountScreen extends StatefulWidget {
 
 class _AccountScreenState extends State<AccountScreen> {
   final id = SupabaseInitializer().supabaseClient.auth.currentUser!.id;
-
-  // we need to fix this
   final User? user = SupabaseInitializer().supabaseClient.auth.currentUser;
 
-  late UserModel userData=UserModel();
+  late UserModel userData = UserModel();
+  @override
+  void initState() {
+    super.initState();
+    getUser();
+  }
 
   getUser() async {
     userData = await SupabaseUser().getUserNmae();
@@ -31,7 +34,6 @@ class _AccountScreenState extends State<AccountScreen> {
 
   @override
   Widget build(BuildContext context) {
-    getUser();
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       body: SingleChildScrollView(
