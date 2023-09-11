@@ -9,6 +9,7 @@ import 'package:final_project/ui/componant/small_card.dart';
 import 'package:final_project/ui/constants/custom_colors.dart';
 import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:final_project/ui/screens/phone_screens/Account_screen.dart';
+import 'package:final_project/ui/screens/phone_screens/favourite_screen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -43,7 +44,11 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
-        title: const Text("Home"),
+        iconTheme: IconThemeData(color: Theme.of(context).colorScheme.primary),
+        title: Text(
+          "Home",
+          style: TextStyle(color: Theme.of(context).colorScheme.primary),
+        ),
         backgroundColor: Theme.of(context).colorScheme.background,
         elevation: 0,
         actions: const [
@@ -86,7 +91,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 title: const Text(
                   "Profile",
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: ((context) => const AccountScreen())));
+                },
               ),
               kVSpace16,
               ListTile(
@@ -95,7 +105,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   color: grayColor,
                 ),
                 title: const Text("Home"),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: ((context) => const HomeScreen())));
+                },
               ),
               kVSpace16,
               ListTile(
@@ -104,7 +119,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   color: grayColor,
                 ),
                 title: const Text("Favorite"),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: ((context) => const FavouriteScreen())));
+                },
               ),
               kVSpace64,
               Padding(

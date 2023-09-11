@@ -42,7 +42,7 @@ class _NavigationBar1State extends State<NavigationBar1> {
           //     icon: Image.asset('assets/Group 17443.png'), label: "Profile"),
         ],
         currentIndex: selectedIndex,
-        backgroundColor: whiteColor,
+        backgroundColor: Theme.of(context).colorScheme.background,
         showSelectedLabels: false,
         showUnselectedLabels: false,
         onTap: (index) {

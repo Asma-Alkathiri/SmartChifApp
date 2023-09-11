@@ -1,3 +1,4 @@
+import 'package:final_project/service/supabase_initializer.dart';
 import 'package:final_project/ui/constants/custom_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -15,20 +16,25 @@ class LogOutButton extends StatelessWidget {
         color: const Color(0xffFE724C),
         borderRadius: BorderRadius.circular(28.5),
       ),
-      child: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
-            children: [
-              Image.asset("assets/Group 18072.png"),
-              const SizedBox(
-                width: 5,
-              ),
-              const Text(
-                "Log Out",
-                style: TextStyle(fontSize: 14, color: whiteColor),
-              )
-            ],
+      child: InkWell(
+        onTap: () {
+          SupabaseInitializer().supabaseClient.auth.signOut();
+        },
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              children: [
+                Image.asset("assets/Group 18072.png"),
+                const SizedBox(
+                  width: 5,
+                ),
+                const Text(
+                  "Log Out",
+                  style: TextStyle(fontSize: 14, color: whiteColor),
+                )
+              ],
+            ),
           ),
         ),
       ),

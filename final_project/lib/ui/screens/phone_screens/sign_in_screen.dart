@@ -4,6 +4,7 @@ import 'package:final_project/ui/componant/coustom_textwithbutton.dart';
 import 'package:final_project/ui/componant/custom_Auth_Appbar.dart';
 import 'package:final_project/ui/componant/custom_devider_text.dart';
 import 'package:final_project/ui/componant/custom_google_button.dart';
+import 'package:final_project/ui/componant/error_container.dart';
 import 'package:final_project/ui/componant/orange_button.dart';
 import 'package:final_project/ui/componant/text_field.dart';
 import 'package:final_project/ui/constants/custom_colors.dart';
@@ -86,9 +87,17 @@ class _SignInScreenState extends State<SignInScreen> {
                     height: 50,
                     width: 248,
                     onPressed: () async {
+                      if (emailController.text.isEmpty &&
+                          passwordController.text.isEmpty) {
+                        return showDialog(
+                            context: context,
+                            builder: (context) {
+                              return ErrorContainer();
+                            });
+                      }
                       if (emailController.text.isNotEmpty &&
                           passwordController.text.isNotEmpty) {
-                        await SupabaseInitializer()
+                        final result = await SupabaseInitializer()
                             .supabaseClient
                             .auth
                             .signInWithPassword(

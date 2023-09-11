@@ -3,7 +3,10 @@ import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:flutter/material.dart';
 
 class SmallCard extends StatelessWidget {
-  const SmallCard({super.key});
+  const SmallCard({super.key,  this.image="assets/images/bf3.jpg",  this.name='Bruschetta',  this.steps='toppings of tomato '});
+  final String image;
+  final String name;
+  final String steps;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +35,7 @@ class SmallCard extends StatelessWidget {
                   Radius.circular(15),
                 ),
                 child: Image.asset(
-                  "assets/images/bf3.jpg",
+                  image ,
                   fit: BoxFit.cover,
                 )),
           ),
@@ -44,7 +47,7 @@ class SmallCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Bruschetta',
+                    name,
                     style: TextStyle(
                       color: Theme.of(context).colorScheme.primary,
                       fontSize: 16,
@@ -52,7 +55,7 @@ class SmallCard extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    'toppings of tomato ',
+                    steps,
                     style: TextStyle(
                       color: Theme.of(context).colorScheme.primary,
                       fontSize: 12,
