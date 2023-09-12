@@ -51,9 +51,10 @@ class _AccountScreenState extends State<AccountScreen> {
                   child: Column(
                     children: [
                       const CircleAvatar(
+                        backgroundColor: whiteColor,
                         backgroundImage: NetworkImage(
-                            "https://www.tenforums.com/geek/gars/images/2/types/thumb_15951118880user.png"),
-                        radius: 55,
+                            'https://www.stedwards.edu/themes/steds/images/no-photo500x535.jpg'),
+                        radius: 40,
                       ),
                       kVSpace8,
                       Text(
