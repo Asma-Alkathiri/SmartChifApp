@@ -43,7 +43,7 @@ class SuggestionCard extends StatelessWidget {
                   borderRadius: const BorderRadius.all(
                     Radius.circular(15),
                   ),
-                  child: Image.asset(
+                  child: Image.network(
                     foodImage,
                     fit: BoxFit.cover,
                   )),
@@ -88,10 +88,10 @@ class SuggestionCard extends StatelessWidget {
                 Text(
                   description,
                   style: TextStyle(
-                    color: Theme.of(context).colorScheme.primary,
-                    fontSize: 12,
-                    fontWeight: FontWeight.w400,
-                  ),
+                      color: Theme.of(context).colorScheme.primary,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
+                      overflow: TextOverflow.ellipsis),
                 ),
               ],
             ),

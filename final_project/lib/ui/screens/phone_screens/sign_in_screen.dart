@@ -72,7 +72,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const ResetPasswordScreen(),
+                          builder: (context) => ResetPasswordScreen(),
                         ),
                       );
                     },
@@ -100,6 +100,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       }
                       if (emailController.text.isNotEmpty &&
                           passwordController.text.isNotEmpty) {
+
                         try {
                             await SupabaseInitializer()
                               .supabaseClient
