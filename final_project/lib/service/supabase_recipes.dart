@@ -4,10 +4,10 @@ import 'package:final_project/service/supabase_initializer.dart';
 // we need to be sure if we need more functions
 
 class SupabaseRecipes {
-  Future<List> getRecipes() async {
+  Future<List<RecipeModel>> getRecipes() async {
     final rawData =
         await SupabaseInitializer().supabaseClient.from('recipe').select();
-    final usersList = [];
+    final List<RecipeModel> usersList = [];
     for (final user in rawData) {
       usersList.add(user);
     }
