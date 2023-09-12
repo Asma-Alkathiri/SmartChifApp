@@ -35,10 +35,12 @@ class MainApp extends StatelessWidget {
         builder: (context, state) {
           return MaterialApp(
 
-            debugShowCheckedModeBanner: false,
-            theme: state.customTheme,
-            home: const OnboardingScreen(),
-          );
+              debugShowCheckedModeBanner: false,
+              theme: state.customTheme,
+              // darkTheme: DarkTheme,
+              home: const AuthenticationScreen()
+              // const NavigationBar1(),
+              );
 
         },
       ),

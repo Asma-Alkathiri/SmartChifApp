@@ -15,7 +15,7 @@ class AccountScreen extends StatefulWidget {
 }
 
 class _AccountScreenState extends State<AccountScreen> {
-  final id = SupabaseInitializer().supabaseClient.auth.currentUser!.id;
+  final id = SupabaseInitializer().supabaseClient.auth.currentUser?.id;
   final User? user = SupabaseInitializer().supabaseClient.auth.currentUser;
 
   late UserModel userData = UserModel();
@@ -79,7 +79,7 @@ class _AccountScreenState extends State<AccountScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 24),
               child: Column(
                 children: [
-                  Text('${user!.email}'),
+                  Text('${user?.email}'),
                   kVSpace32,
                 ],
               ),

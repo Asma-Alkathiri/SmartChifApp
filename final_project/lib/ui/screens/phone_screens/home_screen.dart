@@ -1,4 +1,5 @@
 import 'package:final_project/cubit/theme_cubit.dart';
+import 'package:final_project/service/supabase_users.dart';
 import 'package:final_project/ui/componant/custom_logout_button.dart';
 import 'package:final_project/ui/componant/home_container.dart';
 import 'package:final_project/ui/componant/image_profile_containar.dart';
@@ -10,7 +11,11 @@ import 'package:final_project/ui/screens/phone_screens/favourite_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'package:supabase_flutter/supabase_flutter.dart';
+import '../../../models/user_model.dart';
+
 import '../../../service/supabase_ingredient.dart';
+import '../../../service/supabase_initializer.dart';
 import '../../../service/supabase_suggestion_recipe.dart';
 
 
@@ -25,11 +30,13 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   // final box1 = GetStorage();
   bool isDark = false;
-  late Icon icon;
 
+  late Icon icon;
+  late UserModel userData = UserModel();
   @override
   void initState() {
     icon = const Icon(Icons.sunny);
+    getUser();
     super.initState();
     SupabaseIngredient().getIngredientbyType("Vegetable");
     SupabaseIngredient().getIngredientbyType("Fruit");
@@ -38,8 +45,15 @@ class _HomeScreenState extends State<HomeScreen> {
     SupabaseIngredient().getIngredientbyType("Dairy");
   }
 
+  getUser() async {
+    userData = await SupabaseUser().getUserNmae();
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
+    final id = SupabaseInitializer().supabaseClient.auth.currentUser?.id;
+    final User? user = SupabaseInitializer().supabaseClient.auth.currentUser;
     // final List<SuggestionRecipe> suggestionsList = box1.read("suggestions");
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
@@ -66,7 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: SizedBox(
           child: ListView(
             children: [
-              const DrawerHeader(
+              DrawerHeader(
                 child: Column(
                   children: [
                     kVSpace24,
@@ -81,7 +95,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     SizedBox(
                       height: 10,
                     ),
-                    Text("data"),
+                    Text(
+                      userData.name != null ? '${userData.name}' : '',
+                    ),
                   ],
                 ),
               ),
