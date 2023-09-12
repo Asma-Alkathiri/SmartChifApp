@@ -2,6 +2,7 @@ import 'package:final_project/models/user_model.dart';
 import 'package:final_project/service/supabase_initializer.dart';
 import 'package:final_project/service/supabase_users.dart';
 import 'package:final_project/ui/componant/custom_Account_Appbar.dart';
+import 'package:final_project/ui/componant/custom_logout_button.dart';
 import 'package:final_project/ui/constants/custom_colors.dart';
 import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:flutter/material.dart';
@@ -81,7 +82,8 @@ class _AccountScreenState extends State<AccountScreen> {
               child: Column(
                 children: [
                   Text('${user?.email}'),
-                  kVSpace32,
+                  kVSpace128,
+                  const LogOutButton(),
                 ],
               ),
             ),

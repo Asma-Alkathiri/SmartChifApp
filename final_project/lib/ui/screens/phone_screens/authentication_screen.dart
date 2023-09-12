@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:final_project/service/supabase_initializer.dart';
 import 'package:final_project/ui/componant/coustom_navigationbar.dart';
+import 'package:final_project/ui/screens/phone_screens/onboarding_screen.dart';
 import 'package:final_project/ui/screens/phone_screens/sign_in_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -34,7 +35,7 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: access ? const NavigationBar1() : const SignInScreen(),
+      body: access ? const NavigationBar1() : OnboardingScreen(),
     );
   }
 }

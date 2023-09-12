@@ -7,11 +7,11 @@ class SupabaseRecipes {
   Future<List<RecipeModel>> getRecipes() async {
     final rawData =
         await SupabaseInitializer().supabaseClient.from('recipe').select();
-    final List<RecipeModel> usersList = [];
-    for (final user in rawData) {
-      usersList.add(user);
+    final List<RecipeModel> recipeList = [];
+    for (final recipe in rawData) {
+      recipeList.add(RecipeModel.fromJson(recipe));
     }
-    return usersList;
+    return recipeList;
   }
 
   Future insertRecipe(RecipeModel recipe) async {

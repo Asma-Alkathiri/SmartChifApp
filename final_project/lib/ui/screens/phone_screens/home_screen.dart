@@ -7,8 +7,10 @@ import 'package:final_project/ui/componant/image_profile_containar.dart';
 import 'package:final_project/ui/componant/small_card.dart';
 import 'package:final_project/ui/constants/custom_colors.dart';
 import 'package:final_project/ui/constants/custom_spacing.dart';
+import 'package:final_project/ui/screens/phone_screens/Suggestions_screen.dart';
 import 'package:final_project/ui/screens/phone_screens/account_screen.dart';
 import 'package:final_project/ui/screens/phone_screens/favourite_screen.dart';
+import 'package:final_project/ui/screens/phone_screens/home_suggestion_screen.dart';
 import 'package:final_project/ui/screens/phone_screens/sign_in_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -20,6 +22,7 @@ import '../../../models/user_model.dart';
 import '../../../service/supabase_ingredient.dart';
 import '../../../service/supabase_initializer.dart';
 import '../../../service/supabase_suggestion_recipe.dart';
+import '../../componant/suggestion_card.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key, this.onPressed});
@@ -223,7 +226,17 @@ class _HomeScreenState extends State<HomeScreen> {
                                           child: SmallCard(
                                             suggestionRecipe:
                                                 suggestionRecipeList[i],
-                                            onTap: () {},
+                                            onTap: () {
+                                              Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          HomeSuggestionsScreen(
+                                                            suggestionRecipe:
+                                                                suggestionRecipeList[
+                                                                    i],
+                                                          )));
+                                            },
                                           ),
                                         )
                                       : SizedBox.shrink(),
@@ -239,7 +252,17 @@ class _HomeScreenState extends State<HomeScreen> {
                                         child: SmallCard(
                                           suggestionRecipe:
                                               suggestionRecipeList[i],
-                                          onTap: () {},
+                                          onTap: () {
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        HomeSuggestionsScreen(
+                                                          suggestionRecipe:
+                                                              suggestionRecipeList[
+                                                                  i],
+                                                        )));
+                                          },
                                         ),
                                       )
                                     : SizedBox.shrink(),

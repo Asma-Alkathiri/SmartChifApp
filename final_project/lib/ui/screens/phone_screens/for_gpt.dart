@@ -4,7 +4,9 @@ import 'package:final_project/service/gpt/gpt_service.dart';
 import 'package:final_project/ui/componant/custom_Auth_Appbar.dart';
 import 'package:final_project/ui/componant/orange_button.dart';
 import 'package:final_project/ui/componant/text_field.dart';
+import 'package:final_project/ui/constants/custom_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 class ForGpt extends StatefulWidget {
   const ForGpt({super.key});
@@ -40,7 +42,12 @@ class _ForGptState extends State<ForGpt> {
         builder: (context, snapshot) {
           final (gptContent, imageUrl) = snapshot.data ?? (GPTContent(), '');
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: CircularProgressIndicator());
+            return Center(
+              child: LoadingAnimationWidget.fourRotatingDots(
+                color: orangeColor,
+                size: 100,
+              ),
+            );
           }
           if (snapshot.connectionState == ConnectionState.done) {
             return Column(

@@ -8,12 +8,14 @@ class AppScaffold extends StatelessWidget {
       this.body,
       this.drawer,
       this.onPressedBackIcon,
-      this.onPressedProfile});
+      this.onPressedProfile,
+      this.needProfile = true});
   final String? appBarTitle;
   final Widget? body;
   final Widget? drawer;
   final Function()? onPressedBackIcon;
   final Function()? onPressedProfile;
+  final bool? needProfile;
 
   @override
   Widget build(BuildContext context) {

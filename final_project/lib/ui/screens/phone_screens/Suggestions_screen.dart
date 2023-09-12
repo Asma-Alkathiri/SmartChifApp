@@ -6,10 +6,13 @@ import 'package:final_project/service/supabase_initializer.dart';
 import 'package:final_project/service/supabase_recipes.dart';
 import 'package:final_project/ui/componant/app_scaffold.dart';
 import 'package:final_project/ui/componant/suggestion_card.dart';
+import 'package:final_project/ui/constants/custom_colors.dart';
 import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:final_project/ui/screens/phone_screens/authentication_screen.dart';
+import 'package:final_project/ui/screens/phone_screens/home_favourite_screen.dart';
 import 'package:final_project/ui/screens/phone_screens/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:uuid/uuid.dart';
 
 String prompt = 'i only have $ingredientList.';
@@ -44,7 +47,12 @@ class SuggestionsScreen extends StatelessWidget {
               final (gptContent, imageUrl) =
                   snapshot.data ?? (GPTContent(), '');
               if (snapshot.connectionState == ConnectionState.waiting) {
-                return const Center(child: CircularProgressIndicator());
+                return Center(
+                  child: LoadingAnimationWidget.fourRotatingDots(
+                    color: orangeColor,
+                    size: 100,
+                  ),
+                );
               }
               if (snapshot.connectionState == ConnectionState.done) {
                 return Column(
@@ -58,6 +66,16 @@ class SuggestionsScreen extends StatelessWidget {
                             foodName: '${gptContent.recipeName}',
                             foodImage: imageUrl,
                             description: '${gptContent.steps}',
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => HomeFavouriteScreen(
+                                            foodName: gptContent.recipeName,
+                                            description: gptContent.steps,
+                                            foodImage: imageUrl,
+                                          )));
+                            },
                             onPressedFavoriteIcone: () async {
                               final recipe = RecipeModel(
                                   name: gptContent.recipeName,
