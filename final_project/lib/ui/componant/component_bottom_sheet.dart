@@ -6,13 +6,19 @@ import 'package:final_project/ui/screens/phone_screens/suggestions_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
+import '../../globals.dart';
 import '../../models/ingredient_model.dart';
 
-class ComponentBottomSheet extends StatelessWidget {
+class ComponentBottomSheet extends StatefulWidget {
   ComponentBottomSheet({
     super.key,
   });
 
+  @override
+  State<ComponentBottomSheet> createState() => _ComponentBottomSheetState();
+}
+
+class _ComponentBottomSheetState extends State<ComponentBottomSheet> {
   final box = GetStorage();
 
   @override
@@ -159,7 +165,17 @@ class ComponentBottomSheet extends StatelessWidget {
                       height: 45,
                       width: 150,
                       title: " RESET",
-                      onPressed: () {},
+                      onPressed: () {
+                        ingredientList.clear();
+                        print(ingredientList.length);
+
+                        context
+                            .findAncestorStateOfType<ComponentContainerState>()
+                            ?.setState(() {
+                          ComponentContainerState().isSelected == false;
+                        });
+                        ;
+                      },
                     ),
                     kHSpace16,
                     OrangeButton(

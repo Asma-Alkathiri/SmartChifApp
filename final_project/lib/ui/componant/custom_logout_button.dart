@@ -1,5 +1,6 @@
 import 'package:final_project/service/supabase_initializer.dart';
 import 'package:final_project/ui/constants/custom_colors.dart';
+import 'package:final_project/ui/screens/phone_screens/sign_in_screen.dart';
 import 'package:flutter/material.dart';
 
 class LogOutButton extends StatelessWidget {
@@ -19,6 +20,9 @@ class LogOutButton extends StatelessWidget {
       child: InkWell(
         onTap: () {
           SupabaseInitializer().supabaseClient.auth.signOut();
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return SignInScreen();
+          }));
         },
         child: Center(
           child: Padding(
