@@ -1,3 +1,4 @@
+import 'package:final_project/service/supabase_initializer.dart';
 import 'package:final_project/ui/componant/coustom_textwithsubtext.dart';
 import 'package:final_project/ui/componant/custom_Auth_Appbar.dart';
 import 'package:final_project/ui/componant/orange_button.dart';
@@ -6,8 +7,8 @@ import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:flutter/material.dart';
 
 class ResetPasswordScreen extends StatelessWidget {
-  const ResetPasswordScreen({super.key});
-
+  ResetPasswordScreen({super.key});
+  final TextEditingController? controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +28,8 @@ class ResetPasswordScreen extends StatelessWidget {
                       "Please enter your email address to request a password reset",
                 ),
                 kVSpace24,
-                const TextFieldWidget(
+                TextFieldWidget(
+                  controller: controller,
                   hintText: "Enter your email",
                   label: "",
                 ),
@@ -36,7 +38,13 @@ class ResetPasswordScreen extends StatelessWidget {
                   title: "Send new password",
                   width: 278,
                   height: 57,
-                  onPressed: () {},
+                  onPressed: () {
+                    print('test');
+                    SupabaseInitializer()
+                        .supabaseClient
+                        .auth
+                        .resetPasswordForEmail(controller!.text);
+                  },
                 ),
               ],
             ),

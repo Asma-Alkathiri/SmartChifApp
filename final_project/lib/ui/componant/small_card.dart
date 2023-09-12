@@ -15,6 +15,7 @@ class SmallCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Container(
       width: 155,
       height: 215,
@@ -74,14 +75,30 @@ class SmallCard extends StatelessWidget {
                         color: Theme.of(context).colorScheme.primary,
                         fontSize: 12,
                         fontWeight: FontWeight.w300,
+
                       ),
                     ),
-                  ),
+                    SizedBox(
+                      width: 200,
+                      height: 20,
+                      child: Text(
+                        suggestionRecipe.description!,
+                        softWrap: false,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          color: Theme.of(context).colorScheme.primary,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w300,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

@@ -36,7 +36,9 @@ class ComponentContainerState extends State<ComponentContainer> {
       child: Container(
         padding: const EdgeInsets.all(5),
         decoration: BoxDecoration(
-            color: isSelected ? orangeColor : whiteColor,
+            color: isSelected
+                ? orangeColor
+                : Theme.of(context).colorScheme.background,
             borderRadius: BorderRadius.circular(50),
             boxShadow: [
               BoxShadow(

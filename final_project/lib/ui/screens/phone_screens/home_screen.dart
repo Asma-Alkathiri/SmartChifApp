@@ -2,9 +2,11 @@ import 'package:final_project/cubit/theme_cubit.dart';
 import 'package:final_project/models/suggestion_recipe_model.dart';
 import 'package:final_project/service/supabase_users.dart';
 import 'package:final_project/ui/componant/custom_logout_button.dart';
+import 'package:final_project/ui/componant/error_container.dart';
 import 'package:final_project/ui/componant/home_container.dart';
 import 'package:final_project/ui/componant/image_profile_containar.dart';
 import 'package:final_project/ui/componant/small_card.dart';
+import 'package:final_project/ui/componant/suggestion_card.dart';
 import 'package:final_project/ui/constants/custom_colors.dart';
 import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:final_project/ui/screens/phone_screens/account_screen.dart';
@@ -74,6 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
             "Home",
             style: TextStyle(color: Theme.of(context).colorScheme.primary),
           ),
+
           backgroundColor: Theme.of(context).colorScheme.background,
           elevation: 0,
           actions: const [
@@ -86,29 +89,42 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ],
         ),
-        drawer: Drawer(
-          backgroundColor: Theme.of(context).colorScheme.background,
-          child: SizedBox(
-            child: ListView(
-              children: [
-                DrawerHeader(
-                  child: Column(
-                    children: [
-                      kVSpace24,
-                      CircleAvatar(
-                        backgroundColor: whiteColor,
-                        backgroundImage: NetworkImage(
-                            'https://www.stedwards.edu/themes/steds/images/no-photo500x535.jpg'),
-                        radius: 40,
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        userData.name != null ? '${userData.name}' : '',
-                      ),
-                    ],
-                  ),
+
+        ],
+      ),
+      drawer: Drawer(
+        backgroundColor: Theme.of(context).colorScheme.background,
+        child: SizedBox(
+          child: ListView(
+            children: [
+              DrawerHeader(
+                child: Column(
+                  children: [
+                    kVSpace24,
+                    CircleAvatar(
+                      backgroundColor: whiteColor,
+                      backgroundImage: NetworkImage(
+                          'https://www.stedwards.edu/themes/steds/images/no-photo500x535.jpg'),
+                      radius: 40,
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      userData.name != null ? '${userData.name}' : '',
+                    ),
+                  ],
+                ),
+              ),
+              kVSpace64,
+              ListTile(
+                leading: const Icon(
+                  Icons.person,
+                  color: grayColor,
+                ),
+                title: const Text(
+                  "Profile",
+
                 ),
                 kVSpace64,
                 ListTile(

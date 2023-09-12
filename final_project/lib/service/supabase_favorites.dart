@@ -1,3 +1,4 @@
+import 'package:final_project/models/recipe_model.dart';
 import 'package:final_project/service/supabase_initializer.dart';
 
 // we need to be sure if we need more functions
@@ -13,11 +14,12 @@ class SupabaseFavorites {
     return usersList;
   }
 
-  Future insertFavorite() async {
+  Future insertFavorite(RecipeModel recipe) async {
+    final tojson = RecipeModel().toJson();
     await SupabaseInitializer()
         .supabaseClient
         .from('favorite')
-        .insert(''); // need to be sure about this function
+        .insert(tojson); // need to be sure about this function
   }
 
   Future deleteFavorite(String favoriteId) async {
@@ -32,7 +34,6 @@ class SupabaseFavorites {
     await SupabaseInitializer()
         .supabaseClient
         .from('table')
-        .update({})
-        .eq('id', favoriteId); // need to be sure about this function
+        .update({}).eq('id', favoriteId); // need to be sure about this function
   }
 }
