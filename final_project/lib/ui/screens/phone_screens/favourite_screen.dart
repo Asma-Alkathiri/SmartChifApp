@@ -65,7 +65,6 @@ class FavouriteScreen extends StatelessWidget {
                                     ),
                                   ),
                                   kVSpace16,
-
                                   // kVSpace16,
                                   ListView.builder(
                                     shrinkWrap: true,
