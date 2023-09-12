@@ -1,9 +1,11 @@
 import 'package:final_project/cubit/theme_cubit.dart';
 import 'package:final_project/service/supabase_users.dart';
 import 'package:final_project/ui/componant/custom_logout_button.dart';
+import 'package:final_project/ui/componant/error_container.dart';
 import 'package:final_project/ui/componant/home_container.dart';
 import 'package:final_project/ui/componant/image_profile_containar.dart';
 import 'package:final_project/ui/componant/small_card.dart';
+import 'package:final_project/ui/componant/suggestion_card.dart';
 import 'package:final_project/ui/constants/custom_colors.dart';
 import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:final_project/ui/screens/phone_screens/account_screen.dart';
@@ -17,7 +19,6 @@ import '../../../models/user_model.dart';
 import '../../../service/supabase_ingredient.dart';
 import '../../../service/supabase_initializer.dart';
 import '../../../service/supabase_suggestion_recipe.dart';
-
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key, this.onPressed});
@@ -87,19 +88,15 @@ class _HomeScreenState extends State<HomeScreen> {
                     CircleAvatar(
                       backgroundColor: whiteColor,
                       backgroundImage: NetworkImage(
-
                           'https://www.stedwards.edu/themes/steds/images/no-photo500x535.jpg'),
-
                       radius: 40,
                     ),
                     SizedBox(
                       height: 10,
                     ),
-
                     Text(
                       userData.name != null ? '${userData.name}' : '',
                     ),
-
                   ],
                 ),
               ),
@@ -187,7 +184,6 @@ class _HomeScreenState extends State<HomeScreen> {
             Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 28),
                 child: SizedBox(
-
                   height: MediaQuery.of(context).size.height * 0.42,
                   child: SingleChildScrollView(
                     child: Row(
