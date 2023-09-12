@@ -2,7 +2,6 @@ import 'package:final_project/models/user_model.dart';
 import 'package:final_project/service/supabase_initializer.dart';
 import 'package:final_project/service/supabase_users.dart';
 import 'package:final_project/ui/componant/custom_Account_Appbar.dart';
-import 'package:final_project/ui/componant/orange_button.dart';
 import 'package:final_project/ui/constants/custom_colors.dart';
 import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:flutter/material.dart';
@@ -53,7 +52,7 @@ class _AccountScreenState extends State<AccountScreen> {
                     children: [
                       const CircleAvatar(
                         backgroundImage: NetworkImage(
-                            "https://images.pexels.com/photos/18270600/pexels-photo-18270600/free-photo-of-indian-traditional-bride-in-nauvari-traditional-attire.jpeg"),
+                            "https://www.tenforums.com/geek/gars/images/2/types/thumb_15951118880user.png"),
                         radius: 55,
                       ),
                       kVSpace8,
@@ -82,10 +81,6 @@ class _AccountScreenState extends State<AccountScreen> {
                 children: [
                   Text('${user!.email}'),
                   kVSpace32,
-                  OrangeButton(
-                    title: "SAVE",
-                    onPressed: () {},
-                  ),
                 ],
               ),
             ),

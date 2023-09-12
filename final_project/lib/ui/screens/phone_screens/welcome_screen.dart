@@ -9,7 +9,6 @@ import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:final_project/ui/screens/phone_screens/sign_in_screen.dart';
 import 'package:final_project/ui/screens/phone_screens/sign_up_screen.dart';
 import 'package:flutter/material.dart';
-
 import 'package:animated_typing/animated_typing.dart';
 
 class WelcomeScreen extends StatelessWidget {

@@ -1,4 +1,4 @@
-import 'package:final_project/ui/screens/tablet_screens/screens/tablet_Account_screen.dart';
+import 'package:final_project/ui/screens/tablet_screens/screens/tablet_account_screen.dart';
 import 'package:final_project/ui/screens/tablet_screens/screens/tablet_authentication_screeen.dart';
 import 'package:final_project/ui/screens/tablet_screens/screens/tablet_home_screen.dart';
 import 'package:flutter/material.dart';
@@ -14,9 +14,7 @@ class _TabletNavigationBarState extends State<TabletNavigationBar> {
   final List screens = [
     const TabletHomeScreen(),
     const TabletAuthenticationScreen(),
-
     const TabletAccountScreen(),
-
   ];
 
   int selectedIndex = 0;
@@ -32,10 +30,6 @@ class _TabletNavigationBarState extends State<TabletNavigationBar> {
               icon: Image.asset('assets/Group 17440.png'), label: "Profile"),
           BottomNavigationBarItem(
               icon: Image.asset('assets/Group 17445.png'), label: "Profile"),
-          // BottomNavigationBarItem(
-          //     icon: Image.asset('assets/Group 18073.png'), label: "Profile"),
-          // BottomNavigationBarItem(
-          //     icon: Image.asset('assets/Group 17443.png'), label: "Profile"),
         ],
         currentIndex: selectedIndex,
         selectedItemColor: Colors.green,

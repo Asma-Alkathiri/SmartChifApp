@@ -50,12 +50,7 @@ class _ComponentContainerState extends State<ComponentContainer> {
             SizedBox(
               height: 29,
               width: 29,
-
               child: Image.network(widget.ingredient.ingrImg!),
-              //  Image(
-              //       image:
-              //           CachedNetworkImageProvider(ingredient.ingrImg!)
-              //   ),
             ),
             kHSpace4,
             Text(

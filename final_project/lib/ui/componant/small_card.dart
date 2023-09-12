@@ -3,7 +3,11 @@ import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:flutter/material.dart';
 
 class SmallCard extends StatelessWidget {
-  const SmallCard({super.key,  this.image="assets/images/bf3.jpg",  this.name='Bruschetta',  this.steps='toppings of tomato '});
+  const SmallCard(
+      {super.key,
+      this.image = "assets/images/bf3.jpg",
+      this.name = 'Bruschetta',
+      this.steps = 'toppings of tomato '});
   final String image;
   final String name;
   final String steps;
@@ -35,7 +39,7 @@ class SmallCard extends StatelessWidget {
                   Radius.circular(15),
                 ),
                 child: Image.asset(
-                  image ,
+                  image,
                   fit: BoxFit.cover,
                 )),
           ),

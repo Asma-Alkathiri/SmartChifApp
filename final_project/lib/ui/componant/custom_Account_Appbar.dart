@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 class AccountAppBar extends StatelessWidget {
   const AccountAppBar({
-    super.key,  this.widthappbar = 200,  this.width = 180,
+    super.key,
+    this.widthappbar = 200,
+    this.width = 180,
   });
 
   final double widthappbar;

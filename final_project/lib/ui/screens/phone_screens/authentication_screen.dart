@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:final_project/service/supabase_initializer.dart';
 import 'package:final_project/ui/componant/coustom_navigationbar.dart';
 import 'package:final_project/ui/screens/phone_screens/sign_in_screen.dart';

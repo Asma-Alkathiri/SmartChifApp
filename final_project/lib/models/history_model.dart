@@ -14,11 +14,11 @@ class HistoryModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['name'] = this.name;
-    data['user_id'] = this.userId;
-    data['recipe_id'] = this.recipeId;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['name'] = name;
+    data['user_id'] = userId;
+    data['recipe_id'] = recipeId;
     return data;
   }
 }

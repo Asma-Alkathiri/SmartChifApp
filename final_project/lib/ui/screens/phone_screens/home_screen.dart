@@ -1,17 +1,14 @@
 import 'package:final_project/cubit/theme_cubit.dart';
 import 'package:final_project/ui/componant/custom_logout_button.dart';
-
-
 import 'package:final_project/ui/componant/home_container.dart';
 import 'package:final_project/ui/componant/image_profile_containar.dart';
 import 'package:final_project/ui/componant/small_card.dart';
 import 'package:final_project/ui/constants/custom_colors.dart';
 import 'package:final_project/ui/constants/custom_spacing.dart';
-import 'package:final_project/ui/screens/phone_screens/Account_screen.dart';
+import 'package:final_project/ui/screens/phone_screens/account_screen.dart';
 import 'package:final_project/ui/screens/phone_screens/favourite_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../../service/supabase_ingredient_service.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -70,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     kVSpace24,
                     CircleAvatar(
                       backgroundImage: NetworkImage(
-                          'https://images.pexels.com/photos/14019743/pexels-photo-14019743.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'),
+                          'https://www.tenforums.com/geek/gars/images/2/types/thumb_15951118880user.png'),
                       radius: 40,
                     ),
                     SizedBox(
@@ -154,16 +151,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
-      // appBarTitle: "Home",
-      // // onPressedBackIcon: () {},
-      // onPressedProfile: () {
-      //   Navigator.push(
-      //     context,
-      //     MaterialPageRoute(
-      //       builder: (context) => const AccountScreen(),
-      //     ),
-      //   );
-      // },
       body: SafeArea(
         top: false,
         child: Column(

@@ -92,25 +92,27 @@ class _SignInScreenState extends State<SignInScreen> {
                         return showDialog(
                             context: context,
                             builder: (context) {
-                              return  Center(child: ErrorContainer(onPressed: (){},));
-
+                              return Center(
+                                  child: ErrorContainer(
+                                onPressed: () {},
+                              ));
                             });
                       }
                       if (emailController.text.isNotEmpty &&
                           passwordController.text.isNotEmpty) {
                         try {
+                          return showDialog(
+                              context: context,
+                              builder: (context) {
+                                return const ErrorContainer();
+                              });
+                        } catch (error) {
                           await SupabaseInitializer()
                               .supabaseClient
                               .auth
                               .signInWithPassword(
                                   password: passwordController.text,
                                   email: emailController.text);
-                        } catch (error) {
-                          return showDialog(
-                              context: context,
-                              builder: (context) {
-                                return const ErrorContainer();
-                              });
                         }
                       }
                       if (context.mounted) {

@@ -13,9 +13,7 @@ class ForGpt extends StatefulWidget {
   State<ForGpt> createState() => _ForGptState();
 }
 
-
 String prompt = 'i only have $ingredientList.';
-
 
 class _ForGptState extends State<ForGpt> {
   TextEditingController chatController = TextEditingController();

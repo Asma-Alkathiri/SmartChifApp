@@ -2,7 +2,7 @@ import 'package:final_project/ui/componant/componant_container.dart';
 import 'package:final_project/ui/componant/orange_button.dart';
 import 'package:final_project/ui/constants/custom_colors.dart';
 import 'package:final_project/ui/constants/custom_spacing.dart';
-import 'package:final_project/ui/screens/phone_screens/Suggestions_screen.dart';
+import 'package:final_project/ui/screens/phone_screens/suggestions_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
@@ -58,9 +58,9 @@ class ComponentBottomSheet extends StatelessWidget {
                           },
                         ),
                         kVSpace16,
-                        Text(
+                        const Text(
                           "Fruit",
-                          style: const TextStyle(fontSize: 18),
+                          style: TextStyle(fontSize: 18),
                         ),
                         kVSpace8,
                         GridView.builder(
@@ -80,9 +80,9 @@ class ComponentBottomSheet extends StatelessWidget {
                           },
                         ),
                         kVSpace16,
-                        Text(
+                        const Text(
                           "Protein",
-                          style: const TextStyle(fontSize: 18),
+                          style: TextStyle(fontSize: 18),
                         ),
                         kVSpace8,
                         GridView.builder(
@@ -102,9 +102,9 @@ class ComponentBottomSheet extends StatelessWidget {
                           },
                         ),
                         kVSpace16,
-                        Text(
+                        const Text(
                           "Carbohydrate",
-                          style: const TextStyle(fontSize: 18),
+                          style: TextStyle(fontSize: 18),
                         ),
                         kVSpace8,
                         GridView.builder(
@@ -124,9 +124,9 @@ class ComponentBottomSheet extends StatelessWidget {
                           },
                         ),
                         kVSpace16,
-                        Text(
+                        const Text(
                           "Dairy",
-                          style: const TextStyle(fontSize: 18),
+                          style: TextStyle(fontSize: 18),
                         ),
                         kVSpace8,
                         GridView.builder(

@@ -14,11 +14,11 @@ class Ingredient {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['name'] = this.name;
-    data['ingr_img'] = this.ingrImg;
-    data['type'] = this.type;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['name'] = name;
+    data['ingr_img'] = ingrImg;
+    data['type'] = type;
     return data;
   }
 }

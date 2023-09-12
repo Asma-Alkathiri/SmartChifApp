@@ -3,7 +3,6 @@ import 'package:final_project/ui/componant/small_card.dart';
 import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:flutter/material.dart';
 
-
 class FavouriteScreen extends StatelessWidget {
   const FavouriteScreen({
     super.key,
@@ -23,14 +22,10 @@ class FavouriteScreen extends StatelessWidget {
         actions: const [
           Padding(
             padding: EdgeInsets.only(right: 12, top: 12),
-            child: Center(
-                child: ImageProfileContainar(
-                    // onPressed: onPressedProfile,
-                    )),
+            child: Center(child: ImageProfileContainar()),
           ),
         ],
       ),
-      // appBarTitle: "Favourite",
       body: SingleChildScrollView(
         child: Column(
           children: [

@@ -62,14 +62,14 @@ class OTPScreen extends StatelessWidget {
                           num4Controller!,
                           num5Controller!,
                           num6Controller!);
-                      await SupabaseInitializer().supabaseClient.auth.verifyOTP(
-                          token: otp, email: userEmail, type: OtpType.signup);
                       Navigator.pushAndRemoveUntil(
                           context,
                           MaterialPageRoute(
                               builder: (context) =>
                                   const AuthenticationScreen()),
                           (route) => false);
+                      await SupabaseInitializer().supabaseClient.auth.verifyOTP(
+                          token: otp, email: userEmail, type: OtpType.signup);
                     },
                   ),
                   kVSpace16,
