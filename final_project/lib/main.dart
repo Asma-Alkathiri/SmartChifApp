@@ -2,8 +2,8 @@ import 'dart:ui';
 import 'package:final_project/cubit/theme_cubit.dart';
 import 'package:final_project/firebase_options.dart';
 import 'package:final_project/service/supabase_initializer.dart';
+import 'package:final_project/ui/screens/phone_screens/authentication_screen.dart';
 import 'package:final_project/ui/screens/phone_screens/onboarding_screen.dart';
-
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
@@ -34,14 +34,12 @@ class MainApp extends StatelessWidget {
       child: BlocBuilder<ThemeCubit, ThemeState>(
         builder: (context, state) {
           return MaterialApp(
-
               debugShowCheckedModeBanner: false,
               theme: state.customTheme,
               // darkTheme: DarkTheme,
               home: const AuthenticationScreen()
               // const NavigationBar1(),
               );
-
         },
       ),
     );
