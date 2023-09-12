@@ -1,4 +1,3 @@
-
 import 'package:final_project/ui/componant/coustom_textwithbutton.dart';
 import 'package:final_project/ui/componant/custom_devider_text.dart';
 import 'package:final_project/ui/componant/custom_google_button.dart';
@@ -64,12 +63,7 @@ class TabletWelcomeScreen extends StatelessWidget {
               child: Column(
                 children: [
                   kVSpace24,
-                  GoogleButton(
-                      width: 700,
-                      fontsize: 20,
-                      onPressed: () {
-                        //  SupabaseInitializer().onTapBtnGoogleSignin();
-                      }),
+                  GoogleButton(width: 700, fontsize: 20, onPressed: () {}),
                   kVSpace24,
                   RegisterButton(
                     width: 700,

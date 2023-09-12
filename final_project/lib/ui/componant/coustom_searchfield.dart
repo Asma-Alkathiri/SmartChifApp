@@ -37,7 +37,7 @@ class TextSearchField extends StatelessWidget {
             borderSide: const BorderSide(color: orangeColor, width: 1.5),
           ),
           filled: true,
-          fillColor: Color.fromARGB(31, 214, 211, 211),
+          fillColor: const Color.fromARGB(31, 214, 211, 211),
         ),
       ),
     );

@@ -9,6 +9,7 @@ import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:final_project/ui/screens/phone_screens/sign_in_screen.dart';
 import 'package:final_project/ui/screens/phone_screens/sign_up_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:animated_typing/animated_typing.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key, this.title});
@@ -27,30 +28,40 @@ class WelcomeScreen extends StatelessWidget {
             const Text(
               "Welcome to",
               style: TextStyle(
-                  color: blackColor, fontWeight: FontWeight.bold, fontSize: 50),
+                  color: blackColor, fontWeight: FontWeight.bold, fontSize: 55),
               textAlign: TextAlign.left,
             ),
+            kVSpace8,
             const Text(
-              "FoodHub",
+              "Taste & Innovate",
               style: TextStyle(
                   color: orangeColor,
                   fontWeight: FontWeight.w700,
                   fontSize: 44),
               textAlign: TextAlign.left,
             ),
+            kVSpace24,
             kVSpace16,
             const SizedBox(
-              width: 250,
-              child: Text(
-                "Your favourite foods delivered fast at your door.",
-                style: TextStyle(
-                    color: textColor,
-                    fontWeight: FontWeight.w400,
-                    fontSize: 16),
+              width: 280,
+              height: 150,
+              child: Padding(
+                padding: EdgeInsets.all(8.0),
+                child: AnimatedTyping(
+                  text:
+                      'Cooking has never been this easy! Let our app inspire and guide you to prepare mouthwatering meals.',
+                  duration: Duration(
+                    seconds: 4,
+                  ),
+                  style: TextStyle(
+                    color: darkGrayColor,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 18,
+                  ),
+                ),
               ),
             ),
-            kVSpace128,
-            kVSpace128,
+            kVSpace64,
             const CoustomDeviderText(
               textColor: lightGrayColor,
             ),

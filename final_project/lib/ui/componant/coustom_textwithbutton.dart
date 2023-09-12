@@ -9,9 +9,9 @@ class TextWithTextButton extends StatelessWidget {
     required this.text,
     this.onTap,
     this.buttonTitleColor = orangeColor,
-
-    this.textColor = darkGrayColor,  this.fontsize = 14,  this.fontsizebutton = 14,
-
+    this.textColor = darkGrayColor,
+    this.fontsize = 14,
+    this.fontsizebutton = 14,
   });
   final String buttonTitle;
   final String text;
@@ -19,7 +19,7 @@ class TextWithTextButton extends StatelessWidget {
   final Color textColor;
   final Color buttonTitleColor;
   final double fontsize;
-   final double fontsizebutton;
+  final double fontsizebutton;
 
   @override
   Widget build(BuildContext context) {
@@ -29,19 +29,19 @@ class TextWithTextButton extends StatelessWidget {
         Text(
           text,
           style: TextStyle(
-
-              fontSize: fontsize, color: textColor, fontWeight: FontWeight.w400),
-
+              fontSize: fontsize,
+              color: textColor,
+              fontWeight: FontWeight.w400),
         ),
         kHSpace4,
         InkWell(
           onTap: onTap,
           child: Text(
             buttonTitle,
-            style:
-
-                TextStyle(color: buttonTitleColor, fontWeight: FontWeight.w400,fontSize: fontsizebutton),
-
+            style: TextStyle(
+                color: buttonTitleColor,
+                fontWeight: FontWeight.w400,
+                fontSize: fontsizebutton),
           ),
         )
       ],

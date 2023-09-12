@@ -13,6 +13,7 @@ class SmallCard extends StatelessWidget {
   final SuggestionRecipe suggestionRecipe;
   final Function()? onTap;
 
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -39,8 +40,10 @@ class SmallCard extends StatelessWidget {
                 borderRadius: const BorderRadius.all(
                   Radius.circular(15),
                 ),
+
                 child: Image.network(
                   suggestionRecipe.recipeImg!,
+
                   fit: BoxFit.cover,
                 )),
           ),

@@ -11,9 +11,7 @@ class SuggestionsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppScaffold(
       appBarTitle: "Suggestions",
-      onPressedBackIcon: () {
-        // Navigator.pop(context);
-      },
+      onPressedBackIcon: () {},
       onPressedProfile: () {
         Navigator.push(
           context,

@@ -11,7 +11,7 @@ class Page3 extends StatelessWidget {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24),
+        padding: const EdgeInsets.symmetric(horizontal: 22),
         child: Column(
           children: [
             Center(
@@ -22,16 +22,19 @@ class Page3 extends StatelessWidget {
             kVSpace64,
             const Center(
               child: Text(
-                "Browse your menu and order directly",
-                style: TextStyle(fontSize: 38),
+                " Prepare for a unique kitchen experience at home.",
+                style: TextStyle(
+                    fontSize: 26,
+                    color: blackColor,
+                    fontWeight: FontWeight.w500),
                 textAlign: TextAlign.center,
               ),
             ),
             kVSpace16,
             const Text(
-              "Our app can send you everywhere, even space. For only \$2.99 per month",
+              " Discover amazing recipes and enjoy cooking fantastic dishes.",
               style: TextStyle(
-                  fontSize: 17, fontWeight: FontWeight.w400, color: grayColor),
+                  fontSize: 18, fontWeight: FontWeight.w400, color: grayColor),
               textAlign: TextAlign.center,
             ),
           ],

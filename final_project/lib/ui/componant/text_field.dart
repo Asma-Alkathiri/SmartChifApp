@@ -10,7 +10,8 @@ class TextFieldWidget extends StatelessWidget {
     this.maxLines,
     this.onSubmitted,
     this.controller,
-    this.textfontsize = 18,  this.width = 360,
+    this.textfontsize = 18,
+    this.width = 360,
   });
   final String hintText;
   final String label;
