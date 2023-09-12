@@ -20,7 +20,6 @@ class SupabaseRecipes {
         .supabaseClient
         .from('recipe')
         .insert(tojson); // need to be sure about this function
-    print('func');
   }
 
   Future deleteRecipe(String recipeId) async {

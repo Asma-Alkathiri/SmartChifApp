@@ -64,7 +64,6 @@ class SuggestionsScreen extends StatelessWidget {
                                   recipeImg: imageUrl,
                                   description: gptContent.steps);
                               SupabaseRecipes().insertRecipe(recipe);
-                              print('like');
                             },
                           );
                         },
