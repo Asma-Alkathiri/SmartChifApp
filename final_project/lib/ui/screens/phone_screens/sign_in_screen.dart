@@ -15,6 +15,7 @@ import 'package:final_project/ui/screens/phone_screens/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 
+import '../../../models/suggestion_recipe_model.dart';
 import '../../../service/supabase_suggestion_recipe.dart';
 
 List suggestionRecipeList = [];
@@ -50,7 +51,6 @@ class _SignInScreenState extends State<SignInScreen> {
   }
 
   getMeal() async {
-    print({1});
     SupabaseSuggestionRecipe().getSuggestionRecipe();
     setState(() {});
   }
@@ -123,18 +123,13 @@ class _SignInScreenState extends State<SignInScreen> {
                       }
                       if (emailController.text.isNotEmpty &&
                           passwordController.text.isNotEmpty) {
-
                         try {
-
-
-                            await SupabaseInitializer()
-
+                          await SupabaseInitializer()
                               .supabaseClient
                               .auth
                               .signInWithPassword(
                                   password: passwordController.text,
                                   email: emailController.text);
-
                         } catch (error) {
                           return showDialog(
                               context: context,

@@ -3,6 +3,8 @@ import 'package:final_project/ui/componant/orange_button.dart';
 import 'package:final_project/ui/constants/custom_colors.dart';
 import 'package:flutter/material.dart';
 
+import '../../globals.dart';
+
 class HomeContainer extends StatelessWidget {
   const HomeContainer({super.key, this.height = 249, this.width = 327});
 
@@ -39,6 +41,7 @@ class HomeContainer extends StatelessWidget {
             width: 210,
             title: "start",
             onPressed: () {
+              ingredientList.clear();
               showModalBottomSheet(
                   showDragHandle: true,
                   context: context,
