@@ -30,20 +30,20 @@ class WelcomeScaffold extends StatelessWidget {
               ], begin: Alignment.topLeft, end: Alignment.bottomRight),
             ),
             child: child),
-        Positioned(
-          top: 50,
-          right: 20,
-          child: SkipContainer(
-            onPressedSkip: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const OnboardingScreen(),
-                ),
-              );
-            },
-          ),
-        )
+        // Positioned(
+        //   top: 50,
+        //   right: 20,
+        //   child: SkipContainer(
+        //     onPressedSkip: () {
+        //       Navigator.push(
+        //         context,
+        //         MaterialPageRoute(
+        //           builder: (context) => const OnboardingScreen(),
+        //         ),
+        //       );
+        //     },
+        //   ),
+        // )
       ]),
     );
   }
