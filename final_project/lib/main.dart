@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:final_project/cubit/theme_cubit.dart';
 import 'package:final_project/firebase_options.dart';
 import 'package:final_project/service/supabase_initializer.dart';
+import 'package:final_project/ui/screens/phone_screens/home_screen.dart';
 import 'package:final_project/ui/screens/phone_screens/onboarding_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
@@ -35,7 +36,7 @@ class MainApp extends StatelessWidget {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             theme: state.customTheme,
-            home: const OnboardingScreen(),
+            home: const HomeScreen(),
           );
         },
       ),
