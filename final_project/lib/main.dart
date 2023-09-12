@@ -16,6 +16,8 @@ import 'package:get_storage/get_storage.dart';
 
 void main() async {
   await GetStorage.init();
+  final box = GetStorage();
+  // box.erase();
   await SupabaseInitializer.supabaseInitialize();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
