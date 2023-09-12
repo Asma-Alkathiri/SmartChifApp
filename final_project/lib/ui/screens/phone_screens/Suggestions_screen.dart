@@ -8,6 +8,7 @@ import 'package:final_project/ui/componant/app_scaffold.dart';
 import 'package:final_project/ui/componant/suggestion_card.dart';
 import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:final_project/ui/screens/phone_screens/authentication_screen.dart';
+import 'package:final_project/ui/screens/phone_screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:uuid/uuid.dart';
 
@@ -19,7 +20,14 @@ class SuggestionsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppScaffold(
       appBarTitle: "Suggestions",
-      onPressedBackIcon: () {},
+      onPressedBackIcon: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const HomeScreen(),
+          ),
+        );
+      },
       onPressedProfile: () {
         Navigator.push(
           context,
@@ -41,7 +49,7 @@ class SuggestionsScreen extends StatelessWidget {
               if (snapshot.connectionState == ConnectionState.done) {
                 return Column(
                   children: [
-                    kVSpace32,
+                    kVSpace64,
                     Expanded(
                       child: ListView.separated(
                         itemCount: 1,
