@@ -9,7 +9,10 @@ import 'package:final_project/ui/screens/phone_screens/account_screen.dart';
 import 'package:final_project/ui/screens/phone_screens/favourite_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../service/supabase_ingredient_service.dart';
+
+import '../../../service/supabase_ingredient.dart';
+import '../../../service/supabase_suggestion_recipe.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key, this.onPressed});
@@ -20,6 +23,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  // final box1 = GetStorage();
   bool isDark = false;
   late Icon icon;
 
@@ -36,6 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // final List<SuggestionRecipe> suggestionsList = box1.read("suggestions");
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
@@ -66,8 +71,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     kVSpace24,
                     CircleAvatar(
+                      backgroundColor: whiteColor,
                       backgroundImage: NetworkImage(
-                          'https://www.tenforums.com/geek/gars/images/2/types/thumb_15951118880user.png'),
+
+                          'https://www.stedwards.edu/themes/steds/images/no-photo500x535.jpg'),
+
                       radius: 40,
                     ),
                     SizedBox(
@@ -155,43 +163,103 @@ class _HomeScreenState extends State<HomeScreen> {
         top: false,
         child: Column(
           children: [
-            kVSpace24,
-            const HomeContainer(),
             kVSpace16,
+            const HomeContainer(),
+            kVSpace8,
             Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 28),
                 child: SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.50,
-                  child: const SingleChildScrollView(
+                  height: MediaQuery.of(context).size.height * 0.42,
+                  child: SingleChildScrollView(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Column(
-                          children: [
-                            kVSpace16,
-                            SizedBox(
-                              width: 170,
-                              height: 80,
-                              child: Text(
-                                "Meal Suggestions",
-                                style: TextStyle(
-                                    fontSize: 24, fontWeight: FontWeight.w500),
+                        Expanded(
+                          child: Column(
+                            children: [
+                              kVSpace16,
+                              SizedBox(
+                                width: 170,
+                                height: 60,
+                                child: Text(
+                                  "Meal Suggestions",
+                                  style: TextStyle(
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.w500),
+                                ),
                               ),
-                            ),
-                            kVSpace16,
-                            SmallCard(),
-                            kVSpace16,
-                            SmallCard(),
-                          ],
+                              kVSpace16,
+                              FutureBuilder(
+                                  future: SupabaseSuggestionRecipe
+                                      .getSuggestionRecipeEven(),
+                                  builder: (context, snapshot) {
+                                    if (snapshot.hasData) {
+                                      final suggestionRecipeList =
+                                          snapshot.data ?? [];
+                                      return SizedBox(
+                                        height: 270,
+                                        child: ListView(
+                                            shrinkWrap: true,
+                                            children: [
+                                              for (final suggestionRecipe
+                                                  in suggestionRecipeList) ...[
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.all(8.0),
+                                                  child: SmallCard(
+                                                    suggestionRecipe:
+                                                        suggestionRecipe,
+                                                    onTap: () {},
+                                                  ),
+                                                ),
+                                              ]
+                                            ]),
+                                      );
+                                    }
+                                    return const SizedBox.shrink();
+                                  }),
+                            ],
+                          ),
                         ),
-                        Column(
-                          children: [
-                            kVSpace24,
-                            SmallCard(),
-                            kVSpace16,
-                            SmallCard(),
-                          ],
+                        Expanded(
+                          child: Column(
+                            children: [
+                              kVSpace24,
+                              FutureBuilder(
+                                  future: SupabaseSuggestionRecipe
+                                      .getSuggestionRecipeOdd(),
+                                  builder: (context, snapshot) {
+                                    if (snapshot.hasData) {
+                                      final suggestionRecipeList =
+                                          snapshot.data ?? [];
+                                      return SizedBox(
+                                        height: 340,
+                                        child: ListView(
+                                            scrollDirection: Axis.vertical,
+                                            shrinkWrap: true,
+                                            children: [
+                                              for (final suggestionRecipe
+                                                  in suggestionRecipeList) ...[
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.all(8.0),
+                                                  child: SmallCard(
+                                                    suggestionRecipe:
+                                                        suggestionRecipe,
+                                                    onTap: () {},
+                                                  ),
+                                                ),
+                                              ]
+                                            ]),
+                                      );
+                                    }
+                                    return const SizedBox.shrink();
+                                  }),
+
+                              // SmallCard(),
+                            ],
+                          ),
                         )
                       ],
                     ),

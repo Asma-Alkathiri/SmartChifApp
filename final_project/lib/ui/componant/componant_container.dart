@@ -12,10 +12,10 @@ class ComponentContainer extends StatefulWidget {
   final Ingredient ingredient;
 
   @override
-  State<ComponentContainer> createState() => _ComponentContainerState();
+  State<ComponentContainer> createState() => ComponentContainerState();
 }
 
-class _ComponentContainerState extends State<ComponentContainer> {
+class ComponentContainerState extends State<ComponentContainer> {
   bool isSelected = false;
   @override
   Widget build(BuildContext context) {
@@ -25,13 +25,14 @@ class _ComponentContainerState extends State<ComponentContainer> {
           ingredientList.remove(widget.ingredient.name);
           isSelected = !isSelected;
           setState(() {});
+          print(ingredientList.length);
         } else {
           ingredientList.add(widget.ingredient.name);
           isSelected = !isSelected;
           setState(() {});
+          print(ingredientList.length);
         }
       },
-      onSecondaryTap: () {},
       child: Container(
         padding: const EdgeInsets.all(5),
         decoration: BoxDecoration(
