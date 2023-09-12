@@ -1,4 +1,3 @@
-
 import 'package:final_project/service/supabase_initializer.dart';
 import 'package:final_project/ui/componant/coustom_rectanglefield.dart';
 import 'package:final_project/ui/componant/coustom_textwithbutton.dart';
@@ -55,17 +54,7 @@ class TabletOTPScreen extends StatelessWidget {
             width: 700,
             fontsize: 20,
             title: "verfy",
-            onPressed: () async {
-              //   String otp = getOTP(
-              //       num1Controller!,
-              //       num2Controller!,
-              //       num3Controller!,
-              //       num4Controller!,
-              //       num5Controller!,
-              //       num6Controller!);
-              //   await SupabaseInitializer().supabaseClient.auth.verifyOTP(
-              //       token: otp, email: userEmail, type: OtpType.signup);
-            },
+            onPressed: () async {},
           ),
           kVSpace24,
           TextWithTextButton(

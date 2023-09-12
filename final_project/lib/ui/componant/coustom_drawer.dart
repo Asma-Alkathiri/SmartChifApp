@@ -36,7 +36,6 @@ class CostomDrawer extends StatelessWidget {
                 fontSize: 12,
               ),
             ),
-            //  CustomLogoutButton()
           ],
         ),
       ),

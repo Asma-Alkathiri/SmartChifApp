@@ -1,17 +1,18 @@
 import 'package:final_project/cubit/theme_cubit.dart';
 import 'package:final_project/ui/componant/custom_logout_button.dart';
-
 import 'package:final_project/ui/componant/home_container.dart';
 import 'package:final_project/ui/componant/image_profile_containar.dart';
 import 'package:final_project/ui/componant/small_card.dart';
 import 'package:final_project/ui/constants/custom_colors.dart';
 import 'package:final_project/ui/constants/custom_spacing.dart';
-import 'package:final_project/ui/screens/phone_screens/Account_screen.dart';
+import 'package:final_project/ui/screens/phone_screens/account_screen.dart';
 import 'package:final_project/ui/screens/phone_screens/favourite_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import '../../../service/supabase_ingredient.dart';
 import '../../../service/supabase_suggestion_recipe.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key, this.onPressed});
@@ -72,7 +73,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     CircleAvatar(
                       backgroundColor: whiteColor,
                       backgroundImage: NetworkImage(
+
                           'https://www.stedwards.edu/themes/steds/images/no-photo500x535.jpg'),
+
                       radius: 40,
                     ),
                     SizedBox(
@@ -156,16 +159,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
-      // appBarTitle: "Home",
-      // // onPressedBackIcon: () {},
-      // onPressedProfile: () {
-      //   Navigator.push(
-      //     context,
-      //     MaterialPageRoute(
-      //       builder: (context) => const AccountScreen(),
-      //     ),
-      //   );
-      // },
       body: SafeArea(
         top: false,
         child: Column(

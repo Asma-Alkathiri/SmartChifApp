@@ -7,9 +7,8 @@ import 'package:final_project/ui/componant/custom_google_button.dart';
 import 'package:final_project/ui/componant/orange_button.dart';
 import 'package:final_project/ui/componant/text_field.dart';
 import 'package:final_project/ui/constants/custom_spacing.dart';
-import 'package:final_project/ui/screens/phone_screens/OTP_screen.dart';
+import 'package:final_project/ui/screens/phone_screens/otp_screen.dart';
 import 'package:flutter/material.dart';
-
 
 class TabletSignUpScreen extends StatefulWidget {
   const TabletSignUpScreen({super.key});
@@ -79,39 +78,7 @@ class _TabletSignUpScreenState extends State<TabletSignUpScreen> {
                     fontsize: 20,
                     height: 50,
                     width: 700,
-                    onPressed: () async {
-                      // if (emailController.text.isNotEmpty &&
-                      //     passwordController.text.isNotEmpty) {
-                      //   // Signing up ...
-                      //   await SupabaseInitializer().supabaseClient.auth.signUp(
-                      //         email: emailController.text,
-                      //         password: passwordController.text,
-                      //       );
-                      //   await SupabaseInitializer()
-                      //       .supabaseClient
-                      //       .from("user")
-                      //       .insert({
-                      //     "name": nameController.text,
-                      //     "id": Supabase
-                      //         .instance.client.auth.currentSession?.user.id
-                      //   });
-                      //   await SupabaseInitializer()
-                      //       .supabaseClient
-                      //       .auth
-                      //       .signInWithOtp(email: emailController.text);
-
-                      //   if (context.mounted) {
-                      //     Navigator.pushAndRemoveUntil(
-                      //         context,
-                      //         MaterialPageRoute(
-                      //             builder: (context) => OTPScreen(
-                      //                   userEmail: emailController.text,
-                      //                 )), (route) {
-                      //       return false;
-                      //     });
-                      //   }
-                      // }
-                    },
+                    onPressed: () async {},
                   ),
                   kVSpace24,
                   TextWithTextButton(

@@ -1,10 +1,9 @@
-
 import 'package:flutter/material.dart';
 
 class HomeButton extends StatefulWidget {
   const HomeButton({
     super.key,
-    required this.name ,
+    required this.name,
   });
   final String? name;
   @override

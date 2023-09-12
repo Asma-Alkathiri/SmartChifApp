@@ -2,7 +2,7 @@ import 'package:final_project/ui/componant/coustom_searchfield.dart';
 import 'package:final_project/ui/componant/history_card.dart';
 import 'package:final_project/ui/componant/app_scaffold.dart';
 import 'package:final_project/ui/constants/custom_spacing.dart';
-import 'package:final_project/ui/screens/phone_screens/Account_screen.dart';
+import 'package:final_project/ui/screens/phone_screens/account_screen.dart';
 import 'package:flutter/material.dart';
 
 class HistoryScreen extends StatelessWidget {
@@ -19,7 +19,7 @@ class HistoryScreen extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => AccountScreen(),
+            builder: (context) => const AccountScreen(),
           ),
         );
       },

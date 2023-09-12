@@ -4,12 +4,13 @@ import 'package:final_project/ui/componant/coustom_textwithbutton.dart';
 import 'package:final_project/ui/componant/custom_Auth_Appbar.dart';
 import 'package:final_project/ui/componant/custom_devider_text.dart';
 import 'package:final_project/ui/componant/custom_google_button.dart';
+import 'package:final_project/ui/componant/error_container.dart';
 import 'package:final_project/ui/componant/orange_button.dart';
 import 'package:final_project/ui/componant/text_field.dart';
 import 'package:final_project/ui/constants/custom_spacing.dart';
-import 'package:final_project/ui/screens/phone_screens/OTP_screen.dart';
+import 'package:final_project/ui/screens/phone_screens/otp_screen.dart';
+import 'package:final_project/ui/screens/phone_screens/sign_in_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -73,6 +74,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     height: 50,
                     width: 248,
                     onPressed: () async {
+                      if (emailController.text.isEmpty &&
+                          passwordController.text.isEmpty) {
+                        return showDialog(
+                            context: context,
+                            builder: (context) {
+                              return Center(
+                                  child: ErrorContainer(
+                                onPressed: () {},
+                              ));
+                            });
+                      }
                       if (emailController.text.isNotEmpty &&
                           passwordController.text.isNotEmpty) {
                         // Signing up ...
@@ -114,8 +126,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       Navigator.pushAndRemoveUntil(
                           context,
                           MaterialPageRoute(
-                            builder: (context) =>
-                                OTPScreen(userEmail: emailController.text),
+                            builder: (context) => const SignInScreen(),
                           ), (route) {
                         return false;
                       });
