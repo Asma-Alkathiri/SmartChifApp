@@ -15,7 +15,7 @@ class SupabaseFavorites {
   }
 
   Future insertFavorite(RecipeModel recipe) async {
-    final tojson = RecipeModel().toJson(recipe);
+    final tojson = RecipeModel().toJson();
     await SupabaseInitializer()
         .supabaseClient
         .from('favorite')

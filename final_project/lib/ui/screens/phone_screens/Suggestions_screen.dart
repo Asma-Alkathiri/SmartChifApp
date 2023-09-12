@@ -1,11 +1,15 @@
 import 'package:final_project/globals.dart';
 import 'package:final_project/models/gpt_content.dart';
+import 'package:final_project/models/recipe_model.dart';
 import 'package:final_project/service/gpt/gpt_service.dart';
+import 'package:final_project/service/supabase_initializer.dart';
+import 'package:final_project/service/supabase_recipes.dart';
 import 'package:final_project/ui/componant/app_scaffold.dart';
 import 'package:final_project/ui/componant/suggestion_card.dart';
 import 'package:final_project/ui/constants/custom_spacing.dart';
 import 'package:final_project/ui/screens/phone_screens/authentication_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:uuid/uuid.dart';
 
 String prompt = 'i only have $ingredientList.';
 
@@ -46,7 +50,14 @@ class SuggestionsScreen extends StatelessWidget {
                             foodName: '${gptContent.recipeName}',
                             foodImage: imageUrl,
                             description: '${gptContent.steps}',
-                            onPressedFavoriteIcone: () {},
+                            onPressedFavoriteIcone: () async {
+                              final recipe = RecipeModel(
+                                  name: gptContent.recipeName,
+                                  recipeImg: imageUrl,
+                                  description: gptContent.steps);
+                              SupabaseRecipes().insertRecipe(recipe);
+                              print('like');
+                            },
                           );
                         },
                         separatorBuilder: (BuildContext context, int index) {

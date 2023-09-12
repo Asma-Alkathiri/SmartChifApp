@@ -13,9 +13,8 @@ class RecipeModel {
     recipeImg = json['recipe_img'];
   }
 
-  Map<String, dynamic> toJson(recipe) {
+  Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
-    data['id'] = id;
     data['name'] = name;
     data['description'] = description;
     data['recipe_img'] = recipeImg;
