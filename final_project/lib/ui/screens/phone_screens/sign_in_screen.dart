@@ -100,12 +100,23 @@ class _SignInScreenState extends State<SignInScreen> {
                       }
                       if (emailController.text.isNotEmpty &&
                           passwordController.text.isNotEmpty) {
-                        await SupabaseInitializer()
-                            .supabaseClient
-                            .auth
-                            .signInWithPassword(
-                                password: passwordController.text,
-                                email: emailController.text);
+
+                        try {
+                            await SupabaseInitializer()
+                              .supabaseClient
+                              .auth
+                              .signInWithPassword(
+                                  password: passwordController.text,
+                                  email: emailController.text);
+
+                         
+                        } catch (error) {
+                          return showDialog(
+                              context: context,
+                              builder: (context) {
+                                return const ErrorContainer();
+                              });
+                        }
                       }
                       if (context.mounted) {
                         Navigator.pushAndRemoveUntil(

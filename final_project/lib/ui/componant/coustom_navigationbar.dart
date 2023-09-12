@@ -1,5 +1,4 @@
 import 'package:final_project/ui/constants/custom_colors.dart';
-
 import 'package:final_project/ui/screens/phone_screens/Account_screen.dart';
 import 'package:final_project/ui/screens/phone_screens/favourite_screen.dart';
 import 'package:final_project/ui/screens/phone_screens/home_screen.dart';
@@ -64,3 +63,7 @@ class FirstScreen extends StatelessWidget {
     );
   }
 }
+
+
+// ------------ SecondScreen
+
