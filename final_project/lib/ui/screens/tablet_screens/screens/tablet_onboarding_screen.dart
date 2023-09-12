@@ -1,9 +1,9 @@
 import 'package:final_project/ui/componant/coustom_OnboardingButton.dart';
 import 'package:final_project/ui/constants/custom_colors.dart';
 import 'package:final_project/ui/screens/phone_screens/home_screen.dart';
-import 'package:final_project/ui/screens/tablet_screens/onboarding_page2/tablet_page1.dart';
-import 'package:final_project/ui/screens/tablet_screens/onboarding_page2/tablet_page2.dart';
-import 'package:final_project/ui/screens/tablet_screens/onboarding_page2/tablet_page3.dart';
+import 'package:final_project/ui/screens/tablet_screens/Onboarding_Page2/tablet_page1.dart';
+import 'package:final_project/ui/screens/tablet_screens/Onboarding_Page2/tablet_page2.dart';
+import 'package:final_project/ui/screens/tablet_screens/Onboarding_Page2/tablet_page3.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 

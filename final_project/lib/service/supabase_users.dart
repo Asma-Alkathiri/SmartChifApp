@@ -22,8 +22,8 @@ class SupabaseUser {
         .eq('id',
             SupabaseInitializer().supabaseClient.auth.currentSession!.user.id);
 
-    final UserModel user = UserModel.fromJson(rawData[0]);
-  
+    final UserModel user = UserModel.fromJson(rawData?[0]);
+
     return user;
   }
 }

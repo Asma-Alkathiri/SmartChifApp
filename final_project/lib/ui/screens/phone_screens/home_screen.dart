@@ -73,7 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     SizedBox(
                       height: 10,
                     ),
-                    Text("data"),
+                    Text("Mohammed Alsahli"),
                   ],
                 ),
               ),
@@ -161,7 +161,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 28),
                 child: SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.50,
+                  height: MediaQuery.of(context).size.height * 0.45,
                   child: const SingleChildScrollView(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
