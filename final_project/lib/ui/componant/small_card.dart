@@ -13,7 +13,6 @@ class SmallCard extends StatelessWidget {
   final SuggestionRecipe suggestionRecipe;
   final Function()? onTap;
 
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -40,10 +39,8 @@ class SmallCard extends StatelessWidget {
                 borderRadius: const BorderRadius.all(
                   Radius.circular(15),
                 ),
-
                 child: Image.network(
                   suggestionRecipe.recipeImg!,
-
                   fit: BoxFit.cover,
                 )),
           ),
@@ -52,26 +49,32 @@ class SmallCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  suggestionRecipe.name.toString(),
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.primary,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: Text(
+                    suggestionRecipe.name.toString(),
+                    style: TextStyle(
+                      color: Theme.of(context).colorScheme.primary,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 ),
                 SizedBox(
                   width: 200,
                   height: 20,
-                  child: Text(
-                    suggestionRecipe.description!,
-                    softWrap: false,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      color: Theme.of(context).colorScheme.primary,
-                      fontSize: 12,
-                      fontWeight: FontWeight.w300,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Text(
+                      suggestionRecipe.description!,
+                      softWrap: false,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.primary,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w300,
+                      ),
                     ),
                   ),
                 ),

@@ -13,6 +13,11 @@ import 'package:final_project/ui/screens/phone_screens/authentication_screen.dar
 import 'package:final_project/ui/screens/phone_screens/resetpassword.dart';
 import 'package:final_project/ui/screens/phone_screens/sign_up_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get_storage/get_storage.dart';
+
+import '../../../service/supabase_suggestion_recipe.dart';
+
+List suggestionRecipeList = [];
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
@@ -22,6 +27,8 @@ class SignInScreen extends StatefulWidget {
 }
 
 class _SignInScreenState extends State<SignInScreen> {
+  final box1 = GetStorage();
+
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
@@ -30,6 +37,22 @@ class _SignInScreenState extends State<SignInScreen> {
     emailController.dispose();
     passwordController.dispose();
     super.dispose();
+  }
+
+  @override
+  void initState() {
+    getMeal();
+    if (box1.hasData("suggestion1")) {
+      suggestionRecipeList = box1.read("suggestion1");
+      print(suggestionRecipeList);
+      setState(() {});
+    }
+  }
+
+  getMeal() async {
+    print({1});
+    SupabaseSuggestionRecipe().getSuggestionRecipe();
+    setState(() {});
   }
 
   @override
@@ -101,18 +124,18 @@ class _SignInScreenState extends State<SignInScreen> {
                       if (emailController.text.isNotEmpty &&
                           passwordController.text.isNotEmpty) {
                         try {
-                          return showDialog(
-                              context: context,
-                              builder: (context) {
-                                return const ErrorContainer();
-                              });
-                        } catch (error) {
                           await SupabaseInitializer()
                               .supabaseClient
                               .auth
                               .signInWithPassword(
                                   password: passwordController.text,
                                   email: emailController.text);
+                        } catch (error) {
+                          return showDialog(
+                              context: context,
+                              builder: (context) {
+                                return const ErrorContainer();
+                              });
                         }
                       }
                       if (context.mounted) {
