@@ -40,7 +40,7 @@ class TabletHomeScreen extends StatelessWidget {
                   shrinkWrap: true,
                   itemCount: 4,
                   itemBuilder: (context, index) {
-                    return const Center(child: SmallCard());
+                    // return const Center(child: SmallCard());
                   },
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 4,

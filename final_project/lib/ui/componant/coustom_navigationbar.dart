@@ -1,5 +1,4 @@
 import 'package:final_project/ui/constants/custom_colors.dart';
-
 import 'package:final_project/ui/screens/phone_screens/Account_screen.dart';
 import 'package:final_project/ui/screens/phone_screens/favourite_screen.dart';
 import 'package:final_project/ui/screens/phone_screens/home_screen.dart';
@@ -14,7 +13,7 @@ class NavigationBar1 extends StatefulWidget {
 
 class _NavigationBar1State extends State<NavigationBar1> {
   final List screens = [
-    HomeScreen(),
+    const HomeScreen(),
     const FavouriteScreen(),
     const AccountScreen(),
   ];
@@ -71,10 +70,3 @@ class FirstScreen extends StatelessWidget {
 }
 
 // ------------ SecondScreen
-
-
-
-
-
-
-
