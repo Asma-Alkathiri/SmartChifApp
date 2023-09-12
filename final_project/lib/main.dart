@@ -53,7 +53,7 @@ class MainApp extends StatelessWidget {
               debugShowCheckedModeBanner: false,
               theme: state.customTheme,
               // darkTheme: DarkTheme,
-              home: const NavigationBar1()
+              home: const AuthenticationScreen()
               // const NavigationBar1(),
               );
         },
