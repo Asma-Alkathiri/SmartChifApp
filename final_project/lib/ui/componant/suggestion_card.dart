@@ -24,7 +24,7 @@ class SuggestionCard extends StatelessWidget {
       onTap: onTap,
       child: Stack(children: [
         Container(
-          height: 450,
+          height: 350,
           width: MediaQuery.of(context).size.width,
           // color: orangeColor,
         ),
@@ -32,7 +32,7 @@ class SuggestionCard extends StatelessWidget {
           bottom: 0,
           child: Container(
             width: 340,
-            height: 350,
+            height: 250,
             decoration: BoxDecoration(
                 color: Theme.of(context).colorScheme.background,
                 borderRadius: BorderRadius.circular(15),
@@ -84,7 +84,7 @@ class SuggestionCard extends StatelessWidget {
         ),
         Positioned(
           top: 0,
-          left: 20,
+          left: 19,
           child: Stack(children: [
             SizedBox(
               height: 170,

@@ -31,7 +31,7 @@ class _ComponentBottomSheetState extends State<ComponentBottomSheet> {
     final List<Ingredient> dairyList = box.read("Dairy");
 
     return Scaffold(
-      backgroundColor: whiteColor,
+      backgroundColor: Theme.of(context).colorScheme.background,
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(

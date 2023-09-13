@@ -83,7 +83,7 @@ class _AccountScreenState extends State<AccountScreen> {
                 children: [
                   Text('${user?.email}'),
                   kVSpace128,
-                  const LogOutButton(),
+                  // const LogOutButton(),
                 ],
               ),
             ),

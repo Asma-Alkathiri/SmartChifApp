@@ -15,6 +15,7 @@ import 'package:final_project/ui/screens/phone_screens/sign_in_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 import 'package:supabase_flutter/supabase_flutter.dart';
 import '../../../models/user_model.dart';
@@ -34,7 +35,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   // final box1 = GetStorage();
-
+  // List<SuggestionRecipe> suggestionRecipeList = [];
   bool isDark = false;
   // bool loading = true;
 
@@ -42,10 +43,9 @@ class _HomeScreenState extends State<HomeScreen> {
   late UserModel userData = UserModel();
   @override
   void initState() {
-    // getMeal();
-
     icon = const Icon(Icons.sunny);
     getUser();
+
     super.initState();
     SupabaseIngredient().getIngredientbyType("Vegetable");
     SupabaseIngredient().getIngredientbyType("Fruit");
@@ -57,6 +57,11 @@ class _HomeScreenState extends State<HomeScreen> {
   getUser() async {
     userData = await SupabaseUser().getUserNmae();
   }
+
+  // getMeals() async {
+  //   suggestionRecipeList =
+  //       (await SupabaseSuggestionRecipe().getSuggestionRecipe())!;
+  // }
 
   @override
   void dispose() {
@@ -193,81 +198,107 @@ class _HomeScreenState extends State<HomeScreen> {
               kVSpace16,
               const HomeContainer(),
               kVSpace8,
-              Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 28),
-                  child: SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.42,
-                      child: SingleChildScrollView(
-                          child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                            Expanded(
-                                child: Column(children: [
-                              kVSpace16,
-                              SizedBox(
-                                width: 170,
-                                height: 60,
-                                child: Text(
-                                  "Meal Suggestions",
-                                  style: TextStyle(
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.w500),
-                                ),
-                              ),
-                              kVSpace16,
-                              Column(children: [
-                                for (var i = 0;
-                                    i < suggestionRecipeList.length;
-                                    i++)
-                                  i % 2 != 0
-                                      ? Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: SmallCard(
-                                            suggestionRecipe:
-                                                suggestionRecipeList[i],
-                                            onTap: () {
-                                              Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          HomeSuggestionsScreen(
-                                                            suggestionRecipe:
-                                                                suggestionRecipeList[
-                                                                    i],
-                                                          )));
-                                            },
-                                          ),
-                                        )
-                                      : SizedBox.shrink(),
-                              ])
-                            ])),
-                            Column(children: [
-                              for (var i = 0;
-                                  i < suggestionRecipeList.length;
-                                  i++)
-                                i % 2 == 0
-                                    ? Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: SmallCard(
-                                          suggestionRecipe:
-                                              suggestionRecipeList[i],
-                                          onTap: () {
-                                            Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        HomeSuggestionsScreen(
-                                                          suggestionRecipe:
-                                                              suggestionRecipeList[
-                                                                  i],
-                                                        )));
-                                          },
-                                        ),
-                                      )
-                                    : SizedBox.shrink(),
-                            ])
-                          ]))))
+              //----------------- Meal Suggestion
+              FutureBuilder(
+                future: SupabaseSuggestionRecipe().getSuggestionRecipe(),
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 28),
+                      child: Center(
+                        child: LoadingAnimationWidget.fourRotatingDots(
+                          color: orangeColor,
+                          size: 50,
+                        ),
+                      ),
+                    );
+                  } else if (snapshot.hasData) {
+                    List<SuggestionRecipe> suggestionRecipeList =
+                        snapshot.data!;
+                    return Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 28),
+                        child: SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.42,
+                            child: SingleChildScrollView(
+                                child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                  Expanded(
+                                      child: Column(children: [
+                                    kVSpace16,
+                                    SizedBox(
+                                      width: 170,
+                                      height: 60,
+                                      child: Text(
+                                        "Meal Suggestions",
+                                        style: TextStyle(
+                                            fontSize: 24,
+                                            fontWeight: FontWeight.w500),
+                                      ),
+                                    ),
+                                    kVSpace16,
+                                    Column(children: [
+                                      for (var i = 0;
+                                          i < suggestionRecipeList.length;
+                                          i++)
+                                        i % 2 != 0
+                                            ? Padding(
+                                                padding:
+                                                    const EdgeInsets.all(8.0),
+                                                child: SmallCard(
+                                                  suggestionRecipe:
+                                                      suggestionRecipeList[i],
+                                                  onTap: () {
+                                                    Navigator.push(
+                                                        context,
+                                                        MaterialPageRoute(
+                                                            builder: (context) =>
+                                                                HomeSuggestionsScreen(
+                                                                  suggestionRecipe:
+                                                                      suggestionRecipeList[
+                                                                          i],
+                                                                )));
+                                                  },
+                                                ),
+                                              )
+                                            : SizedBox.shrink(),
+                                    ])
+                                  ])),
+                                  Column(children: [
+                                    for (var i = 0;
+                                        i < suggestionRecipeList.length;
+                                        i++)
+                                      i % 2 == 0
+                                          ? Padding(
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
+                                              child: SmallCard(
+                                                suggestionRecipe:
+                                                    suggestionRecipeList[i],
+                                                onTap: () {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                          builder: (context) =>
+                                                              HomeSuggestionsScreen(
+                                                                suggestionRecipe:
+                                                                    suggestionRecipeList[
+                                                                        i],
+                                                              )));
+                                                },
+                                              ),
+                                            )
+                                          : SizedBox.shrink(),
+                                  ])
+                                ]))));
+                  } else {
+                    return SizedBox.shrink();
+                  }
+                },
+              )
             ])));
 
     // Padding(

@@ -50,7 +50,7 @@ class SuggestionsScreen extends StatelessWidget {
                 return Center(
                   child: LoadingAnimationWidget.fourRotatingDots(
                     color: orangeColor,
-                    size: 100,
+                    size: 70,
                   ),
                 );
               }

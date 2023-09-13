@@ -18,8 +18,6 @@ import 'package:get_storage/get_storage.dart';
 import '../../../models/suggestion_recipe_model.dart';
 import '../../../service/supabase_suggestion_recipe.dart';
 
-List suggestionRecipeList = [];
-
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
 
@@ -42,12 +40,7 @@ class _SignInScreenState extends State<SignInScreen> {
 
   @override
   void initState() {
-    getMeal();
-    if (box1.hasData("suggestion1")) {
-      suggestionRecipeList = box1.read("suggestion1");
-      print(suggestionRecipeList);
-      setState(() {});
-    }
+    super.initState();
   }
 
   getMeal() async {
@@ -64,7 +57,6 @@ class _SignInScreenState extends State<SignInScreen> {
           children: [
             const SignInAppbar(),
             kVSpace32,
-            kVSpace24,
             Padding(
               padding: const EdgeInsets.all(24),
               child: Column(
@@ -150,7 +142,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       }
                     },
                   ),
-                  kVSpace32,
+                  kVSpace16,
                   TextWithTextButton(
                     text: 'Don\'t have account?',
                     buttonTitle: 'sign up',

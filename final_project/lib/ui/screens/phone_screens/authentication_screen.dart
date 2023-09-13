@@ -35,7 +35,7 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: access ? const NavigationBar1() : OnboardingScreen(),
+      body: access ? const NavigationBar1() : const OnboardingScreen(),
     );
   }
 }

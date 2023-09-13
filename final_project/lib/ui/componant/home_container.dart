@@ -23,8 +23,8 @@ class HomeContainer extends StatelessWidget {
             BoxShadow(
               color: orangeColor.withOpacity(0.2),
               blurRadius: 7,
-              spreadRadius: 0,
-              offset: const Offset(0, 3),
+              spreadRadius: 1,
+              offset: const Offset(0, 0),
             ),
           ]),
       child: Column(
@@ -43,6 +43,7 @@ class HomeContainer extends StatelessWidget {
             onPressed: () {
               ingredientList.clear();
               showModalBottomSheet(
+                  backgroundColor: Theme.of(context).colorScheme.background,
                   showDragHandle: true,
                   context: context,
                   shape: const RoundedRectangleBorder(

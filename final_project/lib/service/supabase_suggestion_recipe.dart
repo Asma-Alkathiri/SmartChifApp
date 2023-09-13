@@ -44,15 +44,13 @@ class SupabaseSuggestionRecipe {
           .supabaseClient
           .from('suggestion_recipe')
           .select('');
+
       final List<SuggestionRecipe> suggestions = [];
 
       for (final suggestion in rawSuggestion) {
         suggestions.add(SuggestionRecipe.fromJson(suggestion));
       }
 
-      final box1 = GetStorage();
-      box1.write('suggestion1', suggestions);
-      print(suggestions);
       return suggestions;
     } catch (e) {
       print(" error $e");

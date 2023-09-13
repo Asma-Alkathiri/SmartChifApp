@@ -33,7 +33,7 @@ class WelcomeScreen extends StatelessWidget {
             ),
             kVSpace8,
             const Text(
-              "Taste & Innovate",
+              "Smart Chef",
               style: TextStyle(
                   color: orangeColor,
                   fontWeight: FontWeight.w700,
@@ -83,12 +83,12 @@ class WelcomeScreen extends StatelessWidget {
                       );
                     },
                   ),
-                  kVSpace32,
+                  kVSpace16,
                   TextWithTextButton(
                     text: 'Already have account?',
                     textColor: lightGrayColor,
                     buttonTitle: 'Sign In',
-                    buttonTitleColor: lightGrayColor,
+                    buttonTitleColor: orangeColor,
                     onTap: () {
                       Navigator.push(
                         context,

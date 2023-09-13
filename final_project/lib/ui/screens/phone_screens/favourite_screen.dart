@@ -42,7 +42,7 @@ class FavouriteScreen extends StatelessWidget {
                 children: [
                   for (final favorate in favorateList) ...[
                     Padding(
-                      padding: const EdgeInsets.only(right: 16.0),
+                      padding: const EdgeInsets.only(bottom: 16),
                       child: SuggestionCard(
                         foodName: '${favorate.name}',
                         description: '${favorate.description}',
